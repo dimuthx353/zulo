@@ -2,6 +2,10 @@
 @import '../node_modules/bootstrap/scss/variables';
 
 html[data-bs-theme='light'] {
+  nav {
+    border-color: $dark !important;
+  }
+
   .hello {
     &:hover {
       i {
@@ -66,4 +70,24 @@ html[data-bs-theme='light'] {
       }
     }
   }
+}
+
+.image-section {
+  min-height: 80vh;
+
+  > div {
+    min-height: 80vh;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.carousel-caption {
+  background-color: #f0f0f042;
+  color: #000;
+  border-radius: 10px;
 }

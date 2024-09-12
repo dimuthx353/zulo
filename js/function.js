@@ -44,3 +44,12 @@ function addActiveClass(event) {
 
   event.target.classList.add('active');
 }
+
+const myCarouselElement = document.querySelector(
+  '#carouselExampleAutoplayingM'
+);
+
+const carousel = new bootstrap.Carousel(myCarouselElement, {
+  interval: 30000,
+  touch: false
+});
