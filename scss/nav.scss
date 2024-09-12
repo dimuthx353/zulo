@@ -91,3 +91,11 @@ html[data-bs-theme='light'] {
   color: #000;
   border-radius: 10px;
 }
+
+.border-my {
+  border-bottom: 2px solid #000;
+  flex-grow: 1;
+  position: relative;
+  top: -50%;
+  transform: translateY(-50%);
+}
