@@ -1,7 +1,49 @@
+html[data-bs-theme=light] .hello:hover i {
+  color: #f8f9fa !important;
+}
 html[data-bs-theme=light] .hello > a > i {
   color: #0d6efd !important;
 }
 
-html[data-bs-theme=light] .hello:hover i {
-  color: #f8f9fa !important;
+.logo-animation {
+  color: #0dcaf0;
+  animation: colorChange 60s ease-in infinite;
+  font-family: "Courier New", Courier, monospace;
+}
+.logo-animation .logo-span-text {
+  position: relative;
+  bottom: 6px;
+  letter-spacing: 2px;
+}
+@keyframes colorChange {
+  0% {
+    color: #0dcaf0;
+  }
+  50% {
+    color: #212529;
+  }
+  52% {
+    color: #0d6efd;
+  }
+  100% {
+    color: #198754;
+  }
+}
+.logo-animation .z-rotate-animation {
+  animation: rotate-ani 8s ease-in-out 1;
+  display: inline-block;
+}
+@keyframes rotate-ani {
+  0% {
+    rotate: 0deg;
+  }
+  20% {
+    rotate: 240deg;
+  }
+  50% {
+    rotate: 180deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
 }/*# sourceMappingURL=nav.css.map */

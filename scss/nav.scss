@@ -1,12 +1,69 @@
 @import '../node_modules/bootstrap/scss/functions';
 @import '../node_modules/bootstrap/scss/variables';
 
-html[data-bs-theme='light'] .hello > a > i {
-  color: $primary !important;
+html[data-bs-theme='light'] {
+  .hello {
+    &:hover {
+      i {
+        color: $light !important;
+      }
+    }
+  }
+
+  .hello > a > i {
+    color: $primary !important;
+  }
 }
 
-html[data-bs-theme='light'] .hello:hover {
-  i {
-    color: $light !important;
+.logo-animation {
+  color: $info;
+  animation: colorChange 60s ease-in infinite;
+  font-family: 'Courier New', Courier, monospace;
+
+  .logo-span-text {
+    position: relative;
+    bottom: 6px;
+    letter-spacing: 2px;
+  }
+
+  @keyframes colorChange {
+    0% {
+      color: $info;
+    }
+
+    50% {
+      color: $dark;
+    }
+
+    52% {
+      color: $primary;
+    }
+
+    100% {
+      color: $success;
+    }
+  }
+
+  .z-rotate-animation {
+    animation: rotate-ani 8s ease-in-out 1;
+    display: inline-block;
+
+    @keyframes rotate-ani {
+      0% {
+        rotate: 0deg;
+      }
+
+      20% {
+        rotate: 240deg;
+      }
+
+      50% {
+        rotate: 180deg;
+      }
+
+      100% {
+        rotate: 360deg;
+      }
+    }
   }
 }
