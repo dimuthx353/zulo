@@ -1,79 +1,23 @@
-html[data-bs-theme=light] nav {
-  border-color: #212529 !important;
+nav .z-text {
+  font-family: "Dancing Script", cursive;
 }
-html[data-bs-theme=light] .hello:hover i {
-  color: #f8f9fa !important;
-}
-html[data-bs-theme=light] .hello > a > i {
-  color: #0d6efd !important;
-}
-
-.logo-animation {
-  color: #0dcaf0;
-  animation: colorChange 60s ease-in infinite;
-  font-family: "Courier New", Courier, monospace;
-}
-.logo-animation .logo-span-text {
-  position: relative;
-  bottom: 6px;
-  letter-spacing: 2px;
-}
-@keyframes colorChange {
-  0% {
-    color: #0dcaf0;
-  }
-  50% {
-    color: #212529;
-  }
-  52% {
-    color: #0d6efd;
-  }
-  100% {
-    color: #198754;
-  }
-}
-.logo-animation .z-rotate-animation {
-  animation: rotate-ani 8s ease-in-out 1;
+nav .ulo-text {
+  font-family: "Dancing Script", cursive;
   display: inline-block;
-}
-@keyframes rotate-ani {
-  0% {
-    rotate: 0deg;
-  }
-  20% {
-    rotate: 240deg;
-  }
-  50% {
-    rotate: 180deg;
-  }
-  100% {
-    rotate: 360deg;
-  }
-}
-
-.image-section {
-  min-height: 80vh;
-}
-.image-section > div {
-  min-height: 80vh;
-  background-position: center;
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.carousel-caption {
-  background-color: rgba(240, 240, 240, 0.2588235294);
-  color: #000;
-  border-radius: 10px;
-}
-
-.border-my {
-  border-bottom: 2px solid #000;
-  flex-grow: 1;
   position: relative;
-  top: -50%;
-  transform: translateY(-50%);
+  bottom: 5px;
+  left: -5px;
+}
+nav .cart-btn {
+  position: relative;
+  z-index: -1;
+}
+nav .cart-items {
+  position: absolute;
+  top: -15px;
+  right: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #fff;
+  padding: 0px 2px;
 }/*# sourceMappingURL=nav.css.map */

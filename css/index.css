@@ -1,3 +1,75 @@
-body {
-  font-family: "Poppins", system-ui;
+.full-body {
+  height: 100vh;
+  overflow: hidden;
+}
+.full-body .new-fashion {
+  position: relative;
+  overflow: hidden;
+}
+.full-body .new-fashion .girl-png {
+  position: absolute;
+  width: 600px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.full-body .new-fashion .div-one {
+  justify-content: end;
+  height: 95vh;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+}
+.full-body .new-fashion .div-two {
+  justify-content: start;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+.full-body .new-fashion > div {
+  font-family: "Protest Guerrilla", sans-serif;
+}
+.full-body .new-fashion > div > div {
+  display: flex;
+  align-items: center;
+}
+.full-body .new-fashion > div > div h1 span {
+  color: #212529;
+  animation: textChange 7s ease infinite;
+}
+.full-body .new-fashion > div > div h1 span:nth-child(1) {
+  animation-delay: 2s;
+}
+.full-body .new-fashion > div > div h1 span:nth-child(2) {
+  animation-delay: 5s;
+}
+.full-body .new-fashion > div > div h1 span:nth-child(3) {
+  animation-delay: 7s;
+}
+.full-body .new-fashion > div > div h1 span:nth-child(4) {
+  animation-delay: 9s;
+}
+.full-body .new-fashion > div > div h1 span:nth-child(5) {
+  animation-delay: 11s;
+}
+@keyframes textChange {
+  from {
+    color: #fff;
+  }
+  to {
+    color: #212529;
+  }
+}
+.full-body .new-fashion > div > div .buy-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.full-body .new-fashion > div > div .buy-btn button {
+  cursor: pointer;
+}
+.full-body .new-fashion > div > div h1 {
+  font-size: 150px;
 }/*# sourceMappingURL=index.css.map */

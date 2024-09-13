@@ -1,0 +1,23 @@
+@import '../node_modules/bootstrap/scss/functions';
+@import '../node_modules/bootstrap/scss/variables';
+
+html[data-bs-theme='dark'] {
+  nav {
+    .control-center {
+      button {
+        color: $white;
+        border: 1px solid $primary !important;
+
+        &:hover {
+          background-color: $primary;
+          z-index: 0;
+        }
+      }
+    }
+
+    .cart-items {
+      background-color: $dark !important;
+      // color: $white !important;
+    }
+  }
+}
