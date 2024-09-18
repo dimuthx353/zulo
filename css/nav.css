@@ -1,3 +1,24 @@
+nav ul li {
+  margin: 0px 10px;
+}
+nav ul li .nav-link {
+  position: relative;
+}
+nav ul li .nav-link:hover::before {
+  width: 75%;
+}
+nav ul li .nav-link::before {
+  content: "";
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transition: width 0.2s ease-in;
+  border-bottom: 3px solid #000;
+  transform: translate(-50%, -50%);
+}
 nav .z-text {
   font-family: "Dancing Script", cursive;
 }

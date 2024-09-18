@@ -3,6 +3,35 @@
 @import '../node_modules/bootstrap/scss/variables';
 
 nav {
+  ul {
+    li {
+      margin: 0px 10px;
+
+      .nav-link {
+        position: relative;
+
+        &:hover {
+          &::before {
+            width: 75%;
+          }
+        }
+
+        &::before {
+          content: '';
+          width: 0%;
+          height: 100%;
+          position: absolute;
+          z-index: -1;
+          top: 50%;
+          left: 50%;
+          transition: width 0.2s ease-in;
+          border-bottom: 3px solid #000;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+
   .z-text {
     font-family: 'Dancing Script', cursive;
   }

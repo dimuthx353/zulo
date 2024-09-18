@@ -3,6 +3,18 @@
 
 html[data-bs-theme='dark'] {
   nav {
+    background-color: $dark !important;
+
+    ul {
+      li {
+        .nav-link {
+          &::before {
+            border-color: #fff;
+          }
+        }
+      }
+    }
+
     .control-center {
       button {
         color: $white;
@@ -17,7 +29,6 @@ html[data-bs-theme='dark'] {
 
     .cart-items {
       background-color: $dark !important;
-      // color: $white !important;
     }
   }
 }
