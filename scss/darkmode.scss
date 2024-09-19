@@ -42,4 +42,12 @@ html[data-bs-theme='dark'] {
       background-color: $dark !important;
     }
   }
+
+  .new-collections {
+    background-color: $black !important;
+
+    h1 {
+      color: $white !important;
+    }
+  }
 }

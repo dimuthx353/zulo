@@ -109,7 +109,6 @@
   background-color: #0d6efd !important;
 }
 .new-collections section {
-  background-color: #000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -119,6 +118,9 @@
   border: 0px solid yellow;
 }
 .new-collections section > div:nth-child(2) .carousel-inner {
+  height: 650px !important;
+}
+.new-collections section > div:nth-child(2) .carousel-inner img {
   height: 650px;
 }
 .new-collections section > div:nth-child(3) {
@@ -135,8 +137,26 @@
   color: white;
   font-weight: bold;
   cursor: pointer;
+  margin-bottom: 10px;
 }
 .new-collections section .carousel-inner .carousel-item img {
   border-radius: 10px;
   object-fit: cover;
+}
+
+.category .main-title {
+  position: relative;
+  z-index: 1;
+}
+.category .main-title::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  bottom: 0;
+  height: 5%;
+  width: 100%;
+  z-index: -1;
+  background-color: #0d6efd !important;
 }/*# sourceMappingURL=index.css.map */

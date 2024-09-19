@@ -4,6 +4,8 @@
 
 nav {
   .activeSearch {
+    transition: background-color 0.5s ease-in;
+
     &.search-bar {
       transition: background-color 0.5s ease-in;
       background-color: $light;
