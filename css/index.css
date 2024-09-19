@@ -72,4 +72,23 @@
 }
 .full-body .new-fashion > div > div h1 {
   font-size: 150px;
+}
+
+.trusted-brands {
+  overflow: hidden;
+  background-color: black;
+}
+.trusted-brands img {
+  height: 130px;
+  width: 130px;
+  margin: 20px 40px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease-in-out;
+}
+.trusted-brands img:hover {
+  opacity: 1;
+}
+.trusted-brands .brand-container {
+  display: flex;
 }/*# sourceMappingURL=index.css.map */
