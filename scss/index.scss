@@ -1,8 +1,6 @@
 @import '../node_modules/bootstrap/scss/functions';
 @import '../node_modules/bootstrap/scss/variables';
 
-$input-btn-focus-color-opacity: 0;
-
 .full-body {
   height: 100vh;
   overflow: hidden;
@@ -99,9 +97,8 @@ $input-btn-focus-color-opacity: 0;
   background-color: black;
 
   img {
-    height: 130px;
     width: 130px;
-    margin: 20px 40px;
+    margin: 0px 40px;
     cursor: pointer;
     opacity: 0.7;
     transition: opacity 0.2s ease-in-out;
@@ -113,5 +110,66 @@ $input-btn-focus-color-opacity: 0;
 
   .brand-container {
     display: flex;
+  }
+}
+
+.new-collections {
+  .main-title {
+    position: relative;
+    z-index: 1;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      bottom: 0;
+      height: 5%;
+      width: 100%;
+      z-index: -1;
+      background-color: $primary !important;
+    }
+  }
+
+  section {
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    > div:nth-child(1) {
+      border: 0px solid yellow;
+    }
+    > div:nth-child(2) {
+      .carousel-inner {
+        height: 650px;
+      }
+    }
+    > div:nth-child(3) {
+      border: 0px solid blue;
+    }
+
+    .carousel-inner {
+      height: 600px;
+      display: flex;
+      align-items: center;
+
+      .carousel-caption {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(8px);
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .carousel-item {
+        img {
+          border-radius: 10px;
+          object-fit: cover;
+        }
+      }
+    }
   }
 }
