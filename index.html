@@ -135,10 +135,38 @@
                     </button>
                   </a>
                 </div>
+                <div onclick="searchToggle()">
+                  <button
+                    class="btn btn-outline-dark"
+                    data-toggle="tooltip"
+                    data-placement="top"
+                    title="Search"
+                  >
+                    <i class="bi bi-search"></i>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </nav>
+        <div class="bg-light search-div d-block">
+          <form class="bg-light">
+            <div class="d-flex">
+              <input
+                type="search"
+                class="p-3 text-black flex-grow-1"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                placeholder="Search..."
+              />
+              <div class="d-flex justify-content-center search-btn-div">
+                <button type="button" class="search-btn bg-light">
+                  <i class="bi bi-search"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
       <div class="container-fluid new-fashion p-0 m-0 flex-grow-1">
         <div class="d-flex flex-wrap">

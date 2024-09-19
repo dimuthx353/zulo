@@ -14,4 +14,16 @@ html[data-bs-theme=dark] nav .control-center button:hover {
 }
 html[data-bs-theme=dark] nav .cart-items {
   background-color: #212529 !important;
+}
+html[data-bs-theme=dark] .search-div input {
+  color: #f8f9fa !important;
+}
+html[data-bs-theme=dark] .search-div .search-btn {
+  background-color: #212529 !important;
+}
+html[data-bs-theme=dark] .search-div .search-btn:hover {
+  background-color: #fff !important;
+}
+html[data-bs-theme=dark] .search-div .search-btn:hover i {
+  color: #212529;
 }/*# sourceMappingURL=darkmode.css.map */

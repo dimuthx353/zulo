@@ -41,4 +41,37 @@ nav .cart-items {
   font-weight: bold;
   background-color: #fff;
   padding: 0px 2px;
+}
+
+.search-div {
+  height: 0px;
+  transition: height 0.3s ease;
+  padding: 0;
+}
+.search-div.d-block {
+  height: 60px;
+  transition: height 0.3s ease;
+}
+.search-div .search-btn-div {
+  height: 60px;
+}
+.search-div .search-btn {
+  border: none;
+  outline: none;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: inherit;
+}
+.search-div .search-btn:hover {
+  transition: background-color 0.5s ease-in;
+  background-color: #212529 !important;
+}
+.search-div .search-btn i {
+  color: inherit;
+  transition: color 0.5s ease-in;
+}
+.search-div .search-btn:hover i {
+  color: #f8f9fa;
 }/*# sourceMappingURL=nav.css.map */

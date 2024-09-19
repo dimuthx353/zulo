@@ -31,4 +31,22 @@ html[data-bs-theme='dark'] {
       background-color: $dark !important;
     }
   }
+
+  .search-div {
+    input {
+      color: $light !important;
+    }
+
+    .search-btn {
+      background-color: $dark !important;
+
+      &:hover {
+        background-color: #fff !important;
+      }
+
+      &:hover i {
+        color: $dark;
+      }
+    }
+  }
 }

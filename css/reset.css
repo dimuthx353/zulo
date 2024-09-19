@@ -13,4 +13,13 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
+}
+
+input {
+  border: 0 !important;
+  outline: 0 !important;
+}
+input:focus {
+  outline: 0 !important;
+  border: 0 !important;
 }/*# sourceMappingURL=reset.css.map */
