@@ -51,9 +51,9 @@ const myCarouselElement = document.querySelector(
 
 const carousel = new bootstrap.Carousel(myCarouselElement, {
   interval: 30000,
-  touch: false,
+  touch: false
 });
 
 function searchToggle() {
-  document.querySelector('.search-div').classList.toggle('d-block');
+  document.querySelector('#search-bar').classList.toggle('activeSearch');
 }

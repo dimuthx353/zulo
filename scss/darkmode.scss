@@ -5,6 +5,17 @@ html[data-bs-theme='dark'] {
   nav {
     background-color: $dark !important;
 
+    .search-bar {
+      border-left: 5px solid $white !important;
+    }
+
+    .search-btn {
+      button {
+        background-color: $dark !important;
+        color: $white !important;
+      }
+    }
+
     ul {
       li {
         .nav-link {
@@ -29,24 +40,6 @@ html[data-bs-theme='dark'] {
 
     .cart-items {
       background-color: $dark !important;
-    }
-  }
-
-  .search-div {
-    input {
-      color: $light !important;
-    }
-
-    .search-btn {
-      background-color: $dark !important;
-
-      &:hover {
-        background-color: #fff !important;
-      }
-
-      &:hover i {
-        color: $dark;
-      }
     }
   }
 }
