@@ -27,4 +27,10 @@ html[data-bs-theme=dark] .new-collections {
 }
 html[data-bs-theme=dark] .new-collections h1 {
   color: #fff !important;
+}
+html[data-bs-theme=dark] .category {
+  background-color: #000;
+}
+html[data-bs-theme=dark] .category h1 {
+  color: #fff !important;
 }/*# sourceMappingURL=darkmode.css.map */

@@ -57,3 +57,15 @@ const carousel = new bootstrap.Carousel(myCarouselElement, {
 function searchToggle() {
   document.querySelector('#search-bar').classList.toggle('activeSearch');
 }
+
+function changeIconCart(event) {
+  const targetEl = event.target.parentElement.querySelector('i');
+
+  if (targetEl.classList.contains('bi-bag')) {
+    targetEl.classList.remove('bi-bag');
+    targetEl.classList.add('bi-bag-fill');
+  } else {
+    targetEl.classList.remove('bi-bag-fill');
+    targetEl.classList.add('bi-bag');
+  }
+}

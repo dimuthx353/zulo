@@ -179,6 +179,8 @@
 }
 
 .category {
+  padding-bottom: 40px;
+
   .main-title {
     position: relative;
     z-index: 1;
@@ -194,6 +196,44 @@
       width: 100%;
       z-index: -1;
       background-color: $primary !important;
+    }
+  }
+
+  .container {
+    .card {
+      position: relative;
+      border-radius: 10px;
+
+      &:hover {
+        .card-body {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+      .card-body {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        cursor: pointer;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(8px);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        border-radius: 10px;
+      }
+
+      img {
+        height: 350px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
     }
   }
 }

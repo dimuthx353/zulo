@@ -50,4 +50,12 @@ html[data-bs-theme='dark'] {
       color: $white !important;
     }
   }
+
+  .category {
+    background-color: $black;
+
+    h1 {
+      color: $white !important;
+    }
+  }
 }
