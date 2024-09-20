@@ -104,7 +104,7 @@
   transform: translate(-50%, -50%);
   bottom: 0;
   height: 5%;
-  width: 100%;
+  width: 130%;
   z-index: -1;
   background-color: #0d6efd !important;
 }
@@ -114,17 +114,11 @@
   align-items: center;
   gap: 20px;
 }
-.new-collections section > div:nth-child(1) {
-  border: 0px solid yellow;
-}
 .new-collections section > div:nth-child(2) .carousel-inner {
   height: 650px !important;
 }
 .new-collections section > div:nth-child(2) .carousel-inner img {
   height: 650px;
-}
-.new-collections section > div:nth-child(3) {
-  border: 0px solid blue;
 }
 .new-collections section .carousel-inner {
   height: 600px;
@@ -192,4 +186,11 @@
   height: 350px;
   object-fit: cover;
   border-radius: 10px;
+}
+
+footer {
+  height: 300px;
+}
+footer h4 {
+  font-family: "Dancing Script", cursive;
 }/*# sourceMappingURL=index.css.map */
