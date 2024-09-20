@@ -33,4 +33,7 @@ html[data-bs-theme=dark] .category {
 }
 html[data-bs-theme=dark] .category h1 {
   color: #fff !important;
+}
+html[data-bs-theme=dark] footer {
+  background-color: #000;
 }/*# sourceMappingURL=darkmode.css.map */
