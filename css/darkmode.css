@@ -36,4 +36,7 @@ html[data-bs-theme=dark] .category h1 {
 }
 html[data-bs-theme=dark] footer {
   background-color: #000;
+}
+html[data-bs-theme=dark] .social-media-icons a {
+  color: #fff !important;
 }/*# sourceMappingURL=darkmode.css.map */

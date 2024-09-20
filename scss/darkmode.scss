@@ -62,4 +62,10 @@ html[data-bs-theme='dark'] {
   footer {
     background-color: $black;
   }
+
+  .social-media-icons {
+    a {
+      color: $white !important;
+    }
+  }
 }
