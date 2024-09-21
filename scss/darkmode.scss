@@ -1,0 +1,71 @@
+@import '../node_modules/bootstrap/scss/functions';
+@import '../node_modules/bootstrap/scss/variables';
+
+html[data-bs-theme='dark'] {
+  nav {
+    background-color: $dark !important;
+
+    .search-bar {
+      border-left: 5px solid $white !important;
+    }
+
+    .search-btn {
+      button {
+        background-color: $dark !important;
+        color: $white !important;
+      }
+    }
+
+    ul {
+      li {
+        .nav-link {
+          &::before {
+            border-color: #fff;
+          }
+        }
+      }
+    }
+
+    .control-center {
+      button {
+        color: $white;
+        border: 1px solid $primary !important;
+
+        &:hover {
+          background-color: $primary;
+          z-index: 0;
+        }
+      }
+    }
+
+    .cart-items {
+      background-color: $dark !important;
+    }
+  }
+
+  .new-collections {
+    background-color: $black !important;
+
+    h1 {
+      color: $white !important;
+    }
+  }
+
+  .category {
+    background-color: $black;
+
+    h1 {
+      color: $white !important;
+    }
+  }
+
+  footer {
+    background-color: $black;
+  }
+
+  .social-media-icons {
+    a {
+      color: $white !important;
+    }
+  }
+}

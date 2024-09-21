@@ -1,3 +1,181 @@
-body {
-  font-family: "Poppins", system-ui;
+.full-body {
+  height: 100vh;
+  overflow: hidden;
+}
+.full-body .new-fashion {
+  position: relative;
+  overflow: hidden;
+}
+.full-body .new-fashion .girl-png {
+  position: absolute;
+  width: 600px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.full-body .new-fashion .div-one {
+  justify-content: end;
+  height: 95vh;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+}
+.full-body .new-fashion .div-two {
+  justify-content: start;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+.full-body .new-fashion > div {
+  font-family: "Protest Guerrilla", sans-serif;
+}
+.full-body .new-fashion > div > div {
+  display: flex;
+  align-items: center;
+}
+.full-body .new-fashion > div > div h1 span {
+  color: #212529;
+  animation: textChange 7s ease infinite;
+}
+.full-body .new-fashion > div > div h1 span:nth-child(1) {
+  animation-delay: 2s;
+}
+.full-body .new-fashion > div > div h1 span:nth-child(2) {
+  animation-delay: 5s;
+}
+.full-body .new-fashion > div > div h1 span:nth-child(3) {
+  animation-delay: 7s;
+}
+.full-body .new-fashion > div > div h1 span:nth-child(4) {
+  animation-delay: 9s;
+}
+.full-body .new-fashion > div > div h1 span:nth-child(5) {
+  animation-delay: 11s;
+}
+@keyframes textChange {
+  from {
+    color: #fff;
+  }
+  to {
+    color: #212529;
+  }
+}
+.full-body .new-fashion > div > div .buy-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.full-body .new-fashion > div > div .buy-btn button {
+  cursor: pointer;
+}
+.full-body .new-fashion > div > div h1 {
+  font-size: 150px;
+}
+
+.trusted-brands {
+  overflow: hidden;
+  background-color: black;
+}
+.trusted-brands img {
+  width: 130px;
+  margin: 0px 40px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease-in-out;
+}
+.trusted-brands img:hover {
+  opacity: 1;
+}
+.trusted-brands .brand-container {
+  display: flex;
+}
+
+.new-collections .main-title {
+  position: relative;
+  z-index: 1;
+}
+.new-collections .main-title::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  bottom: 0;
+  height: 5%;
+  width: 130%;
+  z-index: -1;
+  background-color: #0d6efd !important;
+}
+.new-collections section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.new-collections section > div:nth-child(2) .carousel-inner {
+  height: 650px !important;
+}
+.new-collections section > div:nth-child(2) .carousel-inner img {
+  height: 650px;
+}
+.new-collections section .carousel-inner {
+  height: 600px;
+  display: flex;
+  align-items: center;
+}
+.new-collections section .carousel-inner .carousel-caption {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.new-collections section .carousel-inner .carousel-item img {
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.category {
+  padding-bottom: 40px;
+}
+.category img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+.category .main-title {
+  position: relative;
+  z-index: 1;
+}
+.category .main-title::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  bottom: 0;
+  height: 5%;
+  width: 100%;
+  z-index: -1;
+  background-color: #0d6efd !important;
+}
+
+footer {
+  height: 300px;
+  border-top: 4px solid #0d6efd;
+}
+footer h4 {
+  font-family: "Dancing Script", cursive;
+}
+
+.dropdown:hover > .dropdown-menu {
+  display: block;
+  background-color: black;
+}
+
+.dropdown > .dropdown-toggle:active {
+  pointer-events: none;
 }/*# sourceMappingURL=index.css.map */
