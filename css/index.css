@@ -178,4 +178,24 @@ footer h4 {
 
 .dropdown > .dropdown-toggle:active {
   pointer-events: none;
+}
+
+.login {
+  position: absolute;
+  width: 0;
+  right: 0;
+  top: 0;
+  height: 100%;
+  bottom: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: width 0.4s ease-in, opacity 0.4s ease-in, right 0.4s ease-in;
+  border-left: 4px solid #6c757d;
+}
+.login.d-block {
+  right: 0;
+  width: 280px;
+  opacity: 1;
+  visibility: visible;
+  transition: width 0.6s ease-in, opacity 0.6s ease-in, right 0.6s ease-in;
 }/*# sourceMappingURL=index.css.map */

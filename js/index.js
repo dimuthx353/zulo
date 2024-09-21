@@ -84,3 +84,21 @@ function changeSection(section, event) {
     document.querySelector('#womenatag').classList.add('text-danger');
   }
 }
+
+function showLogin() {
+  const loginElement = document.querySelector('#login');
+
+  loginElement.classList.toggle('d-block');
+
+  document.querySelector('#sign-up').classList.add('d-none');
+  document.querySelector('#sign-in').classList.remove('d-none');
+  document.querySelector('#sign-in').classList.add('d-block');
+}
+
+function showSignup() {
+  document.querySelector('#sign-up').classList.toggle('d-none');
+  document.querySelector('#sign-up').classList.add('d-block');
+
+  document.querySelector('#sign-in').classList.add('d-none');
+  document.querySelector('#sign-in').classList.remove('d-block');
+}
