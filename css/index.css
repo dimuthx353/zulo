@@ -169,4 +169,13 @@ footer {
 }
 footer h4 {
   font-family: "Dancing Script", cursive;
+}
+
+.dropdown:hover > .dropdown-menu {
+  display: block;
+  background-color: black;
+}
+
+.dropdown > .dropdown-toggle:active {
+  pointer-events: none;
 }/*# sourceMappingURL=index.css.map */

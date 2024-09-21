@@ -70,9 +70,17 @@ function changeIconCart(event) {
   }
 }
 
-function changeSection(section) {
+function changeSection(section, event) {
   document.querySelector('#men').classList.toggle('d-none', section !== 'men');
   document
     .querySelector('#women')
     .classList.toggle('d-none', section !== 'women');
+
+  if (section === 'men') {
+    document.querySelector('#womenatag').classList.remove('text-danger');
+    document.querySelector('#menatag').classList.add('text-danger');
+  } else if (section === 'women') {
+    document.querySelector('#menatag').classList.remove('text-danger');
+    document.querySelector('#womenatag').classList.add('text-danger');
+  }
 }

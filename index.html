@@ -122,7 +122,29 @@
                   >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Category</a>
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-black dropdown-toggle"
+                      type="button"
+                      id="dropdownMenuButton2"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Category
+                    </button>
+                    <ul
+                      class="dropdown-menu bg-transparent"
+                      aria-labelledby="dropdownMenuButton2"
+                    >
+                      <li>
+                        <a class="dropdown-item" href="#">Men</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#">Women</a>
+                      </li>
+                      <li><hr class="dropdown-divider" /></li>
+                    </ul>
+                  </div>
                 </li>
               </ul>
               <div class=" ">
@@ -437,22 +459,23 @@
     </div>
 
     <!-- category start  -->
-    <div class="container-fluid category p-3 my-5">
+    <div class="container-fluid category">
       <h1 class="display-3 text-center main-title text-black">Category</h1>
       <!-- Category Section -->
       <h3 class="text-center text-capitalize mb-4">
-        <a
-          href="#men"
-          class="mx-2 text-decoration-none text-danger fw-bold"
-          onclick="changeSection('men')"
-          >MENS</a
-        >
-        <a
-          href="#women"
-          class="mx-2 text-decoration-none text-dark"
-          onclick="changeSection('women')"
-          >WOMEN</a
-        >
+        <span
+          class="mx-2 text-decoration-none text-danger cursor-pointer"
+          onclick="changeSection('men' , event)"
+          id="menatag"
+          >MENS
+        </span>
+        <span
+          class="mx-2 text-decoration-none cursor-pointer"
+          onclick="changeSection('women',
+          event)"
+          id="womenatag"
+          >WOMEN
+        </span>
       </h3>
 
       <div class="container d-none" id="women">
