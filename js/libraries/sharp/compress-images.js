@@ -36,7 +36,7 @@ fs.readdir(inputDir, (err, files) => {
     const outputPath = path.join(outputDir, file);
 
     // Compress each image file
-    if (/\.(jpg|jpeg|png)$/i.test(file)) {
+    if (/\.(jpg|jpeg|png|webp)$/i.test(file)) {
       compressImage(inputPath, outputPath);
     }
   });
