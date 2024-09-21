@@ -69,3 +69,10 @@ function changeIconCart(event) {
     targetEl.classList.add('bi-bag');
   }
 }
+
+function changeSection(section) {
+  document.querySelector('#men').classList.toggle('d-none', section !== 'men');
+  document
+    .querySelector('#women')
+    .classList.toggle('d-none', section !== 'women');
+}
