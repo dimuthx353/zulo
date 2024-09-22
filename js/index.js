@@ -49,11 +49,6 @@ const myCarouselElement = document.querySelector(
   '#carouselExampleAutoplayingM'
 );
 
-const carousel = new bootstrap.Carousel(myCarouselElement, {
-  interval: 30000,
-  touch: false
-});
-
 function searchToggle() {
   document.querySelector('#search-bar').classList.toggle('activeSearch');
 }
@@ -102,3 +97,8 @@ function showSignup() {
   document.querySelector('#sign-in').classList.add('d-none');
   document.querySelector('#sign-in').classList.remove('d-block');
 }
+
+const carousel = new bootstrap.Carousel(myCarouselElement, {
+  interval: 30000,
+  touch: false
+});
