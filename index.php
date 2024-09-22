@@ -22,11 +22,11 @@
     crossorigin="anonymous" />
 
   <!-- external css files  -->
-  <link rel="stylesheet" href="./css/reset.min.css" />
-  <link rel="stylesheet" href="./css/darkmode.min.css" />
-  <link rel="stylesheet" href="./css/nav.min.css" />
+  <link rel="stylesheet" href="./assets//css/reset.min.css" />
+  <link rel="stylesheet" href="./assets//css/darkmode.min.css" />
+  <link rel="stylesheet" href="./assets//css/nav.min.css" />
 
-  <link rel="stylesheet" href="./css/index.min.css" />
+  <link rel="stylesheet" href="./assets//css/index.min.css" />
 </head>
 
 <body class="bg-white">
@@ -849,7 +849,8 @@
     crossorigin="anonymous"></script>
 
   <!-- external js  -->
-  <script src="./js/index.js"></script>
+  <script src="./assets/js/index.js"></script>
+
 </body>
 
 </html>
