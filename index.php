@@ -76,7 +76,7 @@
         <!-- SIGN IN SECTION  -->
         <div class="container-fluid d-block py-5 px-3" id="sign-in">
           <h4>My Account</h4>
-          <form>
+          <form action="./inc/handlers/login_handler.php" method="post">
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Email address</label>
               <br />
@@ -84,19 +84,22 @@
                 type="email"
                 class="form-control border border-1 border-dark"
                 id="exampleInputEmail1"
-                aria-describedby="emailHelp" />
+                name="email" />
             </div>
             <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label">Password</label>
               <input
                 type="password"
                 class="form-control border border-1 border-dark"
-                id="exampleInputPassword1" />
+                id="exampleInputPassword1"
+                name="pwd" />
             </div>
             <small class="d-block mb-2 text-danger"><a href="">forgot your password ?</a></small>
             <button
               type="submit"
+              name="submit"
               class="btn btn-outline-dark display-block w-100">
+
               Login
             </button>
           </form>
@@ -114,34 +117,38 @@
         <!-- SIGN UP SECTION  -->
         <div class="container-fluid d-block d-none py-5 px-3" id="sign-up">
           <h4>SIGN UP</h4>
-          <form>
+          <form action="./inc/handlers/register_handler.php" method="post">
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">FIRST NAME *</label>
               <input
-                type="email"
+                type="text"
                 class="form-control border border-1 border-dark"
-                aria-describedby="emailHelp" />
+                name="fname" />
             </div>
             <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label">LAST NAME *</label>
               <input
-                type="password"
-                class="form-control border border-1 border-dark" />
+                type="text"
+                class="form-control border border-1 border-dark"
+                name="lname" />
+
             </div>
             <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label">EMAIL *</label>
               <input
-                type="password"
-                class="form-control border border-1 border-dark" />
+                type="email"
+                class="form-control border border-1 border-dark"
+                name="email" />
             </div>
             <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label">PASSWORD *</label>
               <input
                 type="password"
-                class="form-control border border-1 border-dark" />
+                class="form-control border border-1 border-dark"
+                name="pwd" />
             </div>
 
-            <button class="btn btn-outline-dark display-block w-100">
+            <button type="submit" name="submit" class="btn btn-outline-dark display-block w-100">
               SIGN UP NOW!
             </button>
           </form>
@@ -968,6 +975,9 @@
     integrity="sha512-q583ppKrCRc7N5O0n2nzUiJ+suUv7Et1JGels4bXOaMFQcamPk9HjdUknZuuFjBNs7tsMuadge5k9RzdmO+1GQ=="
     crossorigin="anonymous"
     referrerpolicy="no-referrer"></script>
+
+
+
 
   <!-- bootstrap js cdn  -->
   <script
