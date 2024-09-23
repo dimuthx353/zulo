@@ -1,4 +1,4 @@
-<footer class='pt-1'>
+<div class='pt-1 footer-div'>
     <div class='container-fluid d-flex m-0 h-100 mb-5 pt-5 pb-5'>
         <div
             class='container col-3 h-100 d-flex flex-column border-2 border-end border-primary'>
@@ -34,4 +34,4 @@
             <p class='flex-grow-1 text-center'>Lorem ipsum dolor sit amet.</p>
         </div>
     </div>
-</footer>
+</div>

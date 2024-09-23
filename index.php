@@ -30,10 +30,134 @@
 </head>
 
 <body class="bg-white">
-  <!-- navigation  -->
-  <?php
-  include_once "./partials/nav.php"
-  ?>
+
+
+  <div class="container-fluid m-0 p-0 full-body d-flex flex-column">
+    <!-- navigation  -->
+    <header>
+      <?php
+      include_once "./partials/nav.php"
+      ?>
+    </header>
+    <div class="container-fluid new-fashion p-0 m-0 flex-grow-1">
+      <div class="d-flex flex-wrap">
+        <div class="col-6 bg-danger div-one">
+          <h1 class="display-1 text-white">
+            <span>Z</span><span>U</span><span>L</span><span>O</span>
+            <span>F</span>
+          </h1>
+          <div class="buy-btn">
+            <button type="button" class="btn btn-outline-warning text-white">
+              Shop Now
+            </button>
+          </div>
+        </div>
+
+        <div class="col-6 bg-warning div-two">
+          <h1 class="display-1 text-white">
+            <span>A</span><span>S</span><span>H</span><span>I</span><span>O</span><span>N</span>
+          </h1>
+          <div class="buy-btn">
+            <button type="button" class="btn btn-outline-danger text-dark">
+              Shop Now
+            </button>
+          </div>
+        </div>
+        <img
+          src="./assets/img/low-quality/girl.png"
+          data-sizes="auto"
+          data-src="./assets/img/girl.png"
+          class="lazyload blur-up girl-png"
+          alt="Example Image 3" />
+      </div>
+
+      <!-- login section  -->
+      <div class="container bg-white login" id="login">
+        <!-- SIGN IN SECTION  -->
+        <div class="container-fluid d-block py-5 px-3" id="sign-in">
+          <h4>My Account</h4>
+          <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <br />
+              <input
+                type="email"
+                class="form-control border border-1 border-dark"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp" />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input
+                type="password"
+                class="form-control border border-1 border-dark"
+                id="exampleInputPassword1" />
+            </div>
+            <small class="d-block mb-2 text-danger"><a href="">forgot your password ?</a></small>
+            <button
+              type="submit"
+              class="btn btn-outline-dark display-block w-100">
+              Login
+            </button>
+          </form>
+          <div class="mt-5">
+            <hr class="" />
+            <h4 class="mt-3">SIGN UP</h4>
+            <button
+              class="btn btn-outline-dark display-block w-100 mt-3"
+              onclick="showSignup()">
+              SIGN UP NOW
+            </button>
+          </div>
+        </div>
+
+        <!-- SIGN UP SECTION  -->
+        <div class="container-fluid d-block d-none py-5 px-3" id="sign-up">
+          <h4>SIGN UP</h4>
+          <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">FIRST NAME *</label>
+              <input
+                type="email"
+                class="form-control border border-1 border-dark"
+                aria-describedby="emailHelp" />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">LAST NAME *</label>
+              <input
+                type="password"
+                class="form-control border border-1 border-dark" />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">EMAIL *</label>
+              <input
+                type="password"
+                class="form-control border border-1 border-dark" />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">PASSWORD *</label>
+              <input
+                type="password"
+                class="form-control border border-1 border-dark" />
+            </div>
+
+            <button class="btn btn-outline-dark display-block w-100">
+              SIGN UP NOW!
+            </button>
+          </form>
+          <div class="mt-5">
+            <hr class="" />
+            <button
+              class="btn btn-outline-dark display-block w-100 mt-3"
+              onclick="showLogin()">
+              RETURN TO STORE
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <section class="trusted-brands">
     <div class="container-fluid">
@@ -831,9 +955,12 @@
   </div>
 
   <!-- footer start  -->
-  <?php
-  include_once "./partials/footer.php"
-  ?>
+  <footer>
+    <?php
+    include_once "./partials/footer.php"
+    ?>
+  </footer>
+
 
   <!-- lazysizes cdn -->
   <script
