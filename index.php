@@ -1,18 +1,33 @@
 <?php
 include_once "./inc/db.php";
 
-$sql = "SELECT product_name, description, price, stock_quantity, image_url, sku 
+// SQL query for fetching the latest 8 women's products
+$sqlWomen = "SELECT product_name, description, price, stock_quantity, image_url, sku 
         FROM products 
         WHERE category_id = 2 
         ORDER BY product_id DESC 
         LIMIT 8;";
-$stmt = $conn->prepare($sql);
-$stmt->execute();
 
+// SQL query for fetching the latest 8 men's products
+$sqlMen = "SELECT product_name, description, price, stock_quantity, image_url, sku 
+        FROM products 
+        WHERE category_id = 1
+        ORDER BY product_id DESC 
+        LIMIT 8;";
 
-$products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+// Prepare and execute the query for women's products
+$stmtWomen = $conn->prepare($sqlWomen);
+$stmtWomen->execute();
 
+$wProducts = $stmtWomen->fetchAll(PDO::FETCH_ASSOC); // Fetch women's products
+
+// Prepare and execute the query for men's products
+$stmtMen = $conn->prepare($sqlMen);
+$stmtMen->execute();
+
+$mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC); // Fetch men's products
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
@@ -411,7 +426,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <?php
 
 
-        foreach ($products as $product) {
+        foreach ($wProducts as $product) {
 
           $productPrice = $product["price"];
           $imgName = $product["image_url"];
@@ -429,289 +444,24 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div class="container" id="men">
       <h3 class="d-flex justify-content-between mb-5">
         for men
-        <button type="button" class="btn btn-outline-primary">See all</button>
+        <button type="button" class="btn btn-outline-primary"><a href="./pages/men.php" class="text-decoration-none">See All</a></button>
       </h3>
 
       <div class="d-flex flex-wrap gap-4">
-        <div class="card shadow-sm" style="width: 18rem; margin: 0 auto">
-          <div>
-            <img
-              src="./assets/img/low-quality/m01.jpeg"
-              data-sizes="auto"
-              data-src="./assets/img/m01.jpeg"
-              class="lazyload blur-up card-img-top"
-              alt="Example Image 3" />
-          </div>
+        <?php
 
-          <div class="card-body">
-            <!-- Product Title -->
-            <h6 class="card-title text-center fw-bold text-uppercase mb-4">
-              Long Sleeve Formal Blazer With Pockets - Brown
-            </h6>
 
-            <!-- Price and Icons Section -->
-            <div class="bg-light p-3 rounded shadow-sm">
-              <div
-                class="d-flex justify-content-between align-items-center mb-3">
-                <span class="h5 fw-bold text-danger">Rs 7,990.00</span>
-                <div class="d-flex gap-3 align-items-center">
-                  <i class="bi bi-bag fs-5 text-dark"></i>
-                  <i class="bi bi-heart fs-5 text-danger"></i>
-                </div>
-              </div>
-              <!-- Buy Now Buttons -->
-              <div class="d-flex justify-content-center gap-2">
-                <button class="btn btn-outline-danger">Add to Cart</button>
-                <button class="btn btn-danger text-white">Buy Now</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card shadow-sm" style="width: 18rem; margin: 0 auto">
-          <div>
-            <img
-              src="./assets/img/low-quality/m02.jpg"
-              data-sizes="auto"
-              data-src="./assets/img/m02.jpg"
-              class="lazyload blur-up card-img-top"
-              alt="Example Image 3" />
-          </div>
+        foreach ($mProducts as $product) {
 
-          <div class="card-body">
-            <!-- Product Title -->
-            <h6 class="card-title text-center fw-bold text-uppercase mb-4">
-              Long Sleeve Formal Blazer With Pockets - Brown
-            </h6>
+          $productPrice = $product["price"];
+          $imgName = $product["image_url"];
+          $productTitle = $product["product_name"];
+          $imgPath = "./assets/img/$imgName";
 
-            <!-- Price and Icons Section -->
-            <div class="bg-light p-3 rounded shadow-sm">
-              <div
-                class="d-flex justify-content-between align-items-center mb-3">
-                <span class="h5 fw-bold text-danger">Rs 7,990.00</span>
-                <div class="d-flex gap-3 align-items-center">
-                  <i class="bi bi-bag fs-5 text-dark"></i>
-                  <i class="bi bi-heart fs-5 text-danger"></i>
-                </div>
-              </div>
+          include "./partials/productCard.php";
+        }
 
-              <!-- Buy Now Buttons -->
-              <div class="d-flex justify-content-center gap-2">
-                <button class="btn btn-outline-danger">Add to Cart</button>
-                <button class="btn btn-danger text-white">Buy Now</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card shadow-sm" style="width: 18rem; margin: 0 auto">
-          <div>
-            <img
-              src="./assets/img/low-quality/m03.jpeg"
-              data-sizes="auto"
-              data-src="./assets/img/m03.jpeg"
-              class="lazyload blur-up card-img-top"
-              alt="Example Image 3" />
-          </div>
-
-          <div class="card-body">
-            <!-- Product Title -->
-            <h6 class="card-title text-center fw-bold text-uppercase mb-4">
-              Long Sleeve Formal Blazer With Pockets - Brown
-            </h6>
-
-            <!-- Price and Icons Section -->
-            <div class="bg-light p-3 rounded shadow-sm">
-              <div
-                class="d-flex justify-content-between align-items-center mb-3">
-                <span class="h5 fw-bold text-danger">Rs 7,990.00</span>
-                <div class="d-flex gap-3 align-items-center">
-                  <i class="bi bi-bag fs-5 text-dark"></i>
-                  <i class="bi bi-heart fs-5 text-danger"></i>
-                </div>
-              </div>
-
-              <!-- Buy Now Buttons -->
-              <div class="d-flex justify-content-center gap-2">
-                <button class="btn btn-outline-danger">Add to Cart</button>
-                <button class="btn btn-danger text-white">Buy Now</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card shadow-sm" style="width: 18rem; margin: 0 auto">
-          <div>
-            <img
-              src="./assets/img/low-quality/m04.webp"
-              data-sizes="auto"
-              data-src="./assets/img/m04.webp"
-              class="lazyload blur-up card-img-top"
-              alt="Example Image 3" />
-          </div>
-
-          <div class="card-body">
-            <!-- Product Title -->
-            <h6 class="card-title text-center fw-bold text-uppercase mb-4">
-              Long Sleeve Formal Blazer With Pockets - Brown
-            </h6>
-
-            <!-- Price and Icons Section -->
-            <div class="bg-light p-3 rounded shadow-sm">
-              <div
-                class="d-flex justify-content-between align-items-center mb-3">
-                <span class="h5 fw-bold text-danger">Rs 7,990.00</span>
-                <div class="d-flex gap-3 align-items-center">
-                  <i class="bi bi-bag fs-5 text-dark"></i>
-                  <i class="bi bi-heart fs-5 text-danger"></i>
-                </div>
-              </div>
-
-              <!-- Buy Now Buttons -->
-              <div class="d-flex justify-content-center gap-2">
-                <button class="btn btn-outline-danger">Add to Cart</button>
-                <button class="btn btn-danger text-white">Buy Now</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card shadow-sm" style="width: 18rem; margin: 0 auto">
-          <div>
-            <img
-              src="./assets/img/low-quality/m05.webp"
-              data-sizes="auto"
-              data-src="./assets/img/m05.webp"
-              class="lazyload blur-up card-img-top"
-              alt="Example Image 3" />
-          </div>
-
-          <div class="card-body">
-            <!-- Product Title -->
-            <h6 class="card-title text-center fw-bold text-uppercase mb-4">
-              Long Sleeve Formal Blazer With Pockets - Brown
-            </h6>
-
-            <!-- Price and Icons Section -->
-            <div class="bg-light p-3 rounded shadow-sm">
-              <div
-                class="d-flex justify-content-between align-items-center mb-3">
-                <span class="h5 fw-bold text-danger">Rs 7,990.00</span>
-                <div class="d-flex gap-3 align-items-center">
-                  <i class="bi bi-bag fs-5 text-dark"></i>
-                  <i class="bi bi-heart fs-5 text-danger"></i>
-                </div>
-              </div>
-
-              <!-- Buy Now Buttons -->
-              <div class="d-flex justify-content-center gap-2">
-                <button class="btn btn-outline-danger">Add to Cart</button>
-                <button class="btn btn-danger text-white">Buy Now</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card shadow-sm" style="width: 18rem; margin: 0 auto">
-          <div>
-            <img
-              src="./assets/img/low-quality/m06.webp"
-              data-sizes="auto"
-              data-src="./assets/img/m06.webp"
-              class="lazyload blur-up card-img-top"
-              alt="Example Image 3" />
-          </div>
-
-          <div class="card-body">
-            <!-- Product Title -->
-            <h6 class="card-title text-center fw-bold text-uppercase mb-4">
-              Long Sleeve Formal Blazer With Pockets - Brown
-            </h6>
-
-            <!-- Price and Icons Section -->
-            <div class="bg-light p-3 rounded shadow-sm">
-              <div
-                class="d-flex justify-content-between align-items-center mb-3">
-                <span class="h5 fw-bold text-danger">Rs 7,990.00</span>
-                <div class="d-flex gap-3 align-items-center">
-                  <i class="bi bi-bag fs-5 text-dark"></i>
-                  <i class="bi bi-heart fs-5 text-danger"></i>
-                </div>
-              </div>
-
-              <!-- Buy Now Buttons -->
-              <div class="d-flex justify-content-center gap-2">
-                <button class="btn btn-outline-danger">Add to Cart</button>
-                <button class="btn btn-danger text-white">Buy Now</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card shadow-sm" style="width: 18rem; margin: 0 auto">
-          <div>
-            <img
-              src="./assets/img/low-quality/m01.jpeg"
-              data-sizes="auto"
-              data-src="./assets/img/m01.jpeg"
-              class="lazyload blur-up card-img-top"
-              alt="Example Image 3" />
-          </div>
-
-          <div class="card-body">
-            <!-- Product Title -->
-            <h6 class="card-title text-center fw-bold text-uppercase mb-4">
-              Long Sleeve Formal Blazer With Pockets - Brown
-            </h6>
-
-            <!-- Price and Icons Section -->
-            <div class="bg-light p-3 rounded shadow-sm">
-              <div
-                class="d-flex justify-content-between align-items-center mb-3">
-                <span class="h5 fw-bold text-danger">Rs 7,990.00</span>
-                <div class="d-flex gap-3 align-items-center">
-                  <i class="bi bi-bag fs-5 text-dark"></i>
-                  <i class="bi bi-heart fs-5 text-danger"></i>
-                </div>
-              </div>
-
-              <!-- Buy Now Buttons -->
-              <div class="d-flex justify-content-center gap-2">
-                <button class="btn btn-outline-danger">Add to Cart</button>
-                <button class="btn btn-danger text-white">Buy Now</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card shadow-sm" style="width: 18rem; margin: 0 auto">
-          <div>
-            <img
-              src="./assets/img/low-quality/m02.jpg"
-              data-sizes="auto"
-              data-src="./assets/img/m02.jpg"
-              class="lazyload blur-up card-img-top"
-              alt="Example Image 3" />
-          </div>
-
-          <div class="card-body">
-            <!-- Product Title -->
-            <h6 class="card-title text-center fw-bold text-uppercase mb-4">
-              Long Sleeve Formal Blazer With Pockets - Brown
-            </h6>
-
-            <!-- Price and Icons Section -->
-            <div class="bg-light p-3 rounded shadow-sm">
-              <div
-                class="d-flex justify-content-between align-items-center mb-3">
-                <span class="h5 fw-bold text-danger">Rs 7,990.00</span>
-                <div class="d-flex gap-3 align-items-center">
-                  <i class="bi bi-bag fs-5 text-dark"></i>
-                  <i class="bi bi-heart fs-5 text-danger"></i>
-                </div>
-              </div>
-
-              <!-- Buy Now Buttons -->
-              <div class="d-flex justify-content-center gap-2">
-                <button class="btn btn-outline-danger">Add to Cart</button>
-                <button class="btn btn-danger text-white">Buy Now</button>
-              </div>
-            </div>
-          </div>
-        </div>
+        ?>
       </div>
     </div>
   </div>
