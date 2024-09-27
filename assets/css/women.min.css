@@ -1,0 +1,1 @@
+img{width:100%;height:250px;object-fit:cover}.main-title{position:relative;z-index:1}.main-title::before{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);bottom:0;height:5%;width:100%;z-index:-1;background-color:#0d6efd !important}/*# sourceMappingURL=women.min.css.map */
