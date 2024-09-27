@@ -22,18 +22,6 @@ html[data-bs-theme=dark] nav .control-center button:hover {
 html[data-bs-theme=dark] nav .cart-items {
   background-color: #212529 !important;
 }
-html[data-bs-theme=dark] .new-collections {
-  background-color: #000 !important;
-}
-html[data-bs-theme=dark] .new-collections h1 {
-  color: #fff !important;
-}
-html[data-bs-theme=dark] .category {
-  background-color: #000;
-}
-html[data-bs-theme=dark] .category h1 {
-  color: #fff !important;
-}
 html[data-bs-theme=dark] footer {
   background-color: #000;
 }

@@ -60,11 +60,11 @@ function changeSection(section, event) {
     .classList.toggle('d-none', section !== 'women');
 
   if (section === 'men') {
-    document.querySelector('#womenatag').classList.remove('text-danger');
-    document.querySelector('#menatag').classList.add('text-danger');
+    document.querySelector('#womenatag').classList.remove('text-success');
+    document.querySelector('#menatag').classList.add('text-success');
   } else if (section === 'women') {
-    document.querySelector('#menatag').classList.remove('text-danger');
-    document.querySelector('#womenatag').classList.add('text-danger');
+    document.querySelector('#menatag').classList.remove('text-success');
+    document.querySelector('#womenatag').classList.add('text-success');
   }
 }
 

@@ -23,6 +23,8 @@
        <link rel="stylesheet" href="../assets/css/women.min.css">
        <link rel="stylesheet" href="../assets/css/reset.min.css">
        <link rel="stylesheet" href="../assets/css/nav.min.css">
+       <link rel="stylesheet" href="./assets/css/footer.min.css">
+
 
 
        <!-- font awesome cdn  -->

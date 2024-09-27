@@ -49,16 +49,15 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
     crossorigin="anonymous" />
 
   <!-- external css files  -->
-  <link rel="stylesheet" href="./assets//css/reset.min.css" />
-  <link rel="stylesheet" href="./assets//css/darkmode.min.css" />
-  <link rel="stylesheet" href="./assets//css/nav.min.css" />
+  <link rel="stylesheet" href="./assets/css/reset.min.css" />
+  <link rel="stylesheet" href="./assets/css/darkmode.min.css" />
+  <link rel="stylesheet" href="./assets/css/nav.min.css" />
+  <link rel="stylesheet" href="./assets/css/footer.min.css">
 
-  <link rel="stylesheet" href="./assets//css/index.min.css" />
+  <link rel="stylesheet" href="./assets/css/index.min.css" />
 </head>
 
 <body class="bg-white">
-
-
   <div class="container-fluid m-0 p-0 full-body d-flex flex-column">
     <!-- navigation  -->
     <header>
@@ -68,7 +67,7 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
     </header>
     <div class="container-fluid new-fashion p-0 m-0 flex-grow-1">
       <div class="d-flex flex-wrap">
-        <div class="col-6 bg-danger div-one">
+        <div class="col-6 div-one">
           <h1 class="display-1 text-white">
             <span>Z</span><span>U</span><span>L</span><span>O</span>
             <span>F</span>
@@ -80,7 +79,7 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
           </div>
         </div>
 
-        <div class="col-6 bg-warning div-two">
+        <div class="col-6  div-two">
           <h1 class="display-1 text-white">
             <span>A</span><span>S</span><span>H</span><span>I</span><span>O</span><span>N</span>
           </h1>
@@ -192,7 +191,6 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
     </div>
   </div>
 
-
   <section class="trusted-brands">
     <div class="container-fluid">
       <div class="brand-container">
@@ -230,10 +228,14 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
   </section>
 
   <!-- new collection start  -->
-  <div class="bg-white container-fluid new-collections">
-    <h1 class="display-3 text-center main-title text-black">
-      New Collections
-    </h1>
+  <div class="container-fluid new-collections">
+
+    <div class="d-flex justify-content-center align-items-center">
+      <h1 class="main-title display-5 mt-5 text-center d-block w-100 p-3">
+        New Collections
+      </h1>
+    </div>
+
     <section class="py-5">
       <div
         id="carouselExampleSlidesOnly"
@@ -393,12 +395,16 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
   </div>
 
   <!-- category start  -->
-  <div class="container-fluid category">
-    <h1 class="display-3 text-center main-title text-black">Category</h1>
+  <div class="container-fluid category ">
+    <div class="d-flex justify-content-center align-items-center">
+      <h1 class="main-title mt-5 text-center d-block w-100 p-3">
+        Category
+      </h1>
+    </div>
     <!-- Category Section -->
-    <h3 class="text-center text-capitalize mb-4">
+    <h3 class="text-center text-capitalize mb-4 text-white">
       <span
-        class="mx-2 text-decoration-none text-danger cursor-pointer"
+        class="mx-2 text-decoration-none text-success cursor-pointer"
         onclick="changeSection('men' , event)"
         id="menatag">MENS
       </span>
@@ -411,8 +417,7 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
     </h3>
 
     <div class="container d-none" id="women">
-      <h3 class="d-flex justify-content-between mb-5">
-        for women
+      <h3 class="d-flex justify-content-end mb-5">
         <button type="button" class="btn btn-outline-primary">
           <a href="./pages/women.php" class="text-decoration-none">See All</a>
         </button>
@@ -437,9 +442,8 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
       </div>
     </div>
 
-    <div class="container" id="men">
-      <h3 class="d-flex justify-content-between mb-5">
-        for men
+    <div class="container pb-5" id="men">
+      <h3 class="d-flex justify-content-end mb-5">
         <button type="button" class="btn btn-outline-primary"><a href="./pages/men.php" class="text-decoration-none">See All</a></button>
       </h3>
 
@@ -463,7 +467,7 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
   </div>
 
   <!-- footer start  -->
-  <footer>
+  <footer class="bg-dark text-white">
     <?php
     include_once "./partials/footer.php"
     ?>
@@ -478,8 +482,6 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
     referrerpolicy="no-referrer"></script>
 
 
-
-
   <!-- bootstrap js cdn  -->
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -488,7 +490,6 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
 
   <!-- external js  -->
   <script src="./assets/js/index.js"></script>
-
 </body>
 
 </html>
