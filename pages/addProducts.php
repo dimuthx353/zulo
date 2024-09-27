@@ -12,12 +12,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $imageUrl = $_POST['imageUrl'] ?? ''; // Get the image URL
     $category = $_POST['category'] ?? ''; // Get the category (1 for Men, 2 for Women)
     $sku = $_POST['sku'] ?? ''; // Get the category (1 for Men, 2 for Women)
+    $subCategory = $_POST['subCategories'] ?? ''; // Get the category (1 for Men, 2 for Women)
 
     // Validate if required fields are filled
     if (!empty($productName) && !empty($description) && !empty($price) && !empty($stock) && !empty($imageUrl)) {
         // Prepare the SQL query to insert the product
-        $sql = "INSERT INTO products (product_name, description, price, stock_quantity, image_url, category_id,sku) 
-                VALUES (:productName, :description, :price, :stock, :imageUrl, :category,:sku)";
+        $sql = "INSERT INTO products (product_name, description, price, stock_quantity, image_url, category_id,sku,subCategory) 
+                VALUES (:productName, :description, :price, :stock, :imageUrl, :category,:sku,:subCategory)";
 
         // Prepare the statement
         $stmt = $conn->prepare($sql);
@@ -30,6 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bindParam(':imageUrl', $imageUrl);
         $stmt->bindParam(':category', $category);
         $stmt->bindParam(':sku', $sku);
+        $stmt->bindParam(':subCategory', $subCategory);
 
         // Execute the query and check for success
         if ($stmt->execute()) {
@@ -86,18 +88,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label for="category" class="form-label">Categories</label>
             <select class="form-control" id="category" name="category">
                 <?php
-                $sql = "SELECT id, main_category_name FROM maincategories";
-                $stmt = $conn->prepare($sql);
-                $stmt->execute();
-                $maincategories = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                // Fetch main categories
+                $sqlMainCategories = "SELECT id, main_category_name FROM maincategories";
+                $stmtMainCategories = $conn->prepare($sqlMainCategories);
+                $stmtMainCategories->execute();
+                $maincategories = $stmtMainCategories->fetchAll(PDO::FETCH_ASSOC);
 
-                // Populate dropdown with categories
+                // Populate dropdown with main categories
                 foreach ($maincategories as $category) {
                     echo "<option value='" . $category['id'] . "'>" . $category['main_category_name'] . "</option>";
                 }
                 ?>
             </select>
         </div>
+
+        <div class="mb-3">
+            <label for="subCategories" class="form-label">Sub Categories</label>
+            <select class="form-control" id="subCategories" name="subCategories">
+                <?php
+                // Fetch subcategories
+                $sqlSubCategories = "SELECT category_id, subCategoryName FROM subcategories";
+                $stmtSubCategories = $conn->prepare($sqlSubCategories);
+                $stmtSubCategories->execute();
+                $subCategories = $stmtSubCategories->fetchAll(PDO::FETCH_ASSOC);
+
+                // Populate dropdown with subcategories
+                foreach ($subCategories as $subCategory) {
+                    echo "<option value='" . $subCategory['subCategoryName'] . "'>" . $subCategory['subCategoryName']  . "</option>";
+                }
+                ?>
+            </select>
+        </div>
+
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 

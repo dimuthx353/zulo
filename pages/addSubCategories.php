@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $categoryName = $_POST['categoryName']; // Get the selected category name
 
     // Prepare the SQL query to insert the category
-    $sql = "INSERT INTO categories ( category_name,subCategoryName, description, category_imgUrl) VALUES (:categoryName, :subCategoryName, :description, :categoryImageUrl);";
+    $sql = "INSERT INTO subCategories ( category_name,subCategoryName, description, category_imgUrl) VALUES (:categoryName, :subCategoryName, :description, :categoryImageUrl);";
 
     // Prepare the statement
     $stmt = $conn->prepare($sql);

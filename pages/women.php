@@ -33,22 +33,45 @@
    </head>
 
    <body>
-       <h1 class="text-center">Women</h1>
-       <div class="d-flex flex-wrap gap-4">
 
-           <?php
-            foreach ($products as $product) {
-
-                $productPrice = $product["price"];
-                $imgName = $product["image_url"];
-                $productTitle = $product["product_name"];
-                $imgPath = "../assets/img/$imgName";
-
-                include "../partials/productCard.php";
-            }
-            ?>
+       <div class="container-fluid m-0 p-0 full-body d-flex flex-column">
+           <!-- navigation  -->
+           <header>
+               <?php
+                include_once "../partials/nav.php";
+                ?>
+           </header>
        </div>
 
+
+       <div class="container d-flex">
+           <div class="col-3 border-red">
+               <h1>filer options</h1>
+           </div>
+           <div class="col-9 d-flex flex-wrap gap-4 border-red">
+               <h1 class="text-center w-100">Women</h1>
+               <?php
+                foreach ($products as $product) {
+
+                    $productPrice = $product["price"];
+                    $imgName = $product["image_url"];
+                    $productTitle = $product["product_name"];
+                    $imgPath = "../assets/img/$imgName";
+
+                    include "../partials/productCard.php";
+                }
+                ?>
+           </div>
+       </div>
+
+       <!-- footer start  -->
+       <footer>
+           <?php
+            include_once "../partials/footer.php"
+            ?>
+       </footer>
+
+       <script src="../assets/js/index.js"></script>
        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
    </body>
 
