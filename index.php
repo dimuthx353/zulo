@@ -66,8 +66,8 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
       ?>
     </header>
     <div class="container-fluid new-fashion p-0 m-0 flex-grow-1">
-      <img src="./assets/img/bg.jpg" alt="" class="bg-img">
-      <img src="./assets/img/bg.jpg" alt="" class="bg-img2">
+      <img src="./assets/img/bg2.jpg" alt="" class="bg-img2">
+      <img src="./assets/img/bg2.jpg" alt="" class="bg-img">
       <img src="./assets/img/bg2.png" alt="" class="bg-img3">
       <div class="text-card ">
         <p>
@@ -76,8 +76,8 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
         </p>
         <p class="slogan text-muted">Unleashing Style, Redefining Fashion</p>
         <div class="w-75 d-flex justify-content-around mt-5 p-3">
-          <button class="btn btn-outline-light text-dark">shop men</button>
-          <button class="btn btn-outline-light text-dark">shop women</button>
+          <button class="btn btn-outline-dark">shop men</button>
+          <button class="btn btn-outline-dark ">shop women</button>
         </div>
       </div>
 

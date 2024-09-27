@@ -1,39 +1,94 @@
-<div class='pt-1 footer-div'>
-    <div class='container-fluid d-flex m-0 h-100 mb-5'>
+<footer class="text-center text-lg-start bg-body-tertiary text-muted">
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+        <div class="me-5 d-none d-lg-block">
+            <span>Get connected with us on social networks:</span>
+        </div>
 
-        <div
-            class='container col-3 h-100  d-flex justify-content-around flex-column'>
-            <h4 class='text-center '>About Us</h4>
-            <p class='text-center flex-grow-1'>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia,
-                nisi. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Corporis, recusandae.
-            </p>
-        </div>
-        <div
-            class='container col-3 h-100  d-flex justify-content-around flex-column'>
-            <h4 class='text-center '>Help</h4>
-            <p class='flex-grow-1 text-center'>Lorem ipsum dolor sit amet.</p>
-        </div>
-        <div
-            class='container col-3 h-100 d-flex justify-content-around flex-column'>
-            <h4 class='text-center '>Contact</h4>
-            <p class='flex-grow-1 text-center'>Lorem ipsum dolor sit amet.</p>
-        </div>
-        <div
-            class='container col-3 h-100 d-flex flex-column '>
-            <a class='navbar-brand w-100 d-block text-center' href='#'>
-                <span class='display-2 z-text'> &nbsp;Z</span><span class='ulo-text h3'>ulo</span>
+        <div>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-facebook-f"></i>
             </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-google"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+    </section>
+    <section class="">
+        <div class="container text-center text-md-start mt-5">
+            <div class="row mt-3">
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        <i class="fas fa-gem me-3"></i>Zulo
+                    </h6>
+                    <p>
+                        At Spara, we blend cutting-edge designs with eco-friendly practices, creating fashion that looks and feels good—promoting conscious consumption without compromising on style. Spara is fashion with purpose.
+                    </p>
+                </div>
 
-            <div
-                class='social-media-icons d-flex justify-content-around align-items-center h-100'>
-                <a href='' class='text-decoration-none text-black'><i class='bi bi-facebook fs-3'></i></a>
-                <a href='' class='text-decoration-none text-black'><i class='bi bi-pinterest fs-3'></i></a>
-                <a href='' class='text-decoration-none text-black'><i class='bi bi-instagram fs-3'></i></a>
-                <a href='' class='text-decoration-none text-black'><i class='bi bi-threads fs-3'></i></a>
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Products
+                    </h6>
+                    <p>
+                        <a href="#!" class="text-reset">products 1</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">products 2</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">products 3</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">products 4</a>
+                    </p>
+                </div>
+
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Useful links
+                    </h6>
+                    <p>
+                        <a href="#!" class="text-reset">Pricing</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">Settings</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">Orders</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">Help</a>
+                    </p>
+                </div>
+
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                    <p><i class="fas fa-home me-3"></i> Kegalle,Sri Lanka</p>
+                    <p>
+                        <i class="fas fa-envelope me-3"></i>
+                        info@zulo.com
+                    </p>
+                    <p><i class="fas fa-phone me-3"></i> + 94713969520</p>
+                    <p><i class="fas fa-print me-3"></i> + 94772442599</p>
+                </div>
             </div>
         </div>
+    </section>
 
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2021 Copyright:
+        <a class="text-reset fw-bold" href="">Zulo</a>
     </div>
-</div>
+</footer>

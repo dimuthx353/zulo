@@ -19,7 +19,6 @@
   position: absolute;
   height: 100%;
   width: 40%;
-  background-color: transparent;
   z-index: 4;
   left: 50%;
   transform: translateX(-50%);
@@ -33,7 +32,7 @@
 }
 .full-body .new-fashion .bg-img3 {
   position: absolute;
-  z-index: 3;
+  z-index: 5;
   object-fit: cover;
   object-position: top bottom;
   height: 100%;
@@ -46,28 +45,14 @@
   width: 100%;
   height: 100%;
   z-index: 2;
-  border-top: 10px solid #fff !important;
-  border-right: 10px solid #fff !important;
-  border-bottom: 10px solid #fff !important;
   object-fit: cover;
   object-position: top center;
-  rotate: 10deg;
   left: 250px;
 }
 .full-body .new-fashion .bg-img2 {
   position: absolute;
   display: block;
   z-index: 1;
-}
-.full-body .new-fashion .div-one {
-  justify-content: end;
-  height: 95vh;
-  position: relative;
-  flex-direction: column;
-  justify-content: center;
-  align-items: end;
-  background-color: #222831;
-  padding-right: 50px;
 }
 .full-body .new-fashion .div-two {
   background-color: #393e46;
@@ -143,7 +128,7 @@
 }
 
 .new-collections {
-  background-color: #222831;
+  background-color: #000;
 }
 .new-collections section {
   display: flex;
@@ -177,7 +162,7 @@
 
 .category {
   padding-bottom: 40px;
-  background-color: #393e46;
+  background-color: #212529;
 }
 .category img {
   width: 100%;
