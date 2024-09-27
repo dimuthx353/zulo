@@ -2,7 +2,6 @@ img {
   width: 100%;
   height: 250px;
   object-fit: cover;
-  border: 3px solid yellow !important;
   object-position: top center;
 }
 

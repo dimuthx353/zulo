@@ -86,10 +86,10 @@
                                   class="dropdown-menu bg-transparent"
                                   aria-labelledby="dropdownMenuButton2">
                                   <li>
-                                      <a class="dropdown-item" href="#">Men</a>
+                                      <a class="dropdown-item" href="../../zulo/pages/men.php">Men</a>
                                   </li>
                                   <li>
-                                      <a class="dropdown-item" href="#">Women</a>
+                                      <a class="dropdown-item" href="../../zulo/pages/women.php">Women</a>
                                   </li>
                                   <li>
                                       <hr class="dropdown-divider" />

@@ -1,31 +1,27 @@
 <?php
 include_once "./inc/db.php";
 
-// SQL query for fetching the latest 8 women's products
 $sqlWomen = "SELECT product_name, description, price, stock_quantity, image_url, sku 
         FROM products 
         WHERE category_id = 2 
         ORDER BY product_id DESC 
         LIMIT 8;";
 
-// SQL query for fetching the latest 8 men's products
 $sqlMen = "SELECT product_name, description, price, stock_quantity, image_url, sku 
         FROM products 
         WHERE category_id = 1
         ORDER BY product_id DESC 
         LIMIT 8;";
 
-// Prepare and execute the query for women's products
 $stmtWomen = $conn->prepare($sqlWomen);
 $stmtWomen->execute();
 
-$wProducts = $stmtWomen->fetchAll(PDO::FETCH_ASSOC); // Fetch women's products
+$wProducts = $stmtWomen->fetchAll(PDO::FETCH_ASSOC);
 
-// Prepare and execute the query for men's products
 $stmtMen = $conn->prepare($sqlMen);
 $stmtMen->execute();
 
-$mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC); // Fetch men's products
+$mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 

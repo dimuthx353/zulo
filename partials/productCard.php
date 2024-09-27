@@ -16,7 +16,7 @@
         <div class='bg-light p-3 rounded shadow-sm'>
             <div
                 class='d-flex justify-content-between align-items-center mb-3'>
-                <span class='h5 fw-bold text-danger'> <?php echo $productPrice ?>
+                <span class='h5 fw-bold text-danger'> Rs. <?php echo $productPrice ?>
                 </span>
                 <div class='d-flex gap-3 align-items-center'>
                     <i class='bi bi-bag fs-5 text-dark'></i>
