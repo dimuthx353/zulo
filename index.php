@@ -66,36 +66,22 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
       ?>
     </header>
     <div class="container-fluid new-fashion p-0 m-0 flex-grow-1">
-      <div class="d-flex flex-wrap">
-        <div class="col-6 div-one">
-          <h1 class="display-1 text-white">
-            <span>Z</span><span>U</span><span>L</span><span>O</span>
-            <span>F</span>
-          </h1>
-          <div class="buy-btn">
-            <button type="button" class="btn btn-outline-warning text-white">
-              Shop Now
-            </button>
-          </div>
+      <img src="./assets/img/bg.jpg" alt="" class="bg-img">
+      <img src="./assets/img/bg.jpg" alt="" class="bg-img2">
+      <img src="./assets/img/bg2.png" alt="" class="bg-img3">
+      <div class="text-card ">
+        <p>
+          <span class="display-6 zulo">ZULO</span> <br>
+          <span class="display-1">FASHION</span>
+        </p>
+        <p class="slogan text-muted">Unleashing Style, Redefining Fashion</p>
+        <div class="w-75 d-flex justify-content-around mt-5 p-3">
+          <button class="btn btn-outline-light text-dark">shop men</button>
+          <button class="btn btn-outline-light text-dark">shop women</button>
         </div>
-
-        <div class="col-6  div-two">
-          <h1 class="display-1 text-white">
-            <span>A</span><span>S</span><span>H</span><span>I</span><span>O</span><span>N</span>
-          </h1>
-          <div class="buy-btn">
-            <button type="button" class="btn btn-outline-danger text-dark">
-              Shop Now
-            </button>
-          </div>
-        </div>
-        <img
-          src="./assets/img/low-quality/girl.png"
-          data-sizes="auto"
-          data-src="./assets/img/girl.png"
-          class="lazyload blur-up girl-png"
-          alt="Example Image 3" />
       </div>
+
+
 
       <!-- login section  -->
       <div class="container bg-white login" id="login">
