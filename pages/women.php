@@ -36,8 +36,6 @@
        <h1 class="text-center">Women</h1>
        <div class="d-flex flex-wrap gap-4">
 
-
-
            <?php
             foreach ($products as $product) {
 
@@ -45,8 +43,6 @@
                 $imgName = $product["image_url"];
                 $productTitle = $product["product_name"];
                 $imgPath = "../assets/img/$imgName";
-
-
 
                 include "../partials/productCard.php";
             }
