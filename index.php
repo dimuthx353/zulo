@@ -1,3 +1,19 @@
+<?php
+include_once "./inc/db.php";
+
+$sql = "SELECT product_name, description, price, stock_quantity, image_url, sku 
+        FROM products 
+        WHERE category_id = 2 
+        ORDER BY product_id DESC 
+        LIMIT 8;";
+$stmt = $conn->prepare($sql);
+$stmt->execute();
+
+
+$products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
 
@@ -392,6 +408,20 @@
       </h3>
 
       <div class="d-flex flex-wrap gap-4">
+        <?php
+
+
+        foreach ($products as $product) {
+
+          $productPrice = $product["price"];
+          $imgName = $product["image_url"];
+          $productTitle = $product["product_name"];
+          $imgPath = "./assets/img/$imgName";
+
+          include "./partials/productCard.php";
+        }
+
+        ?>
 
       </div>
     </div>
