@@ -381,14 +381,51 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
       </div>
     </section>
   </div>
-
+  <div>
+    <img src="./assets/img/KOKO.gif" alt="">
+  </div>
   <!-- category start  -->
   <div class="container-fluid category ">
     <div class="d-flex justify-content-center align-items-center">
       <h1 class="main-title mt-5 text-center d-block w-100 p-3">
-        Category
+        Shop By Category
       </h1>
     </div>
+    <div id="category-grid" class="mt-5">
+      <div id="div1">
+        <a href="google.lk" class="linkurl">google</a>
+        <img src="./assets/img/categories/cwDenims.webp" alt="">
+      </div>
+      <div id="div3">
+        <a href="google.lk" class="linkurl">google</a>
+        <img src="./assets/img/categories/cwDresses.webp" alt="">
+      </div>
+      <div id="div9">
+        <a href="google.lk" class="linkurl">google</a>
+        <img src="./assets/img/categories/cwTops.webp" alt="">
+      </div>
+      <div id="div10">
+        <a href="google.lk" class="linkurl">google</a>
+        <img src="./assets/img/categories/cwTshirts.webp" alt="">
+      </div>
+      <div id="div11">
+        <a href="google.lk" class="linkurl">google</a>
+        <img src="./assets/img/categories/cwTops.webp" alt="">
+      </div>
+      <div id="div12">
+        <a href="google.lk" class="linkurl">google</a>
+        <img src="./assets/img/categories/cwTops.webp" alt="">
+      </div>
+    </div>
+
+
+    <div class="d-flex justify-content-center align-items-center">
+      <h1 class="main-title mt-5 text-center d-block w-100 p-3">
+        New Arrivals
+      </h1>
+    </div>
+
+
     <!-- Category Section -->
     <h3 class="text-center text-capitalize mb-4 text-white">
       <span
