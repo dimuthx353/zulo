@@ -47,7 +47,7 @@
        </div>
 
 
-       <div class="container d-flex">
+       <div class="container d-flex product-section">
            <div class="col-3 border-red">
                <h1>filer options</h1>
            </div>
@@ -71,6 +71,8 @@
        <!-- footer start  -->
        <footer>
            <?php
+            $imgPathForFooter = "../assets/img/";
+
             include_once "../partials/footer.php"
             ?>
        </footer>

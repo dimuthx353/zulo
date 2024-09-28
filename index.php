@@ -500,9 +500,13 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
   <!-- footer start  -->
   <footer class="bg-dark text-white">
     <?php
+    $imgPathForFooter = "./assets/img/";
+
     include_once "./partials/footer.php"
     ?>
   </footer>
+
+
 
 
   <!-- lazysizes cdn -->
