@@ -1,7 +1,7 @@
    <?php
     include_once "../inc/db.php";
 
-    $sql = "SELECT product_name, description, price, stock_quantity, image_url, sku FROM products WHERE category_id = 1";
+    $sql = "SELECT product_id,product_name, description, price, stock_quantity, image_url, sku FROM products WHERE category_id = 1";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
 
@@ -60,6 +60,7 @@
                     $imgName = $product["image_url"];
                     $productTitle = $product["product_name"];
                     $imgPath = "../assets/img/$imgName";
+                    $productId = $product["product_id"];
 
                     include "../partials/productCard.php";
                 }

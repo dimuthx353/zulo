@@ -1,13 +1,13 @@
 <?php
 include_once "./inc/db.php";
 
-$sqlWomen = "SELECT product_name, description, price, stock_quantity, image_url, sku 
+$sqlWomen = "SELECT product_name, description, price, stock_quantity, image_url, sku ,product_id
         FROM products 
         WHERE category_id = 2 
         ORDER BY product_id DESC 
         LIMIT 8;";
 
-$sqlMen = "SELECT product_name, description, price, stock_quantity, image_url, sku 
+$sqlMen = "SELECT product_name, description, price, stock_quantity, image_url, sku ,product_id
         FROM products 
         WHERE category_id = 1
         ORDER BY product_id DESC 
@@ -458,12 +458,13 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
           $imgName = $product["image_url"];
           $productTitle = $product["product_name"];
           $imgPath = "./assets/img/$imgName";
+          $productId = $product["product_id"];
+
 
           include "./partials/productCard.php";
         }
 
         ?>
-
       </div>
     </div>
 
@@ -472,16 +473,17 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
         <button type="button" class="btn btn-outline-primary"><a href="./pages/men.php" class="text-decoration-none">See All</a></button>
       </h3>
 
-      <div class="d-flex flex-wrap gap-4">
+      <div class="gap-4  d-flex flex-wrap">
         <?php
-
-
         foreach ($mProducts as $product) {
 
           $productPrice = $product["price"];
+
           $imgName = $product["image_url"];
           $productTitle = $product["product_name"];
           $imgPath = "./assets/img/$imgName";
+          $productId = $product["product_id"];
+
 
           include "./partials/productCard.php";
         }
