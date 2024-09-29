@@ -1,4 +1,4 @@
-img {
+.product-section img {
   width: 100%;
   height: 250px;
   object-fit: cover;
@@ -28,4 +28,15 @@ img {
 }
 .footer-div h4 {
   font-family: "Dancing Script", cursive;
+}
+
+.carousel-slider {
+  height: 80vh;
+}
+.carousel-slider .carousel-item img {
+  display: block;
+  position: relative;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
 }/*# sourceMappingURL=women.css.map */

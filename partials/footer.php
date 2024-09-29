@@ -28,7 +28,7 @@
     <section class="">
         <div class="container text-center text-md-start mt-5">
             <div class="row mt-3">
-                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
                     <h6 class="text-uppercase fw-bold mb-4">
                         <i class="fas fa-gem me-3"></i>Zulo
                     </h6>
@@ -83,11 +83,16 @@
                     <p><i class="fas fa-phone me-3"></i> + 94713969520</p>
                     <p><i class="fas fa-print me-3"></i> + 94772442599</p>
                 </div>
+                <div class="col-lg-2">
+                    <img src="<?php echo $imgPathForFooter ?>koko.webp" alt="" class="mb-2 rounded" style="width: 100%;">
+                    <img src="<?php echo $imgPathForFooter ?>accept.jpg" alt="" style="width: 100%;" class="rounded">
+                </div>
             </div>
         </div>
+
     </section>
 
-    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    <div class=" text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
         © 2021 Copyright:
         <a class="text-reset fw-bold" href="">Zulo</a>
     </div>
