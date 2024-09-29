@@ -62,6 +62,9 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
     <!-- navigation  -->
     <header>
       <?php
+
+      $loginPage = "./pages/login.php";
+
       include_once "./partials/nav.php"
       ?>
     </header>
