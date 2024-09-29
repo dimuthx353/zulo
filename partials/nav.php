@@ -135,14 +135,15 @@
                           </a>
                       </div>
                       <div>
-                          <button
-                              class="btn btn-outline-dark"
-                              data-toggle="tooltip"
-                              data-placement="top"
-                              title="profile"
-                              onclick="showLogin()">
-                              <i class="bi bi-person-circle"></i>
-                          </button>
+                          <a href="<?php echo $loginPage ? $loginPage : '../pages/login.php'; ?>">
+                              <button
+                                  class="btn btn-outline-dark"
+                                  data-toggle="tooltip"
+                                  data-placement="top"
+                                  title="profile">
+                                  <i class=" bi bi-person-circle"></i>
+                              </button>
+                          </a>
                       </div>
                   </div>
               </div>
