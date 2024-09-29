@@ -90,3 +90,8 @@ const carousel = new bootstrap.Carousel(myCarouselElement, {
   interval: 30000,
   touch: false
 });
+
+function cartAdded(event) {
+  console.log(event.target);
+  event.target.setAttribute('class', 'bi bi-heart-fill fs-5 text-danger');
+}

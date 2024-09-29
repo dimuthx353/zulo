@@ -76,7 +76,13 @@ $imgPath = "../assets/img/$imgName";
       </div>
       <div class="col-md-6 col-12 p-4 mb-5">
         <h2 class="text-primary"><?php echo $product["product_name"] ?></h2>
-        <small class="text-muted">Product ID: <?php echo $product["product_id"] ?></small>
+        <small class="text-muted">Product ID: <?php echo $product["product_id"] ?>
+          <form action="" method="post">
+            <button class="btn " type="submit">
+              <i class='bi bi-heart fs-5 text-danger' onclick="cartAdded(event)"></i>
+            </button>
+          </form>
+        </small>
 
         <h1 class="mt-3 text-danger">Rs <?php echo $product["price"] ?></h1>
         <small class="text-muted">or 3 installments of $16.66</small>
@@ -93,6 +99,7 @@ $imgPath = "../assets/img/$imgName";
 
         <p>
           <button class="btn btn-outline-primary me-3">Add to Cart</button>
+          <button class="btn btn-outline-primary me-3">Add to wishlist</button>
           <button class="btn btn-danger">Buy Now</button>
         </p>
       </div>
@@ -136,6 +143,8 @@ $imgPath = "../assets/img/$imgName";
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
+
+  <script src="../assets/js/index.js"></script>
 </body>
 
 </html>
