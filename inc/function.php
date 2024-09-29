@@ -47,9 +47,11 @@ function emailExists($conn, $email)
     }
 }
 
-function createUser($conn, $fName, $lName, $email, $pwd)
+function createUser($conn, $fName, $lName, $email, $pwd, $phoneNum, $streetAddress, $city, $province, $zipCode)
 {
-    $sql = "INSERT INTO users (fName, lName, email, pwd) VALUES (:fName, :lName, :email, :pwd);";
+    // Corrected SQL statement to include all fields
+    $sql = "INSERT INTO users (first_name, last_name, email, password, phone_number, address, city, postal_code, province) 
+            VALUES (:fName, :lName, :email, :pwd, :phoneNum, :streetAddress, :city, :zipCode, :province);";
 
     $stmt = $conn->prepare($sql); // Prepare the SQL statement using PDO
     if (!$stmt) {
@@ -59,15 +61,23 @@ function createUser($conn, $fName, $lName, $email, $pwd)
 
     $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT); // Hash the password
 
-    // Bind the parameters using PDO's bindParam or bindValue
+    // Bind all parameters using PDO's bindParam or bindValue
     $stmt->bindParam(':fName', $fName);
     $stmt->bindParam(':lName', $lName);
     $stmt->bindParam(':email', $email);
     $stmt->bindParam(':pwd', $hashedPwd);
+    $stmt->bindParam(':phoneNum', $phoneNum);
+    $stmt->bindParam(':streetAddress', $streetAddress);
+    $stmt->bindParam(':city', $city);
+    $stmt->bindParam(':zipCode', $zipCode);
+    $stmt->bindParam(':province', $province);
 
-    // Execute the statement
-    $stmt->execute();
-
+    // Execute the statement and handle errors
+    if ($stmt->execute()) {
+        header('Location: ../google.lk'); // Redirect on success
+    } else {
+        header('Location: ../../signup/index.php?error=stmtfailed'); // Redirect on failure
+    }
 
     exit();
 }
@@ -79,7 +89,7 @@ function loginUser($conn, $email, $pwd)
     $stmt = $conn->prepare($sql); // Use PDO's prepare method
 
     if (!$stmt) {
-        header("Location: ../../signin/index.php?error=sqlerror");
+        header("Location: google.lk");
         exit();
     }
 
@@ -99,24 +109,13 @@ function loginUser($conn, $email, $pwd)
             // Start session and store user data
             session_start();
             $_SESSION["email"] = $row["email"];
-            $_SESSION["status"] = $row["status"];
-
-            // Redirect based on user status
-            if ($row["status"] == 1) {
-                header("Location: ../../admin/index.php?admin=true");
-                exit();
-            } else {
-                header("Location: ../../dashboard/index.php?admin=false");
-                exit();
-            }
         } else {
             // Invalid password
-            header("Location: ../../signin/index.php?error=wrongpassword");
+            header("Location: google.lk?error=pwd");
             exit();
         }
     } else {
-        // No user found
-        header("Location: ../../signin/index.php?error=nouser");
+        header("Location: google.lk?error=noUser");
         exit();
     }
 }

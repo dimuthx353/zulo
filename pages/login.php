@@ -38,17 +38,17 @@
             <!-- Login Form -->
             <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
                 <div class="text-white login rounded-2">
-                    <form class="h-75 d-flex flex-column justify-content-around">
+                    <form class="h-75 d-flex flex-column justify-content-around" action="../inc/handlers/login_handler.php" method="post">
                         <div class="mb-3">
-                            <input type="email" placeholder="Email" class="rounded-5 form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <input type="email" name="email" placeholder="Email" class="rounded-5 form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
-                            <input type="password" placeholder="Password" class="rounded-5 form-control" id="exampleInputPassword1">
+                            <input type="password" name="password" placeholder="Password" class="rounded-5 form-control" id="exampleInputPassword1">
                         </div>
                         <div class="text-end mb-3">
                             <a href="#" class="text-light">Forgot Password?</a>
                         </div>
-                        <button type="submit" class="rounded-5 btn btn-primary">Login</button>
+                        <button type="submit" name="submit" class="rounded-5 btn btn-primary">Login</button>
                     </form>
                     <div class="text-center mt-3">
                         <p>Don't have an account? <a href="#" class="text-light">Sign Up</a></p>
@@ -59,45 +59,45 @@
             <!-- Register Form -->
             <div class="tab-pane fade p-0" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
                 <div class="text-white login rounded-2  h-100 d-flex justify-content-center flex-column">
-                    <form class="d-flex flex-column justify-content-around  ">
+                    <form class="d-flex flex-column justify-content-around " action="../inc/handlers/register_handler.php" method="post">
                         <div class="row">
                             <div class="col-md-6 mb-2">
-                                <input type="text" placeholder="First Name" class="rounded-5 form-control">
+                                <input type="text" name="fname" placeholder="First Name" class="rounded-5 form-control">
                             </div>
                             <div class="col-md-6 mb-2">
-                                <input type="text" placeholder="Last Name" class="rounded-5 form-control">
+                                <input type="text" name="lname" placeholder="Last Name" class="rounded-5 form-control">
                             </div>
                         </div>
 
                         <div class="mb-2">
-                            <input type="email" placeholder="Email" class="rounded-5 form-control">
+                            <input type="email" name="email" placeholder="Email" class="rounded-5 form-control">
                         </div>
 
                         <div class="mb-2">
-                            <input type="password" placeholder="Password" class="rounded-5 form-control">
+                            <input type="password" name="password" placeholder="Password" class="rounded-5 form-control">
                         </div>
 
                         <div class="mb-2">
-                            <input type="text" placeholder="Phone Number" class="rounded-5 form-control">
+                            <input type="text" name="phoneNum" placeholder="Phone Number" class="rounded-5 form-control">
                         </div>
 
                         <!-- Address Fields -->
                         <div class="mb-2">
-                            <input type="text" placeholder="Street Address" class="rounded-5 form-control">
+                            <input type="text" name="streetAddress" placeholder="Street Address" class="rounded-5 form-control">
                         </div>
                         <div class="row">
                             <div class="col-md-4 mb-2">
-                                <input type="text" placeholder="City" class="rounded-5 form-control">
+                                <input type="text" name="city" placeholder="City" class="rounded-5 form-control">
                             </div>
                             <div class="col-md-4 mb-2">
-                                <input type="text" placeholder="State" class="rounded-5 form-control">
+                                <input type="text" name="province" placeholder="Province" class="rounded-5 form-control">
                             </div>
                             <div class="col-md-4 mb-2">
-                                <input type="text" placeholder="Zip Code" class="rounded-5 form-control">
+                                <input type="text" name="zipCode" placeholder="Zip Code" class="rounded-5 form-control">
                             </div>
                         </div>
 
-                        <button type="submit" class="rounded-5 btn btn-primary">Register</button>
+                        <button type="submit" name="submit" class="rounded-5 btn btn-primary">Register</button>
                     </form>
                     <div class="text-center mt-1">
                         <p>Already have an account? <a href="#" class="text-light">Login</a></p>

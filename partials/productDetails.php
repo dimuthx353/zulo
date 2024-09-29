@@ -77,11 +77,9 @@ $imgPath = "../assets/img/$imgName";
       <div class="col-md-6 col-12 p-4 mb-5">
         <h2 class="text-primary"><?php echo $product["product_name"] ?></h2>
         <small class="text-muted">Product ID: <?php echo $product["product_id"] ?>
-          <form action="" method="post">
-            <button class="btn " type="submit">
-              <i class='bi bi-heart fs-5 text-danger' onclick="cartAdded(event)"></i>
-            </button>
-          </form>
+          <a href="">
+            <i class='bi bi-heart fs-5 text-danger' onclick="cartAdded(event)"></i>
+          </a>
         </small>
 
         <h1 class="mt-3 text-danger">Rs <?php echo $product["price"] ?></h1>
