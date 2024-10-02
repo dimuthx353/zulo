@@ -147,15 +147,30 @@ if (isset($_SESSION["email"])) {
                         </a>
                     </div>
                     <div class="">
-                        <a href="<?php echo $loginPage ? $loginPage : '../pages/login.php'; ?>">
-                            <button
-                                class="btn  <?php echo $user ? "btn-primary text-white" : "btn-outline-dark"; ?>"
-                                data-toggle="tooltip"
-                                data-placement="top"
-                                title="profile">
-                                <i class="bi bi-person-circle"></i>
-                            </button>
-                        </a>
+                        <?php
+                        if ($user) {
+                            echo '<a href="../../zulo/pages/profile.php">
+            <button
+                class="btn ' . ($user ? 'btn-primary text-white' : 'btn-outline-dark') . '"
+                data-toggle="tooltip"
+                data-placement="top"
+                title="profile">
+                <i class="bi bi-person-circle"></i>
+            </button>
+          </a>';
+                        } else {
+                            echo '<a href="' . ($loginPage ? $loginPage : '../pages/login.php') . '">
+            <button
+                class="btn ' . ($user ? 'btn-primary text-white' : 'btn-outline-dark') . '"
+                data-toggle="tooltip"
+                data-placement="top"
+                title="profile">
+                <i class="bi bi-person-circle"></i>
+            </button>
+          </a>';
+                        }
+                        ?>
+
                     </div>
                 </div>
             </div>

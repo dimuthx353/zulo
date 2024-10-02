@@ -23,12 +23,15 @@
                         <i class='bi bi-heart fs-5 text-danger'></i>
                     </div>
                 </div>
-                <!-- Buy Now Buttons -->
-                <div class='d-flex justify-content-center gap-2'>
-                    <button class='btn btn-outline-danger'>Add to Cart</button>
-                    <button class='btn btn-danger text-white'>Buy Now</button>
-                </div>
-            </div>
-        </div>
     </a>
+    <!-- Buy Now Buttons -->
+    <div class='d-flex justify-content-center gap-2'>
+        <a href="../../zulo/inc/handlers/wishlist_handler.php?product_id=<?php echo $productId ?>">
+            <button class='btn btn-outline-danger'>Add to Cart</button>
+        </a>
+        <button class='btn btn-danger text-white'>Buy Now</button>
+    </div>
+</div>
+</div>
+
 </div>
