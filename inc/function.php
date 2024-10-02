@@ -86,36 +86,32 @@ function createUser($conn, $fName, $lName, $email, $pwd, $phoneNum, $streetAddre
 function loginUser($conn, $email, $pwd)
 {
     $sql = "SELECT * FROM users WHERE email = :email";
-    $stmt = $conn->prepare($sql); // Use PDO's prepare method
+    $stmt = $conn->prepare($sql);
 
     if (!$stmt) {
-        header("Location: google.lk");
+        header("Location: :../../../../zulo/pages/login.php?error=stmt");
         exit();
     }
 
-    // Bind the email parameter using PDO
     $stmt->bindParam(':email', $email);
     $stmt->execute();
 
-    // Fetch the result as an associative array
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    // Check if the user exists
     if ($row) {
-        $pwdHashed = $row['pwd'];
+        $pwdHashed = $row['password'];
 
         // Verify the password
         if (password_verify($pwd, $pwdHashed)) {
-            // Start session and store user data
             session_start();
             $_SESSION["email"] = $row["email"];
+            header("Location:../../../../zulo/index.php");
         } else {
-            // Invalid password
-            header("Location: google.lk?error=pwd");
+            header("Location:../../../../zulo/pages/login.php?error=pwdNotMatching");
             exit();
         }
     } else {
-        header("Location: google.lk?error=noUser");
+        header("Location:../../../../zulo/pages/login.php?error=error");
         exit();
     }
 }
