@@ -62,6 +62,7 @@ if (isset($_SESSION["user_id"])) {
                 <nav class="nav nav-borders">
                     <a class="nav-link active ms-0" href="./index.php" target="__blank">Profile</a>
                     <a class="nav-link" href="./order_history.php" target="__blank">Order History</a>
+                    <a class="nav-link" href="./wishlist.php" target="__blank">Wishlist</a>
                     <a class="nav-link" href="./security.php" target="__blank">Security</a>
                 </nav>
                 <hr class="mt-0 mb-4">
