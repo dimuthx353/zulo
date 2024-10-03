@@ -105,6 +105,7 @@ function loginUser($conn, $email, $pwd)
         if (password_verify($pwd, $pwdHashed)) {
             session_start();
             $_SESSION["email"] = $row["email"];
+            $_SESSION["user_id"] = $row["user_id"];
             header("Location:../../../../zulo/index.php");
         } else {
             header("Location:../../../../zulo/pages/login.php?error=pwdNotMatching");

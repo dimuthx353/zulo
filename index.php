@@ -1,5 +1,7 @@
 <?php
 include_once "./inc/db.php";
+session_start();
+
 
 $sqlWomen = "SELECT product_name, description, price, stock_quantity, image_url, sku ,product_id
         FROM products 
@@ -83,9 +85,6 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
           <button class="btn btn-outline-dark ">shop women</button>
         </div>
       </div>
-
-
-
 
 
       <!-- login section  -->
