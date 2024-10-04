@@ -74,7 +74,7 @@ function createUser($conn, $fName, $lName, $email, $pwd, $phoneNum, $streetAddre
 
     // Execute the statement and handle errors
     if ($stmt->execute()) {
-        header('Location: ../google.lk'); // Redirect on success
+        header('Location:../../../../zulo/'); // Redirect on success
     } else {
         header('Location: ../../signup/index.php?error=stmtfailed'); // Redirect on failure
     }
@@ -89,7 +89,7 @@ function loginUser($conn, $email, $pwd)
     $stmt = $conn->prepare($sql);
 
     if (!$stmt) {
-        header("Location: :../../../../zulo/pages/login.php?error=stmt");
+        header("Location:../../../../zulo/pages/login.php?error=stmt");
         exit();
     }
 
@@ -106,7 +106,12 @@ function loginUser($conn, $email, $pwd)
             session_start();
             $_SESSION["email"] = $row["email"];
             $_SESSION["user_id"] = $row["user_id"];
-            header("Location:../../../../zulo/index.php");
+
+            if ($row["roll"] === "admin") {
+                header("Location:../../../../zulo/pages/admin/");
+            } else {
+                header("Location:../../../../zulo/index.php");
+            }
         } else {
             header("Location:../../../../zulo/pages/login.php?error=pwdNotMatching");
             exit();
