@@ -5,6 +5,8 @@ $email = '';
 
 if (isset($_SESSION["email"])) {
     $email = $_SESSION["email"];
+    $userID = $_SESSION["user_id"];
+
     $login = true;
 }
 ?>
@@ -99,7 +101,21 @@ if (isset($_SESSION["email"])) {
                         <a href="">
                             <button class="btn btn-outline-dark cart-btn" data-toggle="tooltip" data-placement="top" title="cart">
                                 <i class="bi bi-bag-fill"></i>
-                                <span class="cart-items">14</span>
+                                <span class="cart-items">
+                                    <?php
+                                    if ($login) {
+                                        $sql = "SELECT SUM(quantity) AS total_items FROM cart WHERE user_id = :user_id";
+                                        $stmt = $conn->prepare($sql);
+                                        $stmt->bindParam(':user_id', $userID, PDO::PARAM_INT);
+                                        $stmt->execute();
+
+                                        // Fetch the total items count
+                                        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+                                        $itemCount = $result['total_items'] ? $result['total_items'] : 0; // Set
+                                        echo $itemCount;
+                                    }
+                                    ?>
+                                </span>
                             </button>
                         </a>
                     </div>

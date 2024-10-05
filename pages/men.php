@@ -1,4 +1,5 @@
    <?php
+    session_start();
     include_once "../inc/db.php";
 
     $sql = "SELECT product_id,product_name, description, price, stock_quantity, image_url, sku FROM products WHERE category_id = 1";
@@ -35,7 +36,7 @@
            crossorigin="anonymous" />
    </head>
 
-   <body class="bg-dark">
+   <body class="">
 
        <div class="container-fluid m-0 p-0 full-body d-flex flex-column">
            <!-- navigation  -->

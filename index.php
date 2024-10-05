@@ -386,8 +386,10 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
   <div>
     <img src="./assets/img/KOKO.gif" alt="">
   </div>
+
+
   <!-- category start  -->
-  <div class="container-fluid category ">
+  <div class="container-fluid category bg-white">
     <div class="d-flex justify-content-center align-items-center">
       <h1 class="main-title mt-5 text-center d-block w-100 p-3">
         Shop By Category
@@ -425,7 +427,10 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
     </div>
 
 
-    <div class="d-flex justify-content-center align-items-center">
+
+
+
+    <div class="d-flex justify-content-center align-items-center ">
       <h1 class="main-title mt-5 text-center d-block w-100 p-3">
         New Arrivals
       </h1>
@@ -456,6 +461,8 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
 
       <div class="d-flex flex-wrap gap-4">
         <?php
+
+
 
 
         foreach ($wProducts as $product) {
@@ -499,14 +506,24 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
     </div>
   </div>
 
+  <div class="bg-dark text-white discount">
+    <img src="./assets/img/fl.jpg" alt="" class="img-0">
+    <p class="text text-white">
+      Get 25% Discount on your first purchase.
+      Just Sign Up & Register it now to become member.
+      <button class="btn btn-primary">Register Now</button>
+    </p>
+  </div>
+
   <!-- footer start  -->
-  <footer class="bg-dark text-white">
+  <footer class=" bg-dark text-white">
     <?php
     $imgPathForFooter = "./assets/img/";
 
-    include_once "./partials/footer.php"
+    include_once "./partials/footer.php";
     ?>
   </footer>
+
 
 
 
@@ -527,6 +544,8 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
 
   <!-- external js  -->
   <script src="./assets/js/index.js"></script>
+
+
 </body>
 
 </html>
