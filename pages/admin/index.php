@@ -3,6 +3,8 @@ session_start();
 include_once '../../inc/db.php';
 include_once '../../inc/function.php';
 
+
+
 ?>
 
 <!doctype html>
@@ -20,17 +22,10 @@ include_once '../../inc/function.php';
 </head>
 
 <body class="bg-dark">
-    <div class="container">
+    <div class="container-fluid w-100">
         <nav>
-            <!-- Admin Profile Section -->
-            <div class="admin-profile">
-                <img src="https://via.placeholder.com/80" alt="Profile Picture">
-                <div class="admin-name">John Doe</div>
-                <button class="manage-profile">Manage Profile</button>
-            </div>
-
             <!-- Navigation Tabs -->
-            <ul>
+            <ul class="d-flex ">
                 <li class="gnav1 currentPage">Products</li>
                 <li class="gnav2">Category</li>
                 <li class="gnav3">Sub Category</li>
@@ -106,9 +101,6 @@ include_once '../../inc/function.php';
 
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
-
-
-
                 </section>
             </article>
             <article id="page2">
@@ -175,7 +167,65 @@ include_once '../../inc/function.php';
             <article id="page4">
                 <section>
                     <h1>Manage Users</h1>
-                    <p>This is tab four.</p>
+                    <table class="table table-centered mb-0">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Phone Number</th>
+                                <th>Address</th>
+                                <th>City</th>
+                                <th>Postal Code</th>
+                                <th>Active?</th>
+                                <th>Province</th>
+                                <th>Email</th>
+                                <th>Create Date</th>
+                                <th>Active?</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <?php
+                            // SQL query to fetch all user details
+                            $sql = "SELECT * FROM users"; // You can modify this to select specific fields if needed
+                            $stmt = $conn->prepare($sql);
+                            $stmt->execute();
+                            $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                            // Check if any users are found
+                            if (count($users) > 0) {
+                                foreach ($users as $user) {
+                                    echo '
+        <tr>
+            <td>' . htmlspecialchars($user["user_id"]) . '</td>
+            <td>' . htmlspecialchars($user["first_name"]) . '</td>
+            <td>' . htmlspecialchars($user["phone_number"]) . '</td>
+            <td>' . htmlspecialchars($user["address"]) . '</td>
+            <td>' . htmlspecialchars($user["city"]) . '</td>
+            <td>' . htmlspecialchars($user["postal_code"]) . '</td>
+            <td>' . htmlspecialchars($user["province"]) . '</td>
+            <td>' . htmlspecialchars($user["roll"]) . '</td>
+            <td>' . htmlspecialchars($user["email"]) . '</td>
+            <td>' . htmlspecialchars($user["created_at"]) . '</td>
+            <td>
+                <form method="POST" action="../../inc/handlers/admin/update_user_status.php">
+                    <input type="hidden" name="user_id" value="' . htmlspecialchars($user["user_id"]) . '">
+                    <div>
+                        <input type="checkbox" name="account_status" value="1" ' . ($user["account_status"] == 1 ? 'checked' : '') . ' onchange="this.form.submit()" />
+                    </div>
+                </form>
+            </td>
+        </tr>';
+                                }
+                            } else {
+                                echo '<p>No users found.</p>';
+                            }
+                            ?>
+
+
+
+                        </tbody>
+                    </table>
                 </section>
             </article>
         </div>

@@ -103,6 +103,13 @@ function loginUser($conn, $email, $pwd)
 
         // Verify the password
         if (password_verify($pwd, $pwdHashed)) {
+
+
+            if ($row["account_status"] == 0) {
+                header("Location:../../../../zulo/pages/suspend.php");
+                exit();
+            }
+
             session_start();
             $_SESSION["email"] = $row["email"];
             $_SESSION["user_id"] = $row["user_id"];
