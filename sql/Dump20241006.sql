@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `zulo` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `zulo`;
 -- MySQL dump 10.13  Distrib 8.0.38, for Win64 (x86_64)
 --
 -- Host: localhost    Database: zulo
@@ -18,6 +16,37 @@ USE `zulo`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `cart`
+--
+
+DROP TABLE IF EXISTS `cart`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `cart` (
+  `cart_id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int NOT NULL,
+  `product_id` int NOT NULL,
+  `quantity` int DEFAULT '1',
+  `added_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`cart_id`),
+  KEY `user_id` (`user_id`),
+  KEY `product_id` (`product_id`),
+  CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE,
+  CONSTRAINT `cart_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cart`
+--
+
+LOCK TABLES `cart` WRITE;
+/*!40000 ALTER TABLE `cart` DISABLE KEYS */;
+INSERT INTO `cart` VALUES (1,2,80,3,'2024-10-05 14:09:07'),(2,2,78,1,'2024-10-05 14:10:23'),(3,2,68,2,'2024-10-05 14:11:02'),(4,4,80,1,'2024-10-05 15:10:12'),(5,2,76,1,'2024-10-06 03:14:01'),(6,3,65,1,'2024-10-06 06:12:09'),(7,3,64,1,'2024-10-06 06:12:21');
+/*!40000 ALTER TABLE `cart` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `maincategories`
 --
 
@@ -30,7 +59,7 @@ CREATE TABLE `maincategories` (
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `main_category_name` (`main_category_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +68,7 @@ CREATE TABLE `maincategories` (
 
 LOCK TABLES `maincategories` WRITE;
 /*!40000 ALTER TABLE `maincategories` DISABLE KEYS */;
-INSERT INTO `maincategories` VALUES (1,'men','2024-09-26 18:02:09'),(2,'women','2024-09-26 18:02:12');
+INSERT INTO `maincategories` VALUES (1,'men','2024-09-26 18:02:09'),(2,'women','2024-09-26 18:02:12'),(19,'hello','2024-10-04 17:01:26'),(26,'test','2024-10-04 17:02:56');
 /*!40000 ALTER TABLE `maincategories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -185,7 +214,7 @@ CREATE TABLE `products` (
   `subCategory` varchar(45) NOT NULL,
   PRIMARY KEY (`product_id`),
   UNIQUE KEY `sku_UNIQUE` (`sku`)
-) ENGINE=InnoDB AUTO_INCREMENT=82 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=83 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -337,11 +366,14 @@ CREATE TABLE `users` (
   `address` text,
   `city` varchar(100) DEFAULT NULL,
   `postal_code` varchar(20) DEFAULT NULL,
-  `country` varchar(50) DEFAULT NULL,
+  `country` varchar(50) DEFAULT 'Sri Lanka',
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `account_status` tinyint(1) NOT NULL DEFAULT '1',
+  `province` varchar(45) DEFAULT NULL,
+  `roll` varchar(45) DEFAULT 'user',
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -350,8 +382,38 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'dimuth','adithya','dimuth@gmail.com','123','713969520','314,welimannathota,kegalle','kegalle','71000','sri lanka','2024-09-26 14:54:48');
+INSERT INTO `users` VALUES (2,'waruni','laksika','waruni@gmail.com','$2y$10$uhMa6HWvfAumiTfMBVe8DO29p1iOEWviuEJJon0INSA9ONkpcwsS.','0775969520','91/3','990kegalle','71000','Sri Lanka','2024-09-29 08:13:46',1,'western','user'),(3,'thauka','marasinghe','tharuka@gmail.com','$2y$10$uWUOWQ4JXwqO6mJ1hgjGKe0IfnRBb6Su9JYO79KziEif0RCeibIGO','72224252','abc','abc','71000','Sri Lanka','2024-09-29 12:55:29',1,'sabaragamuwa','user'),(4,'Dimuth','Adithya','dimuth@gmail.com','$2y$10$hdt2EUnASobzQuAPECsWM.dbJUGfqyQBjtOAoVHUUDY0oZoGrwgIm','0772442599','314','kegalle','71000','Sri Lanka','2024-10-04 15:24:27',1,'sabaragamuwa','admin');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `wishlist`
+--
+
+DROP TABLE IF EXISTS `wishlist`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `wishlist` (
+  `wishlist_id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int NOT NULL,
+  `product_id` int NOT NULL,
+  `added_date` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`wishlist_id`),
+  KEY `user_id` (`user_id`),
+  KEY `product_id` (`product_id`),
+  CONSTRAINT `wishlist_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),
+  CONSTRAINT `wishlist_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `wishlist`
+--
+
+LOCK TABLES `wishlist` WRITE;
+/*!40000 ALTER TABLE `wishlist` DISABLE KEYS */;
+INSERT INTO `wishlist` VALUES (20,2,78,'2024-10-06 09:47:48'),(21,3,64,'2024-10-06 11:42:01'),(22,3,65,'2024-10-06 11:42:05');
+/*!40000 ALTER TABLE `wishlist` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -363,4 +425,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-09-27 17:29:50
+-- Dump completed on 2024-10-06 11:44:06
