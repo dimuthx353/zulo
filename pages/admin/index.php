@@ -5,6 +5,17 @@ include_once '../../inc/function.php';
 
 
 
+$sql = "SELECT product_name, description, price, stock_quantity, image_url, sku ,product_id
+        FROM products;";
+
+$stmt = $conn->prepare($sql);
+$stmt->execute();
+
+$Products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+
+
 ?>
 
 <!doctype html>
@@ -79,6 +90,8 @@ include_once '../../inc/function.php';
                                 }
                                 ?>
                             </select>
+
+
                         </div>
 
                         <div class="mb-3">
@@ -101,6 +114,23 @@ include_once '../../inc/function.php';
 
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
+                    <div class="container d-flex flex-wrap product-container">
+                        <?php
+                        foreach ($Products as $product) {
+
+                            $productPrice = $product["price"];
+                            $imgName = $product["image_url"];
+                            $productTitle = $product["product_name"];
+                            $imgPath = "../../assets/img/$imgName";
+                            $productId = $product["product_id"];
+
+
+                            include "../../partials/admin/productCard.php";
+                        }
+                        ?>
+
+                    </div>
+
                 </section>
             </article>
             <article id="page2">
