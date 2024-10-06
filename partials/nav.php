@@ -56,7 +56,7 @@ if (isset($_SESSION["email"])) {
             <div class="col-6 d-flex align-items-center">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 h6 justify-content-end flex-grow-1">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="../../zulo/index.php">Home</a>
                     </li>
                     <li class="nav-item">
                         <div class="dropdown">
