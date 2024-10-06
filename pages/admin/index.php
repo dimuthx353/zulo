@@ -12,10 +12,6 @@ $stmt = $conn->prepare($sql);
 $stmt->execute();
 
 $Products = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-
-
-
 ?>
 
 <!doctype html>
@@ -25,11 +21,16 @@ $Products = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Admin Dashboard</title>
+
+    <!-- Bootstrap CDN  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- External CSS  -->
     <link rel="stylesheet" href="../../assets/css/admin.min.css">
     <link rel="stylesheet" href="../../assets/css/reset.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body class="bg-dark">
@@ -43,7 +44,6 @@ $Products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <li class="gnav4">Manage Users</li>
             </ul>
         </nav>
-
         <div class="contents" id="contents">
             <article id="page1" class="show top">
                 <section>
@@ -214,7 +214,6 @@ $Products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             </tr>
                         </thead>
                         <tbody>
-
                             <?php
                             // SQL query to fetch all user details
                             $sql = "SELECT * FROM users"; // You can modify this to select specific fields if needed
@@ -226,34 +225,31 @@ $Products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             if (count($users) > 0) {
                                 foreach ($users as $user) {
                                     echo '
-        <tr>
-            <td>' . htmlspecialchars($user["user_id"]) . '</td>
-            <td>' . htmlspecialchars($user["first_name"]) . '</td>
-            <td>' . htmlspecialchars($user["phone_number"]) . '</td>
-            <td>' . htmlspecialchars($user["address"]) . '</td>
-            <td>' . htmlspecialchars($user["city"]) . '</td>
-            <td>' . htmlspecialchars($user["postal_code"]) . '</td>
-            <td>' . htmlspecialchars($user["province"]) . '</td>
-            <td>' . htmlspecialchars($user["roll"]) . '</td>
-            <td>' . htmlspecialchars($user["email"]) . '</td>
-            <td>' . htmlspecialchars($user["created_at"]) . '</td>
-            <td>
-                <form method="POST" action="../../inc/handlers/admin/update_user_status.php">
-                    <input type="hidden" name="user_id" value="' . htmlspecialchars($user["user_id"]) . '">
-                    <div>
-                        <input type="checkbox" name="account_status" value="1" ' . ($user["account_status"] == 1 ? 'checked' : '') . ' onchange="this.form.submit()" />
-                    </div>
-                </form>
-            </td>
-        </tr>';
+                                            <tr>
+                                                <td>' . htmlspecialchars($user["user_id"]) . '</td>
+                                                <td>' . htmlspecialchars($user["first_name"]) . '</td>
+                                                <td>' . htmlspecialchars($user["phone_number"]) . '</td>
+                                                <td>' . htmlspecialchars($user["address"]) . '</td>
+                                                <td>' . htmlspecialchars($user["city"]) . '</td>
+                                                <td>' . htmlspecialchars($user["postal_code"]) . '</td>
+                                                <td>' . htmlspecialchars($user["province"]) . '</td>
+                                                <td>' . htmlspecialchars($user["roll"]) . '</td>
+                                                <td>' . htmlspecialchars($user["email"]) . '</td>
+                                                <td>' . htmlspecialchars($user["created_at"]) . '</td>
+                                                <td>
+                                                    <form method="POST" action="../../inc/handlers/admin/update_user_status.php">
+                                                        <input type="hidden" name="user_id" value="' . htmlspecialchars($user["user_id"]) . '">
+                                                        <div>
+                                                            <input type="checkbox" name="account_status" value="1" ' . ($user["account_status"] == 1 ? 'checked' : '') . ' onchange="this.form.submit()" />
+                                                        </div>
+                                                    </form>
+                                                </td>
+                                            </tr>';
                                 }
                             } else {
                                 echo '<p>No users found.</p>';
                             }
                             ?>
-
-
-
                         </tbody>
                     </table>
                 </section>
@@ -261,12 +257,13 @@ $Products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </div>
 
+    <!-- Jquery CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.0/jquery-ui.min.js" integrity="sha512-MlEyuwT6VkRXExjj8CdBKNgd+e2H+aYZOCUaCrt9KRk6MlZDOs91V1yK22rwm8aCIsb5Ec1euL8f0g58RKT/Pg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js' integrity='sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==' crossorigin='anonymous'></script>
+    <!-- Bootstrap CDN  -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- External JS  -->
     <script src="../../assets/js/admin.js"></script>
-
-
 </body>
 
 </html>

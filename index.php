@@ -33,30 +33,30 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- title  -->
+  <!-- Title  -->
   <title>Zulo - Your Style, Your Way</title>
 
-  <!-- bootstrap cdn  -->
+  <!-- Bootstrap CDN  -->
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
     crossorigin="anonymous" />
 
-  <!-- font awesome cdn  -->
+  <!-- Font Awesome CDN  -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
     crossorigin="anonymous" />
 
-  <!-- external css files  -->
+  <!-- External CSS   -->
   <link rel="stylesheet" href="./assets/css/reset.min.css" />
-  <link rel="stylesheet" href="./assets/css/darkmode.min.css" />
+  <link rel="stylesheet" href="./assets/css/darkMode.min.css" />
   <link rel="stylesheet" href="./assets/css/nav.min.css" />
   <link rel="stylesheet" href="./assets/css/footer.min.css">
-
   <link rel="stylesheet" href="./assets/css/index.min.css" />
+
 </head>
 
 <body class="bg-white">
@@ -64,12 +64,11 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
     <!-- navigation  -->
     <header>
       <?php
-
       $loginPage = "./pages/login.php";
-
       include_once "./partials/nav.php"
       ?>
     </header>
+
     <div class="container-fluid new-fashion p-0 m-0 flex-grow-1">
       <img src="./assets/img/bg2.jpg" alt="" class="bg-img2">
       <img src="./assets/img/bg2.jpg" alt="" class="bg-img">
@@ -217,7 +216,7 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
     </div>
   </section>
 
-  <!-- new collection start  -->
+  <!-- New Collection Start  -->
   <div class="container-fluid new-collections">
 
     <div class="d-flex justify-content-center align-items-center">
@@ -383,12 +382,14 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
       </div>
     </section>
   </div>
+
+  <!-- Banner  -->
   <div>
     <img src="./assets/img/KOKO.gif" alt="">
   </div>
 
 
-  <!-- category start  -->
+  <!-- Category Start  -->
   <div class="container-fluid category ">
     <div class="d-flex justify-content-center align-items-center">
       <h1 class="main-title mt-5 text-center d-block w-100 p-3">
@@ -515,7 +516,7 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
     </p>
   </div>
 
-  <!-- footer start  -->
+  <!-- Footer Start  -->
   <footer class=" bg-dark text-white">
     <?php
     $imgPathForFooter = "./assets/img/";
@@ -528,7 +529,7 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
 
 
 
-  <!-- lazysizes cdn -->
+  <!-- Lazysizes CDN -->
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"
     integrity="sha512-q583ppKrCRc7N5O0n2nzUiJ+suUv7Et1JGels4bXOaMFQcamPk9HjdUknZuuFjBNs7tsMuadge5k9RzdmO+1GQ=="
@@ -536,13 +537,13 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
     referrerpolicy="no-referrer"></script>
 
 
-  <!-- bootstrap js cdn  -->
+  <!-- Bootstrap  CDN  -->
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
 
-  <!-- external js  -->
+  <!-- External JS  -->
   <script src="./assets/js/index.js"></script>
 
 

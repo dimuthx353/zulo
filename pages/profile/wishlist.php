@@ -14,23 +14,25 @@ if (isset($_SESSION["user_id"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Account Details</title>
-    <link rel="stylesheet" href="../../assets/css/profile.css">
+    <title>Wishlist - Zulo</title>
+
+    <!-- Bootstrap CDN  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- font awesome cdn  -->
+    <!-- Font Awesome CDN  -->
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" />
 
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../../assets/css/profile.css">
     <link rel="stylesheet" href="../../assets/css/footer.min.css">
     <link rel="stylesheet" href="../../assets/css/nav.min.css">
     <link rel="stylesheet" href="../../assets/css/reset.min.css">
     <link rel="stylesheet" href="../../assets/css/order_history.min.css">
-
-
 </head>
 
 <body>
@@ -40,7 +42,7 @@ if (isset($_SESSION["user_id"])) {
 
 
     <div class="container-xl px-4 mt-4">
-        <!-- Account page navigation-->
+        <!-- Account Page Navigation-->
         <nav class="nav nav-borders">
             <a class="nav-link" href="./index.php" target="__blank">Profile</a>
             <a class="nav-link" href="./order_history.php" target="__blank">Order History</a>
@@ -98,14 +100,14 @@ if (isset($_SESSION["user_id"])) {
                 </div>
             </div>
         </div>
-        <!-- Payment methods card-->
+        <!-- Payment Methods Card-->
         <div class="card card-header-actions mb-4">
             <div class="card-header">
                 Payment Methods
                 <button class="btn btn-sm btn-primary" type="button">Add Payment Method</button>
             </div>
             <div class="card-body px-0">
-                <!-- Payment method 1-->
+                <!-- Payment Method 1-->
                 <div class="d-flex align-items-center justify-content-between px-4">
                     <div class="d-flex align-items-center">
                         <i class="fab fa-cc-visa fa-2x cc-color-visa"></i>
@@ -120,7 +122,7 @@ if (isset($_SESSION["user_id"])) {
                     </div>
                 </div>
                 <hr>
-                <!-- Payment method 2-->
+                <!-- Payment Method 2-->
                 <div class="d-flex align-items-center justify-content-between px-4">
                     <div class="d-flex align-items-center">
                         <i class="fab fa-cc-mastercard fa-2x cc-color-mastercard"></i>
@@ -135,7 +137,7 @@ if (isset($_SESSION["user_id"])) {
                     </div>
                 </div>
                 <hr>
-                <!-- Payment method 3-->
+                <!-- Payment Method 3-->
                 <div class="d-flex align-items-center justify-content-between px-4">
                     <div class="d-flex align-items-center">
                         <i class="fab fa-cc-amex fa-2x cc-color-amex"></i>
@@ -202,6 +204,7 @@ if (isset($_SESSION["user_id"])) {
     include_once "../../partials/footer.php"
     ?>
 
+    <!-- Bootstrap CDN  -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
