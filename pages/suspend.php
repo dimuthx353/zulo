@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suspend</title>
+    <title>User Suspend - Zulo</title>
+    <link rel="icon" type="image/x-icon" href="../assets/img/logo.png">
+
 </head>
 
 <body>

@@ -38,6 +38,8 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- Title  -->
   <title>Zulo - Your Style, Your Way</title>
+  <link rel="icon" type="image/x-icon" href="./assets/img/logo.png">
+
 
   <!-- Bootstrap CDN  -->
   <link
