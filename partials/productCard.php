@@ -54,9 +54,20 @@ if (isset($_SESSION["user_id"])) {
             </span>
             <div class='d-flex gap-3 align-items-center'>
                 <i class='bi bi-bag fs-5 text-dark'></i>
-                <a href="../../zulo/inc/handlers/wishlist_handler.php?product_id=<?php echo $productId ?>">
-                    <button class='btn '> <i class='<?php echo $heartClass ?> fs-5 text-danger'></i></button>
-                </a>
+                <?php
+                if ($heartClass == "bi bi-heart") {
+                    echo
+                    "<a href='../../zulo/inc/handlers/wishlist_handler.php?cart=true&product_id=" . $productId . "'>
+        <button class='btn'> <i class='bi bi-heart fs-5 text-danger'></i></button>
+        </a>";
+                } else if ($heartClass == "bi bi-heart-fill") {
+                    echo
+                    "<a href='../../zulo/inc/handlers/wishlist_handler.php?cart=false&product_id=" . $productId . "'>
+        <button class='btn'> <i class='bi bi-heart-fill fs-5 text-danger'></i></button>
+        </a>";
+                }
+                ?>
+
 
             </div>
         </div>

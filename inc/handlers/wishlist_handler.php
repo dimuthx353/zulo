@@ -6,6 +6,8 @@ session_start();
 $user = false;
 $userID = null;
 
+$cart = $_GET['cart'];
+
 // Check if the session contains an email
 if (isset($_SESSION["email"])) {
     $user = true;
@@ -36,25 +38,50 @@ if (isset($_GET['product_id'])) {
     die('Product ID not provided in the URL.');
 }
 
-// If user is authenticated and product_id is set, proceed with adding to wishlist
+// If user is authenticated and product_id is set, proceed
 if ($user && isset($product_id)) {
-    // Prepare the insert statement using PDO
-    $sql = "INSERT INTO wishlist (user_id, product_id) VALUES (:user_id, :product_id)";
-    $stmt = $conn->prepare($sql);
 
-    if (!$stmt) {
-        header('Location: ../../signup/index.php?error=stmtfailed');
-        exit();
-    }
 
-    // Bind the user ID and product ID parameters
-    $stmt->bindParam(':user_id', $userID, PDO::PARAM_INT);  // Bind user_id as integer
-    $stmt->bindParam(':product_id', $product_id, PDO::PARAM_INT);  // Bind product_id as integer
 
-    // Execute the statement
-    if ($stmt->execute()) {
-        header('Location: ../../../../../zulo/');
-    } else {
-        header('Location: google.lk?error');
+    if ($cart == "true") {
+        // Prepare the insert statement using PDO
+        $sql = "INSERT INTO wishlist (user_id, product_id) VALUES (:user_id, :product_id)";
+        $stmt = $conn->prepare($sql);
+
+        if (!$stmt) {
+            header('Location: ../../signup/index.php?error=stmtfailed');
+            exit();
+        }
+
+        // Bind the user ID and product ID parameters
+        $stmt->bindParam(':user_id', $userID, PDO::PARAM_INT);  // Bind user_id as integer
+        $stmt->bindParam(':product_id', $product_id, PDO::PARAM_INT);  // Bind product_id as integer
+
+        // Execute the statement
+        if ($stmt->execute()) {
+            header('Location: ../../../../../zulo/?done');
+        } else {
+            header('Location: google.lk?error');
+        }
+    } else if ($cart == "false") {
+        // Remove product from wishlist
+        $sql = "DELETE FROM wishlist WHERE user_id = :user_id AND product_id = :product_id";
+        $stmt = $conn->prepare($sql);
+
+        if (!$stmt) {
+            header('Location: ../../signup/index.php?error=stmtfailed');
+            exit();
+        }
+
+        // Bind the user ID and product ID parameters
+        $stmt->bindParam(':user_id', $userID, PDO::PARAM_INT);  // Bind user_id as integer
+        $stmt->bindParam(':product_id', $product_id, PDO::PARAM_INT);  // Bind product_id as integer
+
+        // Execute the statement
+        if ($stmt->execute()) {
+            header('Location: ../../../../../zulo/?removed');
+        } else {
+            header('Location: google.lk?error');
+        }
     }
 }

@@ -389,7 +389,7 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
 
 
   <!-- category start  -->
-  <div class="container-fluid category bg-white">
+  <div class="container-fluid category ">
     <div class="d-flex justify-content-center align-items-center">
       <h1 class="main-title mt-5 text-center d-block w-100 p-3">
         Shop By Category
