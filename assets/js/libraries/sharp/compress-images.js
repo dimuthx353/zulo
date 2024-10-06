@@ -2,8 +2,8 @@ const sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
 
-const inputDir = '../../../assets/img'; // Folder with your images
-const outputDir = '../../../assets/img/low-quality'; // Folder to save compressed images
+const inputDir = '../../../img/categories'; // Folder with your images
+const outputDir = '../../../img/low-quality'; // Folder to save compressed images
 
 // Create output directory if it doesn't exist
 if (!fs.existsSync(outputDir)) {

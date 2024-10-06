@@ -35,10 +35,14 @@ if (isset($_SESSION["user_id"])) {
 <div class='card shadow-sm' style='width: 18rem; margin: 0 auto'>
     <a href='../../zulo/partials/productDetails.php?product_id=<?php echo $productId ?>' class="text-decoration-none  d-block">
         <div>
+
+
             <img
-                src='<?php echo $imgPath ?>'
-                data-sizes='auto'
-                alt='Example Image 3' />
+                src="<?php echo $imgPathLow ?>"
+                data-sizes="auto"
+                data-src="<?php echo $imgPathOrg ?>"
+                class="lazyload blur-up d-block w-100"
+                alt="Example Image 3" />
         </div>
         <div class='card-body'>
             <!-- Product Title -->

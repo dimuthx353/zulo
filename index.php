@@ -1,5 +1,8 @@
 <?php
+// DB Connection 
 include_once "./inc/db.php";
+
+// Start Session 
 session_start();
 
 
@@ -51,17 +54,16 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
     crossorigin="anonymous" />
 
   <!-- External CSS   -->
-  <link rel="stylesheet" href="./assets/css/reset.min.css" />
   <link rel="stylesheet" href="./assets/css/darkMode.min.css" />
   <link rel="stylesheet" href="./assets/css/nav.min.css" />
   <link rel="stylesheet" href="./assets/css/footer.min.css">
   <link rel="stylesheet" href="./assets/css/index.min.css" />
-
+  <link rel="stylesheet" href="./assets/css/reset.min.css" />
 </head>
 
 <body class="bg-white">
   <div class="container-fluid m-0 p-0 full-body d-flex flex-column">
-    <!-- navigation  -->
+    <!-- Navigation  -->
     <header>
       <?php
       $loginPage = "./pages/login.php";
@@ -70,9 +72,23 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
     </header>
 
     <div class="container-fluid new-fashion p-0 m-0 flex-grow-1">
-      <img src="./assets/img/bg2.jpg" alt="" class="bg-img2">
-      <img src="./assets/img/bg2.jpg" alt="" class="bg-img">
-      <img src="./assets/img/bg2.png" alt="" class="bg-img3">
+      <img src="./assets/img/low-quality/bg2.jpg"
+        data-sizes="auto"
+        data-src="./assets/img/bg2.jpg"
+        class="lazyload blur-up bg-img2"
+        alt="Example Image 3" />
+
+      <img src="./assets/img/low-quality/bg2.jpg"
+        data-sizes="auto"
+        data-src="./assets/img/bg2.jpg"
+        class="lazyload blur-up bg-img"
+        alt="Example Image 3" />
+
+      <img src="./assets/img/low-quality/bg3Copy.png"
+        data-sizes="auto"
+        data-src="./assets/img/bg3.png"
+        class="lazyload blur-up bg-img3"
+        alt="Example Image 3" />
       <div class="text-card ">
         <p>
           <span class="display-6 zulo">ZULO</span> <br>
@@ -399,44 +415,68 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
     <div id="category-grid" class="mt-5">
       <div id="div1">
         <a href="google.lk" class="linkurl">Denims</a>
-        <img src="./assets/img/categories/cwDenims.webp" alt="">
+        <img src="./assets/img/low-quality/categories/cwDenims.webp"
+          data-sizes=" auto"
+          data-src="./assets/img/categories/cwDenims.webp"
+          class="lazyload blur-up "
+          alt="Example Image 3" />
       </div>
       <div id="div3">
         <a href="google.lk" class="linkurl">Dresses</a>
-        <img src="./assets/img/categories/cwDresses.webp" alt="">
+        <img src="./assets/img/low-quality/categories/cwDresses.webp"
+          data-sizes=" auto"
+          data-src="./assets/img/categories/cwDresses.webp"
+          class="lazyload blur-up "
+          alt="Example Image 3" />
       </div>
       <div id="div9">
         <a href="google.lk" class="linkurl">Shirts</a>
-        <img src="./assets/img/categories/cmShirts.webp" alt="">
+        <img src="./assets/img/low-quality/categories/cmShirts.webp"
+          data-sizes=" auto"
+          data-src="./assets/img/categories/cmShirts.webp"
+          class="lazyload blur-up "
+          alt="Example Image 3" />
       </div>
       <div id="div10">
         <a href="google.lk" class="linkurl">T-Shirts</a>
-        <img src="./assets/img/categories/cwTshirts.webp" alt="">
+        <img src="./assets/img/low-quality/categories/cwTshirts.webp"
+          data-sizes=" auto"
+          data-src="./assets/img/categories/cwTshirts.webp"
+          class="lazyload blur-up "
+          alt="Example Image 3" />
       </div>
       <div id="div11">
         <a href="google.lk" class="linkurl">Tops</a>
-        <img src="./assets/img/categories/cwTops.webp" alt="">
+
+        <img src="./assets/img/low-quality/categories/cwTops.webp"
+          data-sizes=" auto"
+          data-src="./assets/img/categories/cwTops.webp"
+          class="lazyload blur-up "
+          alt="Example Image 3" />
       </div>
       <div id="div13">
         <a href="google.lk" class="linkurl">Crop Tops</a>
-        <img src="./assets/img/categories/cwCropTops.webp" alt="">
+        <img src="./assets/img/low-quality/categories/cwCropTops.webp"
+          data-sizes=" auto"
+          data-src="./assets/img/categories/cwCropTops.webp"
+          class="lazyload blur-up "
+          alt="Example Image 3" />
       </div>
       <div id="div12">
         <a href="google.lk" class="linkurl">T-Shirts</a>
-        <img src="./assets/img/categories/cmTshirts.webp" alt="">
+        <img src="./assets/img/low-quality/categories/cmTshirts.webp"
+          data-sizes=" auto"
+          data-src="./assets/img/categories/cmTshirts.webp"
+          class="lazyload blur-up "
+          alt="Example Image 3" />
       </div>
     </div>
-
-
-
-
 
     <div class="d-flex justify-content-center align-items-center ">
       <h1 class="main-title mt-5 text-center d-block w-100 p-3">
         New Arrivals
       </h1>
     </div>
-
 
     <!-- Category Section -->
     <h3 class="text-center text-capitalize mb-4 text-white">
@@ -452,28 +492,22 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
         id="womenatag">WOMEN
       </span>
     </h3>
-
     <div class="container d-none" id="women">
       <h3 class="d-flex justify-content-end mb-5">
         <button type="button" class="btn btn-outline-primary">
           <a href="./pages/women.php" class="text-decoration-none">See All</a>
         </button>
       </h3>
-
       <div class="d-flex flex-wrap gap-4">
         <?php
-
-
-
-
         foreach ($wProducts as $product) {
 
           $productPrice = $product["price"];
           $imgName = $product["image_url"];
           $productTitle = $product["product_name"];
-          $imgPath = "./assets/img/$imgName";
+          $imgPathOrg = "./assets/img/$imgName";
+          $imgPathLow = "./assets/img/low-quality/$imgName";
           $productId = $product["product_id"];
-
 
           include "./partials/productCard.php";
         }
@@ -495,7 +529,8 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
 
           $imgName = $product["image_url"];
           $productTitle = $product["product_name"];
-          $imgPath = "./assets/img/$imgName";
+          $imgPathOrg = "./assets/img/$imgName";
+          $imgPathLow = "./assets/img/low-quality/$imgName";
           $productId = $product["product_id"];
 
 
@@ -508,7 +543,11 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
   </div>
 
   <div class="bg-dark text-white discount">
-    <img src="./assets/img/fl.jpg" alt="" class="img-0">
+    <img src="./assets/img/low-quality/fl.jpg"
+      data-sizes=" auto"
+      data-src="./assets/img/fl.jpg"
+      class="lazyload blur-up img-0"
+      alt="Example Image 3" />
     <p class="text text-white">
       Get 25% Discount on your first purchase.
       Just Sign Up & Register it now to become member.
@@ -527,7 +566,8 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
 
 
 
-
+  <!-- Lazysizes  -->
+  <script src="./node_modules/lazysizes/lazysizes.min.js" async=""></script>
 
   <!-- Lazysizes CDN -->
   <script
@@ -545,8 +585,6 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
 
   <!-- External JS  -->
   <script src="./assets/js/index.js"></script>
-
-
 </body>
 
 </html>

@@ -88,7 +88,8 @@
                     $productPrice = $product["price"];
                     $imgName = $product["image_url"];
                     $productTitle = $product["product_name"];
-                    $imgPath = "../assets/img/$imgName";
+                    $imgPathOrg = "../assets/img/$imgName";
+                    $imgPathLow = "../assets/img/low-quality/$imgName";
                     $productId = $product["product_id"];
 
 
@@ -112,6 +113,17 @@
 
        <!-- Bootstrap CDN  -->
        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+       <!-- Lazysizes  -->
+       <script src="./node_modules/lazysizes/lazysizes.min.js" async=""></script>
+
+       <!-- Lazysizes CDN -->
+       <script
+           src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"
+           integrity="sha512-q583ppKrCRc7N5O0n2nzUiJ+suUv7Et1JGels4bXOaMFQcamPk9HjdUknZuuFjBNs7tsMuadge5k9RzdmO+1GQ=="
+           crossorigin="anonymous"
+           referrerpolicy="no-referrer"></script>
+
    </body>
 
    </html>
