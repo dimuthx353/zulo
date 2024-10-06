@@ -98,7 +98,7 @@ if (isset($_SESSION["email"])) {
                     </div>
 
                     <div>
-                        <a href="">
+                        <a href="../../zulo/pages/cart.php">
                             <button class="btn btn-outline-dark cart-btn" data-toggle="tooltip" data-placement="top" title="cart">
                                 <i class="bi bi-bag-fill"></i>
                                 <span class="cart-items">
