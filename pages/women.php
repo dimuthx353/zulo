@@ -5,7 +5,7 @@
     $stmt = $conn->prepare($sql);
     $stmt->execute();
 
-    // Fetch all products as an associative array
+
     $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
@@ -17,15 +17,20 @@
    <head>
        <meta charset="utf-8">
        <meta name="viewport" content="width=device-width, initial-scale=1">
-       <title>Women</title>
+       <title>Women - Zulo</title>
+       <link rel="icon" type="image/x-icon" href="../assets/img/logo.png">
+
+       <!-- Bootstrap CDN  -->
        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+       <!-- External CSS  -->
        <link rel="stylesheet" href="../assets/css/addCategories.min.css">
        <link rel="stylesheet" href="../assets/css/women.min.css">
        <link rel="stylesheet" href="../assets/css/reset.min.css">
        <link rel="stylesheet" href="./assets/css/footer.min.css">
 
 
-       <!-- font awesome cdn  -->
+       <!-- Font Awesome CDN  -->
        <link
            rel="stylesheet"
            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -84,7 +89,8 @@
                     $productPrice = $product["price"];
                     $imgName = $product["image_url"];
                     $productTitle = $product["product_name"];
-                    $imgPath = "../assets/img/$imgName";
+                    $imgPathOrg = "../assets/img/$imgName";
+                    $imgPathLow = "../assets/img/low-quality/$imgName";
                     $productId = $product["product_id"];
 
 
@@ -94,7 +100,7 @@
            </div>
        </div>
 
-       <!-- footer start  -->
+       <!-- Footer start  -->
        <footer>
            <?php
             $imgPathForFooter = "../assets/img/";
@@ -103,8 +109,22 @@
             ?>
        </footer>
 
+       <!-- External JS  -->
        <script src="../assets/js/index.js"></script>
+
+       <!-- Bootstrap CDN  -->
        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+       <!-- Lazysizes  -->
+       <script src="./node_modules/lazysizes/lazysizes.min.js" async=""></script>
+
+       <!-- Lazysizes CDN -->
+       <script
+           src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"
+           integrity="sha512-q583ppKrCRc7N5O0n2nzUiJ+suUv7Et1JGels4bXOaMFQcamPk9HjdUknZuuFjBNs7tsMuadge5k9RzdmO+1GQ=="
+           crossorigin="anonymous"
+           referrerpolicy="no-referrer"></script>
+
    </body>
 
    </html>

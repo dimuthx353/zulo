@@ -4,10 +4,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login and Register</title>
+    <title>Login and Register - Zulo</title>
+    <link rel="icon" type="image/x-icon" href="../assets/img/logo.png">
+
+    <!-- Bootstrap CDN  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
+    <!-- External CSS  -->
     <link rel="stylesheet" href="../assets/css/addCategories.min.css">
     <link rel="stylesheet" href="../assets/css/women.min.css">
     <link rel="stylesheet" href="../assets/css/reset.min.css">
@@ -62,38 +66,38 @@
                     <form class="d-flex flex-column justify-content-around " action="../inc/handlers/register_handler.php" method="post">
                         <div class="row">
                             <div class="col-md-6 mb-2">
-                                <input type="text" name="fname" placeholder="First Name" class="rounded-5 form-control">
+                                <input type="text" required name="fname" placeholder="First Name" class="rounded-5 form-control">
                             </div>
                             <div class="col-md-6 mb-2">
-                                <input type="text" name="lname" placeholder="Last Name" class="rounded-5 form-control">
+                                <input type="text" required name="lname" placeholder="Last Name" class="rounded-5 form-control">
                             </div>
                         </div>
 
                         <div class="mb-2">
-                            <input type="email" name="email" placeholder="Email" class="rounded-5 form-control">
+                            <input type="email" required name="email" placeholder="Email" class="rounded-5 form-control">
                         </div>
 
                         <div class="mb-2">
-                            <input type="password" name="password" placeholder="Password" class="rounded-5 form-control">
+                            <input type="password" required name="password" placeholder="Password" class="rounded-5 form-control">
                         </div>
 
                         <div class="mb-2">
-                            <input type="text" name="phoneNum" placeholder="Phone Number" class="rounded-5 form-control">
+                            <input type="text" required name="phoneNum" placeholder="Phone Number" class="rounded-5 form-control">
                         </div>
 
                         <!-- Address Fields -->
                         <div class="mb-2">
-                            <input type="text" name="streetAddress" placeholder="Street Address" class="rounded-5 form-control">
+                            <input type="text" required name="streetAddress" placeholder="Street Address" class="rounded-5 form-control">
                         </div>
                         <div class="row">
                             <div class="col-md-4 mb-2">
-                                <input type="text" name="city" placeholder="City" class="rounded-5 form-control">
+                                <input type="text" required name="city" placeholder="City" class="rounded-5 form-control">
                             </div>
                             <div class="col-md-4 mb-2">
-                                <input type="text" name="province" placeholder="Province" class="rounded-5 form-control">
+                                <input type="text" required name="province" placeholder="Province" class="rounded-5 form-control">
                             </div>
                             <div class="col-md-4 mb-2">
-                                <input type="text" name="zipCode" placeholder="Zip Code" class="rounded-5 form-control">
+                                <input type="text" required name="zipCode" placeholder="Zip Code" class="rounded-5 form-control">
                             </div>
                         </div>
 
@@ -105,10 +109,30 @@
                 </div>
             </div>
         </div>
+    </div>
+    <?php
+    if ($_GET["error"]) { ?>
+        <div class="error">
+            <div class="alert alert-danger" role="alert">
+                <?php
+                $error = $_GET["error"];
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-            crossorigin="anonymous"></script>
+                if ($error == "password") {
+                    echo "password not matching";
+                } else if ($error == "stmtFailed") {
+                    echo "something went wrong try again later..";
+                }
+                ?>
+            </div>
+        </div>
+    <?php  }    ?>
+
+
+    <!-- Bootstrap CDN  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
 
 </body>
 

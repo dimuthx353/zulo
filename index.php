@@ -1,5 +1,10 @@
 <?php
+// DB Connection 
 include_once "./inc/db.php";
+
+// Start Session 
+session_start();
+
 
 $sqlWomen = "SELECT product_name, description, price, stock_quantity, image_url, sku ,product_id
         FROM products 
@@ -31,47 +36,61 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- title  -->
+  <!-- Title  -->
   <title>Zulo - Your Style, Your Way</title>
+  <link rel="icon" type="image/x-icon" href="./assets/img/logo.png">
 
-  <!-- bootstrap cdn  -->
+
+  <!-- Bootstrap CDN  -->
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
     crossorigin="anonymous" />
 
-  <!-- font awesome cdn  -->
+  <!-- Font Awesome CDN  -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
     crossorigin="anonymous" />
 
-  <!-- external css files  -->
-  <link rel="stylesheet" href="./assets/css/reset.min.css" />
-  <link rel="stylesheet" href="./assets/css/darkmode.min.css" />
+  <!-- External CSS   -->
+  <link rel="stylesheet" href="./assets/css/darkMode.min.css" />
   <link rel="stylesheet" href="./assets/css/nav.min.css" />
   <link rel="stylesheet" href="./assets/css/footer.min.css">
-
   <link rel="stylesheet" href="./assets/css/index.min.css" />
+  <link rel="stylesheet" href="./assets/css/reset.min.css" />
 </head>
 
 <body class="bg-white">
   <div class="container-fluid m-0 p-0 full-body d-flex flex-column">
-    <!-- navigation  -->
+    <!-- Navigation  -->
     <header>
       <?php
-
       $loginPage = "./pages/login.php";
-
       include_once "./partials/nav.php"
       ?>
     </header>
+
     <div class="container-fluid new-fashion p-0 m-0 flex-grow-1">
-      <img src="./assets/img/bg2.jpg" alt="" class="bg-img2">
-      <img src="./assets/img/bg2.jpg" alt="" class="bg-img">
-      <img src="./assets/img/bg2.png" alt="" class="bg-img3">
+      <img src="./assets/img/low-quality/bg2.jpg"
+        data-sizes="auto"
+        data-src="./assets/img/bg2.jpg"
+        class="lazyload blur-up bg-img2"
+        alt="Example Image 3" />
+
+      <img src="./assets/img/low-quality/bg2.jpg"
+        data-sizes="auto"
+        data-src="./assets/img/bg2.jpg"
+        class="lazyload blur-up bg-img"
+        alt="Example Image 3" />
+
+      <img src="./assets/img/low-quality/bg3Copy.png"
+        data-sizes="auto"
+        data-src="./assets/img/bg3.png"
+        class="lazyload blur-up bg-img3"
+        alt="Example Image 3" />
       <div class="text-card ">
         <p>
           <span class="display-6 zulo">ZULO</span> <br>
@@ -83,9 +102,6 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
           <button class="btn btn-outline-dark ">shop women</button>
         </div>
       </div>
-
-
-
 
 
       <!-- login section  -->
@@ -218,7 +234,7 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
     </div>
   </section>
 
-  <!-- new collection start  -->
+  <!-- New Collection Start  -->
   <div class="container-fluid new-collections">
 
     <div class="d-flex justify-content-center align-items-center">
@@ -384,10 +400,14 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
       </div>
     </section>
   </div>
+
+  <!-- Banner  -->
   <div>
     <img src="./assets/img/KOKO.gif" alt="">
   </div>
-  <!-- category start  -->
+
+
+  <!-- Category Start  -->
   <div class="container-fluid category ">
     <div class="d-flex justify-content-center align-items-center">
       <h1 class="main-title mt-5 text-center d-block w-100 p-3">
@@ -397,41 +417,68 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
     <div id="category-grid" class="mt-5">
       <div id="div1">
         <a href="google.lk" class="linkurl">Denims</a>
-        <img src="./assets/img/categories/cwDenims.webp" alt="">
+        <img src="./assets/img/low-quality/categories/cwDenims.webp"
+          data-sizes=" auto"
+          data-src="./assets/img/categories/cwDenims.webp"
+          class="lazyload blur-up "
+          alt="Example Image 3" />
       </div>
       <div id="div3">
         <a href="google.lk" class="linkurl">Dresses</a>
-        <img src="./assets/img/categories/cwDresses.webp" alt="">
+        <img src="./assets/img/low-quality/categories/cwDresses.webp"
+          data-sizes=" auto"
+          data-src="./assets/img/categories/cwDresses.webp"
+          class="lazyload blur-up "
+          alt="Example Image 3" />
       </div>
       <div id="div9">
         <a href="google.lk" class="linkurl">Shirts</a>
-        <img src="./assets/img/categories/cmShirts.webp" alt="">
+        <img src="./assets/img/low-quality/categories/cmShirts.webp"
+          data-sizes=" auto"
+          data-src="./assets/img/categories/cmShirts.webp"
+          class="lazyload blur-up "
+          alt="Example Image 3" />
       </div>
       <div id="div10">
         <a href="google.lk" class="linkurl">T-Shirts</a>
-        <img src="./assets/img/categories/cwTshirts.webp" alt="">
+        <img src="./assets/img/low-quality/categories/cwTshirts.webp"
+          data-sizes=" auto"
+          data-src="./assets/img/categories/cwTshirts.webp"
+          class="lazyload blur-up "
+          alt="Example Image 3" />
       </div>
       <div id="div11">
         <a href="google.lk" class="linkurl">Tops</a>
-        <img src="./assets/img/categories/cwTops.webp" alt="">
+
+        <img src="./assets/img/low-quality/categories/cwTops.webp"
+          data-sizes=" auto"
+          data-src="./assets/img/categories/cwTops.webp"
+          class="lazyload blur-up "
+          alt="Example Image 3" />
       </div>
       <div id="div13">
         <a href="google.lk" class="linkurl">Crop Tops</a>
-        <img src="./assets/img/categories/cwCropTops.webp" alt="">
+        <img src="./assets/img/low-quality/categories/cwCropTops.webp"
+          data-sizes=" auto"
+          data-src="./assets/img/categories/cwCropTops.webp"
+          class="lazyload blur-up "
+          alt="Example Image 3" />
       </div>
       <div id="div12">
         <a href="google.lk" class="linkurl">T-Shirts</a>
-        <img src="./assets/img/categories/cmTshirts.webp" alt="">
+        <img src="./assets/img/low-quality/categories/cmTshirts.webp"
+          data-sizes=" auto"
+          data-src="./assets/img/categories/cmTshirts.webp"
+          class="lazyload blur-up "
+          alt="Example Image 3" />
       </div>
     </div>
 
-
-    <div class="d-flex justify-content-center align-items-center">
+    <div class="d-flex justify-content-center align-items-center ">
       <h1 class="main-title mt-5 text-center d-block w-100 p-3">
         New Arrivals
       </h1>
     </div>
-
 
     <!-- Category Section -->
     <h3 class="text-center text-capitalize mb-4 text-white">
@@ -447,26 +494,22 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
         id="womenatag">WOMEN
       </span>
     </h3>
-
     <div class="container d-none" id="women">
       <h3 class="d-flex justify-content-end mb-5">
         <button type="button" class="btn btn-outline-primary">
           <a href="./pages/women.php" class="text-decoration-none">See All</a>
         </button>
       </h3>
-
       <div class="d-flex flex-wrap gap-4">
         <?php
-
-
         foreach ($wProducts as $product) {
 
           $productPrice = $product["price"];
           $imgName = $product["image_url"];
           $productTitle = $product["product_name"];
-          $imgPath = "./assets/img/$imgName";
+          $imgPathOrg = "./assets/img/$imgName";
+          $imgPathLow = "./assets/img/low-quality/$imgName";
           $productId = $product["product_id"];
-
 
           include "./partials/productCard.php";
         }
@@ -488,7 +531,8 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
 
           $imgName = $product["image_url"];
           $productTitle = $product["product_name"];
-          $imgPath = "./assets/img/$imgName";
+          $imgPathOrg = "./assets/img/$imgName";
+          $imgPathLow = "./assets/img/low-quality/$imgName";
           $productId = $product["product_id"];
 
 
@@ -500,19 +544,34 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
     </div>
   </div>
 
-  <!-- footer start  -->
-  <footer class="bg-dark text-white">
+  <div class="bg-dark text-white discount">
+    <img src="./assets/img/low-quality/fl.jpg"
+      data-sizes=" auto"
+      data-src="./assets/img/fl.jpg"
+      class="lazyload blur-up img-0"
+      alt="Example Image 3" />
+    <p class="text text-white">
+      Get 25% Discount on your first purchase.
+      Just Sign Up & Register it now to become member.
+      <button class="btn btn-primary">Register Now</button>
+    </p>
+  </div>
+
+  <!-- Footer Start  -->
+  <footer class=" bg-dark text-white">
     <?php
     $imgPathForFooter = "./assets/img/";
 
-    include_once "./partials/footer.php"
+    include_once "./partials/footer.php";
     ?>
   </footer>
 
 
 
+  <!-- Lazysizes  -->
+  <script src="./node_modules/lazysizes/lazysizes.min.js" async=""></script>
 
-  <!-- lazysizes cdn -->
+  <!-- Lazysizes CDN -->
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"
     integrity="sha512-q583ppKrCRc7N5O0n2nzUiJ+suUv7Et1JGels4bXOaMFQcamPk9HjdUknZuuFjBNs7tsMuadge5k9RzdmO+1GQ=="
@@ -520,13 +579,13 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
     referrerpolicy="no-referrer"></script>
 
 
-  <!-- bootstrap js cdn  -->
+  <!-- Bootstrap  CDN  -->
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
 
-  <!-- external js  -->
+  <!-- External JS  -->
   <script src="./assets/js/index.js"></script>
 </body>
 
