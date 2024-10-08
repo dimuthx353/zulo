@@ -38,7 +38,12 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- Title  -->
   <title>Zulo - Your Style, Your Way</title>
-  <link rel="icon" type="image/x-icon" href="./assets/img/logo.png">
+
+  <link rel="icon" type="image/png" href="./assets/img/favicon-48x48.png" sizes="48x48" />
+<link rel="icon" type="image/svg+xml" href="./assets/img/favicon.svg" />
+<link rel="shortcut icon" href="./assets/img/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="./assets/img/apple-touch-icon.png" />
+<link rel="manifest" href="./assets/img/site.webmanifest" />
 
 
   <!-- Bootstrap CDN  -->
