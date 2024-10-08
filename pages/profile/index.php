@@ -7,7 +7,7 @@ if (isset($_SESSION["user_id"])) {
     $userID = $_SESSION["user_id"];
 
     // Fetch the user details based on the user_id from the database
-    $sql = "SELECT first_name, last_name, email, password, phone_number, address, city, postal_code, country, created_at, province, account_status 
+    $sql = "SELECT first_name, last_name, email, password, phone_number, address, city, postal_code, country, created_at, province, account_status ,image
             FROM users WHERE user_id = :userID";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(":userID", $userID);
@@ -77,11 +77,20 @@ if (isset($_SESSION["user_id"])) {
                             <div class="card-header">Profile Picture</div>
                             <div class="card-body text-center">
                                 <!-- Profile picture image-->
-                                <img class="img-account-profile rounded-circle mb-2" src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                                 <?php 
+                                 $imageName = htmlspecialchars($user['image']);
+                                $imagePath = "../../assets/img/userProfile/".$imageName ; 
+                                 ?>
+                                <img class="img-account-profile rounded-circle mb-2" src="<?php echo $imagePath  ?>" alt="">
                                 <!-- Profile picture help block-->
                                 <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
                                 <!-- Profile picture upload button-->
-                                <button class="btn btn-primary" type="button">Upload new image</button>
+                                <div class="mb-3">
+                                    <form action="../../inc/handlers/profilePic_handler.php" method="post"  enctype="multipart/form-data" class="d-flex">
+                                        <input type="file" class="form-control flex-1" id="uploadImg" name="uploadImg" required>
+                                        <input type="submit" class="py-2 px-1 h6 border btn btn-outline-primary" name="uploadImg">
+                                    </form>
+                        </div>
                             </div>
                         </div>
                     </div>

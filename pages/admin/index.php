@@ -49,7 +49,7 @@ $Products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <section>
                     <h1>Add Products</h1>
                     <!-- Update the form with the correct method and action -->
-                    <form class="col-6 mx-auto my-0 p-5" action="../../inc/handlers/admin/addProducts.php" method="post">
+                    <form class="col-6 mx-auto my-0 p-5" action="../../inc/handlers/admin/addProducts.php" method="post" enctype="multipart/form-data">
                         <div class="mb-3">
                             <label for="productName" class="form-label">Product Name</label>
                             <input type="text" class="form-control" id="productName" name="productName" aria-describedby="productNameHelp" required>
@@ -71,8 +71,8 @@ $Products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <input type="text" class="form-control" id="sku" name="sku" required>
                         </div>
                         <div class="mb-3">
-                            <label for="imageUrl" class="form-label">Image URL</label>
-                            <input type="text" class="form-control" id="imageUrl" name="imageUrl" required>
+                            <label for="uploadImage" class="form-label">Image</label>
+                            <input type="file" class="form-control" id="uploadImage" name="uploadImage" required>
                         </div>
                         <div class="mb-3">
                             <label for="category" class="form-label">Categories</label>
