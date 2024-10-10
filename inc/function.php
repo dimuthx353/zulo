@@ -107,11 +107,8 @@ function loginUser($conn, $email, $pwd)
             $_SESSION["email"] = $row["email"];
             $_SESSION["user_id"] = $row["user_id"];
 
-            if ($row["roll"] === "admin") {
-                header("Location:../../../../zulo/pages/admin/");
-            } else {
+
                 header("Location:../../../../zulo/index.php");
-            }
         } else {
             header("Location:../../../../zulo/pages/login.php?error=password");
             exit();

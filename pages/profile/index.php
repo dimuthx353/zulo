@@ -7,7 +7,7 @@ if (isset($_SESSION["user_id"])) {
     $userID = $_SESSION["user_id"];
 
     // Fetch the user details based on the user_id from the database
-    $sql = "SELECT first_name, last_name, email, password, phone_number, address, city, postal_code, country, created_at, province, account_status ,image
+    $sql = "SELECT first_name, last_name, email, password, phone_number, address, city, postal_code, country, created_at, province, account_status ,image ,roll
             FROM users WHERE user_id = :userID";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(":userID", $userID);
@@ -68,6 +68,11 @@ if (isset($_SESSION["user_id"])) {
                     <a class="nav-link" href="./order_history.php" target="__blank">Order History</a>
                     <a class="nav-link" href="./wishlist.php" target="__blank">Wishlist</a>
                     <a class="nav-link" href="./security.php" target="__blank">Security</a>
+                   <?php
+                   if($user["roll"]=="admin"){?>
+                       <a class="nav-link" href="../admin/" target="__blank">Dashboard</a>
+                  <?php }
+                   ?>
                 </nav>
                 <hr class="mt-0 mb-4">
                 <div class="row">

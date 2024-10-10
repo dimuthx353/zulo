@@ -32,7 +32,7 @@ if (isset($_SESSION["user_id"])) {
 
                     // Execute the query
                     if ($stmt->execute()) {
-                        echo "User profile image name updated successfully.";
+                        header("location:../../pages/profile");
                     } else {
                         echo "Error updating user profile image name.";
                     }
