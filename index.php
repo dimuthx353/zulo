@@ -75,6 +75,11 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
       <?php
       $loginPage = "./pages/login.php";
       $imgFolder = "../../zulo/assets/img/userProfile/";
+      $profilePage = "../zulo/pages/profile/";
+      $homePage = "../zulo/";
+      $menPage = "../zulo/pages/men.php";
+      $womenPage = "../zulo/pages/women.php";
+
       include_once "./partials/nav.php"
       ?>
     </header>
@@ -104,8 +109,12 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
         </p>
         <p class="slogan text-muted">Unleashing Style, Redefining Fashion</p>
         <div class="w-75 d-flex justify-content-around mt-5 p-3">
-          <button class="btn btn-outline-dark">shop men</button>
-          <button class="btn btn-outline-dark ">shop women</button>
+          <button class="btn btn-outline-dark">
+            <a href="./pages/men.php" class="text-decoration-none">shop men</a>
+          </button>
+          <button class=" btn btn-outline-dark ">
+            <a href=" ./pages/women.php" class="text-decoration-none">shop women</a>
+          </button>
         </div>
       </div>
 

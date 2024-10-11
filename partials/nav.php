@@ -72,7 +72,13 @@ if (isset($_SESSION["email"])) {
             <div class="col-6 d-flex align-items-center">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 h6 justify-content-end flex-grow-1">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../../zulo/index.php">Home</a>
+                        <?php
+                        $homePage = isset($homePage) ? $homePage : '../../../zulo/';
+                        $menPage = isset($menPage) ? $menPage : '../../../zulo/pages/men.php';
+                        $womenPage = isset($womenPage) ? $womenPage : '../../../zulo/pages/women.php';
+
+                        ?>
+                        <a class="nav-link active" aria-current="page" href="<?php echo $homePage ?>">Home</a>
                     </li>
                     <li class="nav-item">
                         <div class="dropdown">
@@ -80,8 +86,8 @@ if (isset($_SESSION["email"])) {
                                 Category
                             </button>
                             <ul class="dropdown-menu bg-transparent" aria-labelledby="dropdownMenuButton2">
-                                <li><a class="dropdown-item" href="../../zulo/pages/men.php">Men</a></li>
-                                <li><a class="dropdown-item" href="../../zulo/pages/women.php">Women</a></li>
+                                <li><a class="dropdown-item" href="<?php echo $menPage ?>">Men</a></li>
+                                <li><a class="dropdown-item" href="<?php echo $womenPage ?>">Women</a></li>
                                 <li>
                                     <hr class="dropdown-divider" />
                                 </li>
@@ -138,8 +144,12 @@ if (isset($_SESSION["email"])) {
                     <div>
                         <?php
                         if ($login) {
-                            $imgFolder = isset($imgFolder) ? $imgFolder : '../../../zulo/assets/img/userProfile/'; ?>
-                            <a href="../../zulo/pages/profile/">
+                            $profilePage = isset($profilePage) ? $profilePage : '../profile/';
+                            $imgFolder = isset($imgFolder) ? $imgFolder : '../../../zulo/assets/img/userProfile/';
+
+
+                        ?>
+                            <a href="<?php echo  $profilePage ?>">
                                 <button class="btn btn-outline-white p-0" data-toggle="tooltip" data-placement="top" title="profile">
                                     <img src="<?php echo $imgFolder . $profileImage ?>" alt="" class="p-image">
                                 </button>
