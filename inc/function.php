@@ -1,73 +1,81 @@
 <?php
-
-function emptyInputSignup($fName, $lName, $email, $pwd)
+function stmtFailed($stmt)
 {
-    $result = null;
+    if (!$stmt) {
+        header('Location: $_SERVER["PHP_SELF"]?error=stmtFailed');
+        exit();
+    }
+}
 
-    if (empty($fName) || empty($lName) || empty($email) || empty($pwd)) {
-        $result = true;
+function emptyInputSignup($fName, $lName, $email, $pwd, $phoneNum, $streetAddress, $city, $province, $zipCode)
+{
+    $isEmpty = null;
+
+    if (empty($fName) || empty($lName) || empty($email) || empty($pwd) || empty($phoneNum) || empty($streetAddress) || empty($city) || empty($province) || empty($zipCode)) {
+        $isEmpty = true;
     } else {
-        $result = false;
+        $isEmpty = false;
     }
 
-    return $result;
+    return $isEmpty;
 }
 
 function invalidEmail($email)
 {
-    $result = null;
+    $IsInvalid = null;
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $result = true;
+        $IsInvalid = true;
     } else {
-        $result = false;
+        $IsInvalid = false;
     }
-    return $result;
+
+    return $IsInvalid;
 }
 
 function emailExists($conn, $email)
 {
     $sql = "SELECT * FROM users WHERE email = :email;";
 
-    $stmt = $conn->prepare($sql); // Use PDO's prepare method
-
-    if (!$stmt) {
-        // Handle the error, for example:
-        header('Location: ../../signup/index.php?error=stmtfailed');
-        exit();
-    }
-
-    $stmt->bindParam(':email', $email); // Use bindParam for PDO
+    $stmt = $conn->prepare($sql);
+    stmtFailed($stmt);
+    $stmt->bindParam(':email', $email);
     $stmt->execute();
 
     if ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        return $row['id']; // Return the user ID if the email exists
+        return true;
     } else {
-        return false; // Email does not exist
+        return false;
     }
 }
 
-function createUser($conn, $fName, $lName, $email, $pwd)
+function createUser($conn, $fName, $lName, $email, $pwd, $phoneNum, $streetAddress, $city, $province, $zipCode)
 {
-    $sql = "INSERT INTO users (fName, lName, email, pwd) VALUES (:fName, :lName, :email, :pwd);";
 
-    $stmt = $conn->prepare($sql); // Prepare the SQL statement using PDO
-    if (!$stmt) {
-        header('Location: ../../signup/index.php?error=stmtfailed');
-        exit();
-    }
+    $sql = "INSERT INTO users (first_name, last_name, email, password, phone_number, address, city, postal_code, province) 
+            VALUES (:fName, :lName, :email, :pwd, :phoneNum, :streetAddress, :city, :zipCode, :province);";
 
-    $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT); // Hash the password
+    $stmt = $conn->prepare($sql);
+    stmtFailed($stmt);
 
-    // Bind the parameters using PDO's bindParam or bindValue
+    // password hash 
+    $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
+
+
     $stmt->bindParam(':fName', $fName);
     $stmt->bindParam(':lName', $lName);
     $stmt->bindParam(':email', $email);
     $stmt->bindParam(':pwd', $hashedPwd);
+    $stmt->bindParam(':phoneNum', $phoneNum);
+    $stmt->bindParam(':streetAddress', $streetAddress);
+    $stmt->bindParam(':city', $city);
+    $stmt->bindParam(':zipCode', $zipCode);
+    $stmt->bindParam(':province', $province);
 
-    // Execute the statement
-    $stmt->execute();
 
+    if ($stmt->execute()) {
+        header('Location:../../../../zulo/');
+    }
 
     exit();
 }
@@ -76,47 +84,34 @@ function createUser($conn, $fName, $lName, $email, $pwd)
 function loginUser($conn, $email, $pwd)
 {
     $sql = "SELECT * FROM users WHERE email = :email";
-    $stmt = $conn->prepare($sql); // Use PDO's prepare method
 
-    if (!$stmt) {
-        header("Location: ../../signin/index.php?error=sqlerror");
-        exit();
-    }
+    $stmt = $conn->prepare($sql);
+    stmtFailed($stmt);
 
-    // Bind the email parameter using PDO
     $stmt->bindParam(':email', $email);
     $stmt->execute();
 
-    // Fetch the result as an associative array
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    // Check if the user exists
     if ($row) {
-        $pwdHashed = $row['pwd'];
+        $pwdHashed = $row['password'];
 
         // Verify the password
         if (password_verify($pwd, $pwdHashed)) {
-            // Start session and store user data
-            session_start();
-            $_SESSION["email"] = $row["email"];
-            $_SESSION["status"] = $row["status"];
-
-            // Redirect based on user status
-            if ($row["status"] == 1) {
-                header("Location: ../../admin/index.php?admin=true");
-                exit();
-            } else {
-                header("Location: ../../dashboard/index.php?admin=false");
+            if ($row["account_status"] == 0) {
+                header("Location:../../../../zulo/pages/suspend.php");
                 exit();
             }
+
+            session_start();
+            $_SESSION["email"] = $row["email"];
+            $_SESSION["user_id"] = $row["user_id"];
+
+
+                header("Location:../../../../zulo/index.php");
         } else {
-            // Invalid password
-            header("Location: ../../signin/index.php?error=wrongpassword");
+            header("Location:../../../../zulo/pages/login.php?error=password");
             exit();
         }
-    } else {
-        // No user found
-        header("Location: ../../signin/index.php?error=nouser");
-        exit();
     }
 }

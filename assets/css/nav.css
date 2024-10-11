@@ -1,3 +1,9 @@
+.p-image {
+  width: 35px;
+  border-radius: 50%;
+  position: relative;
+}
+
 nav .activeSearch {
   transition: background-color 0.5s ease-in;
 }

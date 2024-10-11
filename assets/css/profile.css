@@ -1,82 +1,68 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500");
 body {
-  overflow-x: hidden;
-  font-family: "Roboto", sans-serif;
-  font-size: 16px;
+  background-color: #f2f6fc;
+  color: #69707a;
 }
 
-/* Toggle Styles */
-#viewport {
-  padding-left: 250px;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+.img-account-profile {
+  height: 10rem;
 }
 
-#content {
+.rounded-circle {
+  border-radius: 50% !important;
+}
+
+.card {
+  box-shadow: 0 0.15rem 1.75rem 0 rgba(33, 40, 50, 0.15);
+}
+
+.card .card-header {
+  font-weight: 500;
+}
+
+.card-header:first-child {
+  border-radius: 0.35rem 0.35rem 0 0;
+}
+
+.card-header {
+  padding: 1rem 1.35rem;
+  margin-bottom: 0;
+  background-color: rgba(33, 40, 50, 0.03);
+  border-bottom: 1px solid rgba(33, 40, 50, 0.125);
+}
+
+.form-control,
+.dataTable-input {
+  display: block;
   width: 100%;
-  position: relative;
-  margin-right: 0;
+  padding: 0.875rem 1.125rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1;
+  color: #69707a;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #c5ccd6;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.35rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-/* Sidebar Styles */
-#sidebar {
-  z-index: 1000;
-  position: fixed;
-  left: 250px;
-  width: 250px;
-  height: 100%;
-  margin-left: -250px;
-  overflow-y: auto;
-  background: #37474f;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+.nav-borders .nav-link.active {
+  color: #0061f2;
+  border-bottom-color: #0061f2;
 }
 
-#sidebar header {
-  background-color: #263238;
-  font-size: 20px;
-  line-height: 52px;
-  text-align: center;
-}
-
-#sidebar header a {
-  color: #fff;
-  display: block;
-  text-decoration: none;
-}
-
-#sidebar header a:hover {
-  color: #fff;
-}
-
-#sidebar .nav a {
-  background: none;
-  border-bottom: 1px solid #455a64;
-  color: #cfd8dc;
-  font-size: 14px;
-  padding: 16px 24px;
-}
-
-#sidebar .nav a:hover {
-  background: none;
-  color: #eceff1;
-}
-
-#sidebar .nav a i {
-  margin-right: 16px;
-}
-
-.img-profile {
-  display: block;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  border: 5px solid yellow;
-  object-fit: cover;
-  object-position: top center;
-  margin: 30px auto;
+.nav-borders .nav-link {
+  color: #69707a;
+  border-bottom-width: 0.125rem;
+  border-bottom-style: solid;
+  border-bottom-color: transparent;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }/*# sourceMappingURL=profile.css.map */
