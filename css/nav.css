@@ -1,7 +1,0 @@
-html[data-bs-theme=light] .hello > a > i {
-  color: #0d6efd !important;
-}
-
-html[data-bs-theme=light] .hello:hover i {
-  color: #f8f9fa !important;
-}/*# sourceMappingURL=nav.css.map */
