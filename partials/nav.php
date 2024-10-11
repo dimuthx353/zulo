@@ -6,9 +6,25 @@ $email = '';
 if (isset($_SESSION["email"])) {
     $email = $_SESSION["email"];
     $userID = $_SESSION["user_id"];
-
     $login = true;
+
+    // Assuming you already have a database connection as $conn
+    $stmt = $conn->prepare("SELECT image FROM users WHERE user_id = :userID");
+    $stmt->bindParam(':userID', $userID);
+    $stmt->execute();
+
+    // Fetch the user's profile image
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    if ($result && !empty($result['image'])) {
+        $profileImage = $result['image'];
+    } else {
+        // Default image if no profile image is set
+        $profileImage = 'default.png';
+    }
 }
+
+
+
 ?>
 
 <div class="bg-secondary text-white d-flex justify-content-center align-content-center">
@@ -119,23 +135,24 @@ if (isset($_SESSION["email"])) {
                             </button>
                         </a>
                     </div>
-
                     <div>
                         <?php
                         if ($login) {
-                            echo '<a href="../../zulo/pages/profile/">
-                                    <button class="btn btn-primary text-white" data-toggle="tooltip" data-placement="top" title="profile">
-                                        <i class="bi bi-person-circle"></i>
-                                    </button>
-                                  </a>';
+                            $imgFolder = isset($imgFolder) ? $imgFolder : '../../../zulo/assets/img/userProfile/'; ?>
+                            <a href="../../zulo/pages/profile/">
+                                <button class="btn btn-outline-white p-0" data-toggle="tooltip" data-placement="top" title="profile">
+                                    <img src="<?php echo $imgFolder . $profileImage ?>" alt="" class="p-image">
+                                </button>
+                            </a>
+                        <?php
                         } else {
-                            $loginPage = isset($loginPage) ? $loginPage : '../pages/login.php';
-                            echo '<a href="' . $loginPage . '">
-                                    <button class="btn btn-outline-dark" data-toggle="tooltip" data-placement="top" title="profile">
-                                        <i class="bi bi-person-circle"></i>
-                                    </button>
-                                  </a>';
-                        }
+                            $loginPage = isset($loginPage) ? $loginPage : '../pages/login.php'; ?>
+                            <a href="<?php echo $loginPage ?>">
+                                <button class="btn btn-outline-dark" data-toggle="tooltip" data-placement="top" title="profile">
+                                    <i class="bi bi-person-circle"></i>
+                                </button>
+                            </a>
+                        <?php  }
                         ?>
                     </div>
                 </div>
