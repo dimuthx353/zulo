@@ -55,10 +55,8 @@ if (isset($_SESSION["user_id"])) {
 
 <body>
     <?php
-
     include_once "../../partials/nav.php";
     ?>
-
 
     <div class="container-xl px-4 mt-4">
         <h1 class="mb-4">Account Details</h1>
@@ -70,11 +68,11 @@ if (isset($_SESSION["user_id"])) {
                     <a class="nav-link" href="./order_history.php" target="__blank">Order History</a>
                     <a class="nav-link" href="./wishlist.php" target="__blank">Wishlist</a>
                     <a class="nav-link" href="./security.php" target="__blank">Security</a>
-                    <?php
-                    if ($user["roll"] == "admin") { ?>
-                        <a class="nav-link" href="../admin/" target="__blank">Dashboard</a>
-                    <?php }
-                    ?>
+                   <?php
+                   if($user["roll"]=="admin"){?>
+                       <a class="nav-link" href="../admin/" target="__blank">Dashboard</a>
+                  <?php }
+                   ?>
                 </nav>
                 <hr class="mt-0 mb-4">
                 <div class="row">
@@ -84,20 +82,20 @@ if (isset($_SESSION["user_id"])) {
                             <div class="card-header">Profile Picture</div>
                             <div class="card-body text-center">
                                 <!-- Profile picture image-->
-                                <?php
-                                $imageName = htmlspecialchars($user['image']);
-                                $imagePath = "../../assets/img/userProfile/" . $imageName;
-                                ?>
+                                 <?php 
+                                 $imageName = htmlspecialchars($user['image']);
+                                $imagePath = "../../assets/img/userProfile/".$imageName ; 
+                                 ?>
                                 <img class="img-account-profile rounded-circle mb-2" src="<?php echo $imagePath  ?>" alt="">
                                 <!-- Profile picture help block-->
                                 <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
                                 <!-- Profile picture upload button-->
                                 <div class="mb-3">
-                                    <form action="../../inc/handlers/profilePic_handler.php" method="post" enctype="multipart/form-data" class="d-flex">
+                                    <form action="../../inc/handlers/profilePic_handler.php" method="post"  enctype="multipart/form-data" class="d-flex">
                                         <input type="file" class="form-control flex-1" id="uploadImg" name="uploadImg" required>
                                         <input type="submit" class="py-2 px-1 h6 border btn btn-outline-primary" name="uploadImg">
                                     </form>
-                                </div>
+                        </div>
                             </div>
                         </div>
                     </div>
