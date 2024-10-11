@@ -98,7 +98,9 @@ if (isset($_SESSION["user_id"])) {
                   </div>
                 </td>
                 <td>
-               <button class="btn btn-outline-danger">remove</button>
+                  <a href="../../inc/handlers/wishlist_handler.php?cart=false&product_id=<?php echo $item["product_id"] ?>&page=cart">
+                    <button class="btn btn-outline-danger">remove</button>
+                  </a>
                 </td>
               </tr>
 
