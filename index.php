@@ -79,6 +79,7 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
       $homePage = "../zulo/";
       $menPage = "../zulo/pages/men.php";
       $womenPage = "../zulo/pages/women.php";
+      $logoutPage = "../zulo/inc/handlers/logout_handler.php";
 
       include_once "./partials/nav.php"
       ?>

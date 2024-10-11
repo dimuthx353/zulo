@@ -19,7 +19,7 @@ if (isset($_SESSION["email"])) {
         $profileImage = $result['image'];
     } else {
         // Default image if no profile image is set
-        $profileImage = 'default.png';
+        $profileImage = 'default.jpg';
     }
 }
 
@@ -76,6 +76,7 @@ if (isset($_SESSION["email"])) {
                         $homePage = isset($homePage) ? $homePage : '../../../zulo/';
                         $menPage = isset($menPage) ? $menPage : '../../../zulo/pages/men.php';
                         $womenPage = isset($womenPage) ? $womenPage : '../../../zulo/pages/women.php';
+                        $logoutPage = isset($logoutPage) ? $logoutPage : '../../../zulo/inc/handlers/logout_handler.php';
 
                         ?>
                         <a class="nav-link active" aria-current="page" href="<?php echo $homePage ?>">Home</a>
@@ -174,7 +175,7 @@ if (isset($_SESSION["email"])) {
 <?php if ($login): ?>
     <div class="bg-white p-2 d-flex justify-content-end align-items-center">
         <span><?= htmlspecialchars($email, ENT_QUOTES, 'UTF-8'); ?></span>
-        <a href="../../zulo/inc/handlers/logout_handler.php" class="ms-4">
+        <a href="<?php echo $logoutPage ?>" class="ms-4">
             <button class="btn btn-danger text-white" data-toggle="tooltip" data-placement="top" title="Log Out">
                 Log Out
             </button>
