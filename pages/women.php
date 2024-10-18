@@ -1,4 +1,6 @@
    <?php
+    session_start();
+
     include_once "../inc/db.php";
 
     $sql = "SELECT product_id,product_name, description, price, stock_quantity, image_url, sku FROM products WHERE category_id = 2";
@@ -44,6 +46,7 @@
        <div class="container-fluid m-0 p-0 full-body d-flex flex-column">
            <!-- Navigation  -->
            <header>
+
                <?php
                 include_once "../partials/nav.php";
                 ?>

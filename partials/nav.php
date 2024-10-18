@@ -141,7 +141,7 @@ if (isset($_SESSION["email"])) {
                     <div>
                         <?php
                         if ($login) {
-                            $profilePage = isset($profilePage) ? $profilePage : '../profile/';
+                            $profilePage = isset($profilePage) ? $profilePage : '../pages/profile/';
                             $imgFolder = isset($imgFolder) ? $imgFolder : '../../../zulo/assets/img/userProfile/';
 
 
