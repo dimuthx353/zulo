@@ -10,7 +10,7 @@ $cart = $_GET['cart'];
 
 $page = null;
 
-if(isset($_GET["page"])){
+if (isset($_GET["page"])) {
     $page = $_GET["page"];
 }
 
@@ -36,6 +36,9 @@ if (isset($_SESSION["email"])) {
         echo "No user found with this email.";
         $user = false;
     }
+} else {
+    header('Location: ../../../../../zulo/pages/login.php');
+    exit();
 }
 
 if (isset($_GET['product_id'])) {
@@ -82,11 +85,9 @@ if ($user && isset($product_id)) {
 
         // Execute the statement
         if ($stmt->execute()) {
-            if($page){
+            if ($page) {
                 header('Location: ../../../../../zulo/pages/profile/wishlist?removed');
-
-            }else{
-
+            } else {
                 header('Location: ../../../../../zulo/?removed');
             }
         } else {

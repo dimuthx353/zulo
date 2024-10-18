@@ -59,14 +59,14 @@ if (isset($_SESSION["user_id"])) {
                 <?php
                 if ($heartClass == "bi bi-heart") {
                     echo
-                    "<a href='../../zulo/inc/handlers/wishlist_handler.php?cart=true&product_id=" . $productId . "'>
-        <button class='btn'> <i class='bi bi-heart fs-5 text-danger'></i></button>
-        </a>";
+                    "
+        <button class='btn' > <i class='bi bi-heart fs-5 text-danger' onclick='addToWishlist(event)'   data-product_id='" . $productId . "'></i></button>
+        ";
                 } else if ($heartClass == "bi bi-heart-fill") {
                     echo
-                    "<a href='../../zulo/inc/handlers/wishlist_handler.php?cart=false&product_id=" . $productId . "'>
-        <button class='btn'> <i class='bi bi-heart-fill fs-5 text-danger'></i></button>
-        </a>";
+                    "
+        <button class='btn'> <i class='bi bi-heart-fill fs-5 text-danger' onclick='addToWishlist(event)' data-product_id='" . $productId . "'></i></button>
+      ";
                 }
                 ?>
 
@@ -75,9 +75,9 @@ if (isset($_SESSION["user_id"])) {
         </div>
         <!-- Buy Now Buttons -->
         <div class='d-flex justify-content-center gap-2'>
-            <a href="../../zulo/inc/handlers/cart_handler.php?product_id=<?php echo $productId ?>">
-                <button class='btn btn-outline-danger'>Add to Cart</button>
-            </a>
+            <!-- <a href="../../zulo/inc/handlers/cart_handler.php?product_id=<?php echo $productId ?>"> -->
+            <button class='btn btn-outline-danger' onclick="addToCart(<?php echo $product_id ?> )">Add to Cart</button>
+            <!-- </a> -->
             <button class='btn btn-danger text-white'>Buy Now</button>
         </div>
     </div>
