@@ -75,9 +75,9 @@ if (isset($_SESSION["user_id"])) {
         </div>
         <!-- Buy Now Buttons -->
         <div class='d-flex justify-content-center gap-2'>
-            <a href="../../zulo/inc/handlers/cart_handler.php?product_id=<?php echo $productId ?>">
-                <button class='btn btn-outline-danger'>Add to Cart</button>
-            </a>
+            <!-- <a href="../../zulo/inc/handlers/cart_handler.php?product_id=<?php echo $productId ?>"> -->
+            <button class='btn btn-outline-danger' onclick="addToCart(<?php echo $product_id ?> )">Add to Cart</button>
+            <!-- </a> -->
             <button class='btn btn-danger text-white'>Buy Now</button>
         </div>
     </div>
