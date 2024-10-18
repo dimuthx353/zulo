@@ -27,6 +27,7 @@
        <link rel="stylesheet" href="../assets/css/addCategories.min.css">
        <link rel="stylesheet" href="../assets/css/women.min.css">
        <link rel="stylesheet" href="../assets/css/reset.min.css">
+       <link rel="stylesheet" href="../assets/css/nav.min.css">
        <link rel="stylesheet" href="./assets/css/footer.min.css">
 
 
@@ -41,7 +42,7 @@
    <body>
 
        <div class="container-fluid m-0 p-0 full-body d-flex flex-column">
-           <!-- navigation  -->
+           <!-- Navigation  -->
            <header>
                <?php
                 include_once "../partials/nav.php";

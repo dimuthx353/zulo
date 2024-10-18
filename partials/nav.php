@@ -27,7 +27,7 @@ if (isset($_SESSION["email"])) {
 
 ?>
 
-<div class="bg-secondary text-white d-flex justify-content-center align-content-center">
+<div class="bg-secondary text-white d-flex justify-content-center align-content-center ">
     <div class="container">
         <div id="carouselContent" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner" role="listbox">
@@ -46,7 +46,7 @@ if (isset($_SESSION["email"])) {
     </div>
 </div>
 
-<div class="container-fluid p-0 navigation">
+<div class="container-fluid p-0 navigation ">
     <nav class="navbar navbar-expand-lg bg-body-light shadow p-0 sticky-top navbar-inverse">
         <div class="container-fluid p-0 d-flex">
             <div class="col-3 row">
@@ -68,9 +68,8 @@ if (isset($_SESSION["email"])) {
                     </div>
                 </div>
             </div>
-
-            <div class="col-6 d-flex align-items-center">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 h6 justify-content-end flex-grow-1">
+            <div class="col-6 d-flex align-items-center ">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 h6 justify-content-end flex-grow-1 ">
                     <li class="nav-item">
                         <?php
                         $homePage = isset($homePage) ? $homePage : '../../../zulo/';
@@ -96,12 +95,10 @@ if (isset($_SESSION["email"])) {
                         </div>
                     </li>
                 </ul>
-
-                <a class="navbar-brand w-100" href="#">
+                <a class="text-decoration-none" href="#">
                     <span class="display-5 z-text">&nbsp;Z</span><span class="ulo-text h3">ulo</span>
                 </a>
-
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-start h6 flex-grow-1">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-start h6  flex-grow-1">
                     <li class="nav-item">
                         <a class="nav-link" href="#">Gift</a>
                     </li>
@@ -110,8 +107,7 @@ if (isset($_SESSION["email"])) {
                     </li>
                 </ul>
             </div>
-
-            <div class="col-3 d-flex justify-content-end align-items-center pe-4">
+            <div class="col-3 d-flex justify-content-end align-items-center pe-4 ">
                 <div class="d-flex justify-content-end gap-2 ms-2 control-center">
                     <div onclick="activeDarkMode()">
                         <button class="btn btn-outline-dark" id="switch-mode">
