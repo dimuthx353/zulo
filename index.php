@@ -603,6 +603,9 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
 
   <!-- External JS  -->
   <script src="./assets/js/index.js"></script>
+
+  <!-- Ajax For Handling Wishlist  -->
+  <script src="./assets/js/ajax.js"></script>
 </body>
 
 </html>
