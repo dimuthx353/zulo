@@ -44,6 +44,8 @@ if (isset($_SESSION["user_id"])) {
 
 
     <div class="container-xl px-4 mt-4">
+        <h1 class="mb-4">My Security</h1>
+
         <!-- Account page navigation-->
         <nav class="nav nav-borders">
             <a class="nav-link" href="./index.php" target="__blank">Profile</a>
