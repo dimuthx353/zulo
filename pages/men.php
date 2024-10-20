@@ -81,8 +81,9 @@
            <div class="col-3 border-red">
                <h1>filer options</h1>
            </div>
-           <div class="col-9 d-flex flex-wrap gap-4 border-red">
+           <div class="col-9 d-flex flex-wrap gap-4 border-red" id="men">
                <h1 class="text-center w-100">Men</h1>
+
                <?php
                 foreach ($products as $product) {
 
@@ -97,6 +98,7 @@
                 }
                 ?>
            </div>
+       </div>
        </div>
 
        <!-- Footer Start  -->
@@ -123,6 +125,70 @@
            integrity="sha512-q583ppKrCRc7N5O0n2nzUiJ+suUv7Et1JGels4bXOaMFQcamPk9HjdUknZuuFjBNs7tsMuadge5k9RzdmO+1GQ=="
            crossorigin="anonymous"
            referrerpolicy="no-referrer"></script>
+
+
+       <!-- Ajax For Handling Wishlist and add to cart function  -->
+       <?php
+        if ($_SESSION["user_id"]) { ?>
+           <script>
+               function addToWishlist(event) {
+                   if (event.target.classList.contains('bi-heart-fill')) {
+                       const xhr = new XMLHttpRequest();
+                       xhr.open(
+                           'GET',
+                           `../../zulo/inc/handlers/wishlist_handler.php?cart=false&product_id=${event.target.dataset.product_id}`,
+                           true
+                       );
+                       xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                       xhr.onload = function() {
+                           if (this.status === 200) {
+                               // console.log(this.responseText);
+                           }
+                       };
+
+                       xhr.send();
+                   } else if (event.target.classList.contains('bi-heart')) {
+                       const xhr = new XMLHttpRequest();
+                       xhr.open(
+                           'GET',
+                           `../../zulo/inc/handlers/wishlist_handler.php?cart=true&product_id=${event.target.dataset.product_id}`,
+                           true
+                       );
+                       xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                       xhr.onload = function() {
+                           if (this.status === 200) {}
+                       };
+
+                       xhr.send();
+                   }
+
+                   event.target.classList.toggle('bi-heart');
+                   event.target.classList.toggle('bi-heart-fill');
+               }
+
+
+               function addToCart(productId) {
+                   console.log(productId);
+                   const xhr = new XMLHttpRequest();
+                   xhr.open(
+                       'GET',
+                       `../../zulo/inc/handlers/cart_handler.php?product_id=${productId}`,
+                       true
+                   );
+                   xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                   xhr.onload = function() {
+                       if (this.status === 200) {
+                           //    console.log(this.responseText);
+                       }
+                   };
+                   xhr.send();
+               }
+           </script>
+       <?php }
+        ?>
+
+       <script src="../assets/js/search.js"></script>
+
 
    </body>
 
