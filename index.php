@@ -603,6 +603,15 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
 
   <!-- External JS  -->
   <script src="./assets/js/index.js"></script>
+
+  <!-- Ajax For Handling Wishlist  -->
+  <?php
+
+  if (isset($_SESSION["user_id"])) { ?>
+    <script src="./assets/js/ajax.js"></script>
+  <?php  }  ?>
+
+  <script src="../zulo/assets/js/search.js"></script>
 </body>
 
 </html>

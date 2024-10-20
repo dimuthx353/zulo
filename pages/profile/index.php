@@ -61,7 +61,7 @@ if (isset($_SESSION["user_id"])) {
 
 
     <div class="container-xl px-4 mt-4">
-        <h1 class="mb-4">Account Details</h1>
+        <h1 class="mb-4">My Account</h1>
         <div class="row">
             <div class="container-xl px-4 mt-4">
                 <!-- Account page navigation-->
