@@ -607,7 +607,7 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
   <!-- Ajax For Handling Wishlist  -->
   <?php
 
-  if ($_SESSION["user_id"]) { ?>
+  if (isset($_SESSION["user_id"])) { ?>
     <script src="./assets/js/ajax.js"></script>
   <?php  }  ?>
 
