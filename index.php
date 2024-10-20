@@ -610,6 +610,8 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
   if ($_SESSION["user_id"]) { ?>
     <script src="./assets/js/ajax.js"></script>
   <?php  }  ?>
+
+  <script src="../zulo/assets/js/search.js"></script>
 </body>
 
 </html>

@@ -49,7 +49,7 @@
            </header>
        </div>
 
-       <div id="carouselExampleIndicators" class="carousel slide mb-5 carousel-slider">
+       <!-- <div id="carouselExampleIndicators" class="carousel slide mb-5 carousel-slider">
            <div class="carousel-indicators">
                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -75,14 +75,15 @@
                <span class="carousel-control-next-icon" aria-hidden="true"></span>
                <span class="visually-hidden">Next</span>
            </button>
-       </div>
+       </div> -->
 
        <div class="container d-flex product-section">
            <div class="col-3 border-red">
                <h1>filer options</h1>
            </div>
-           <div class="col-9 d-flex flex-wrap gap-4 border-red">
+           <div class="col-9 d-flex flex-wrap gap-4 border-red" id="men">
                <h1 class="text-center w-100">Men</h1>
+
                <?php
                 foreach ($products as $product) {
 
@@ -97,6 +98,7 @@
                 }
                 ?>
            </div>
+       </div>
        </div>
 
        <!-- Footer Start  -->
@@ -176,15 +178,16 @@
                    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                    xhr.onload = function() {
                        if (this.status === 200) {
-                           // console.log(this.responseText);
+                           //    console.log(this.responseText);
                        }
                    };
                    xhr.send();
                }
            </script>
        <?php }
-
         ?>
+
+       <script src="../assets/js/search.js"></script>
 
 
    </body>

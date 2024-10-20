@@ -62,8 +62,10 @@ if (isset($_SESSION["email"])) {
                                         <i class="bi bi-search"></i>
                                     </button>
                                 </div>
-                                <input type="search" class="p-2 text-black search-bar bg-light" id="search-bar" placeholder="Search..." />
+                                <input type="search" class="p-2 text-black search-bar bg-light" id="search-bar" name="searchQuery" placeholder="Search..." />
+                                <p class="search-result"></p>
                             </li>
+
                         </ul>
                     </div>
                 </div>

@@ -187,8 +187,9 @@
                }
            </script>
        <?php }
-
         ?>
+
+       <script src="../assets/js/search.js"></script>
 
    </body>
 
