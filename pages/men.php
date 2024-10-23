@@ -58,12 +58,21 @@
 
            <div class="carousel-inner h-100">
                <div class="carousel-item active">
+                   <p>
+                   <h1>Men</h1>
+                   </p>
                    <img src="../assets/img/menpageslide03.jpg" class="d-block w-100" alt="...">
                </div>
                <div class="carousel-item">
+                   <p>
+                   <h1>Men</h1>
+                   </p>
                    <img src="../assets/img/menpageslide02.jpg" class="d-block w-100" alt="...">
                </div>
                <div class="carousel-item">
+                   <p>
+                   <h1>Men</h1>
+                   </p>
                    <img src="../assets/img/menpageslide01.jpg" class="d-block w-100" alt="...">
                </div>
            </div>
