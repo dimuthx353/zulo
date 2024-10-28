@@ -143,7 +143,10 @@ $Products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                             <td scope="row"><input type="text" name="productName" value="<?php echo $productTitle; ?>"></td>
                                             <td><input type="text" name="productPrice" value="<?php echo $productPrice; ?>"></td>
                                             <td><input type="text" name="productId" value="<?php echo $productId; ?>" disabled></td>
-                                            <td><button class="btn btn-success" type="submit">Update</button></td>
+                                            <td>
+                                                <button class="btn btn-success" name="update">Update</button>
+                                                <button class="btn btn-danger deleteBtn" onclick="deleteProduct(event, <?php echo $productId; ?>)">Delete</button>
+                                            </td>
                                         </form>
                                     </tr>
                                 <?php  } ?>
@@ -286,6 +289,7 @@ $Products = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <!-- External JS  -->
     <script src="../../assets/js/admin.js"></script>
     <script src="../../assets/js/updateProduct.js"></script>
+    <script src="../../assets/js/deleteProducts.js"></script>
 </body>
 
 </html>

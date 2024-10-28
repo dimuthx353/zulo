@@ -1,9 +1,8 @@
 const updateProductForms = document.querySelectorAll('.updateProduct');
 
-console.log('hello from');
-
 updateProductForms.forEach((form) => {
-  form.addEventListener('submit', (event) => {
+  const updateBtn = form.update;
+  updateBtn.addEventListener('click', (event) => {
     event.preventDefault();
     const productId = form.productId.value;
 
