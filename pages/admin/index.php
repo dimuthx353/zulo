@@ -123,7 +123,7 @@ $Products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     <th scope="col">Product Image</th>
                                     <th scope="col">Product Name</th>
                                     <th scope="col">Product Price</th>
-                                    <th scope="col">Poduct Id</th>
+                                    <th scope="col">Product Id</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
