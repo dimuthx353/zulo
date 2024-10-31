@@ -33,10 +33,31 @@
 .carousel-slider {
   height: 80vh;
 }
+.carousel-slider .carousel-item {
+  height: 100%;
+}
 .carousel-slider .carousel-item img {
   display: block;
   position: relative;
   height: 100%;
   object-fit: cover;
   object-position: top center;
+}
+
+.carousel-item img {
+  position: relative;
+}
+.carousel-item p {
+  position: absolute;
+  top: 0;
+  height: 80%;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1;
+  color: #fff;
+  font-size: 80px;
+  text-align: center;
 }/*# sourceMappingURL=women.css.map */

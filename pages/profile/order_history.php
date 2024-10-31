@@ -16,7 +16,7 @@ try {
     $stmt->bindParam(':user_id', $userID, PDO::PARAM_INT);
     $stmt->execute();
     $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    
+
     if (empty($orders)) {
         $orders = [];
     }
@@ -53,6 +53,8 @@ try {
     <?php include_once "../../partials/nav.php"; ?>
 
     <div class="container-xl px-4 mt-4">
+        <h1 class="mb-4">My Orders</h1>
+
         <!-- Account page navigation -->
         <nav class="nav nav-borders">
             <a class="nav-link" href="./index.php">Profile</a>
@@ -77,7 +79,7 @@ try {
                 </thead>
                 <tbody>
                     <?php if (!empty($orders)): ?>
-                        <?php foreach ($orders as $order): 
+                        <?php foreach ($orders as $order):
                             // Fetch product details based on product_id stored in orders
                             $productIDs = explode(',', $order['product_id']);
                             $products = [];
@@ -86,37 +88,37 @@ try {
                             $stmt->execute();
                             $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-                            
+
                         ?>
-                        <tr>
-                            <td><?= date('F j, Y', strtotime($order['created_at'])); ?></td>
-                            <td>
-                                <?php foreach ($products as $product): 
-                                    $imagePath = "../../assets/img/".$product["image_url"] ;
+                            <tr>
+                                <td><?= date('F j, Y', strtotime($order['created_at'])); ?></td>
+                                <td>
+                                    <?php foreach ($products as $product):
+                                        $imagePath = "../../assets/img/" . $product["image_url"];
 
 
-?>                                   
+                                    ?>
 
- <div class="d-flex align-items-center">
-                                        <img src="<?php echo $imagePath  ?>"  alt="<?= $product['product_name']; ?>" style="width: 45px; height: 45px; object-fit:cover; object-position:top center;" class="rounded-circle">
-                                        <div class="ms-3">
-                                            <p class="fw-bold mb-1"><?= $product['product_name']; ?></p>
-                                            <p class="text-muted mb-0">Rs <?= number_format($product['price'], 2); ?></p>
+                                        <div class="d-flex align-items-center">
+                                            <img src="<?php echo $imagePath  ?>" alt="<?= $product['product_name']; ?>" style="width: 45px; height: 45px; object-fit:cover; object-position:top center;" class="rounded-circle">
+                                            <div class="ms-3">
+                                                <p class="fw-bold mb-1"><?= $product['product_name']; ?></p>
+                                                <p class="text-muted mb-0">Rs <?= number_format($product['price'], 2); ?></p>
+                                            </div>
                                         </div>
-                                    </div>
-                                <?php endforeach; ?>
-                            </td>
-                            <td><?= $order['qty']; ?></td>
-                            <td>Rs <?= number_format($order['total_amount'], 2); ?></td>
-                            <td>
-                                <span class="badge badge-<?php echo $order['payment_status'] == 'Paid' ? 'success' : 'danger'; ?> rounded-pill d-inline">
-                                    <?= ucfirst($order['payment_status']); ?>
-                                </span>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-link btn-sm btn-rounded">View Details</button>
-                            </td>
-                        </tr>
+                                    <?php endforeach; ?>
+                                </td>
+                                <td><?= $order['qty']; ?></td>
+                                <td>Rs <?= number_format($order['total_amount'], 2); ?></td>
+                                <td>
+                                    <span class="badge badge-<?php echo $order['payment_status'] == 'Paid' ? 'success' : 'danger'; ?> rounded-pill d-inline">
+                                        <?= ucfirst($order['payment_status']); ?>
+                                    </span>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-link btn-sm btn-rounded">View Details</button>
+                                </td>
+                            </tr>
                         <?php endforeach; ?>
                     <?php else: ?>
                         <tr>
