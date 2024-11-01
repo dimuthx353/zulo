@@ -235,6 +235,7 @@ $Products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <th>Email</th>
                                 <th>Create Date</th>
                                 <th>Active?</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -268,6 +269,9 @@ $Products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                                         </div>
                                                     </form>
                                                 </td>
+                                               <td>
+                                                    <a href="../../inc/handlers/admin/deleteUser_handler.php?id=' . htmlspecialchars($user["user_id"]) . '">Delete</a>
+                                               </td>
                                             </tr>';
                                 }
                             } else {
