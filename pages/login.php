@@ -52,11 +52,9 @@
                         <div class="text-end mb-3">
                             <a href="#" class="text-light">Forgot Password?</a>
                         </div>
+
                         <button type="submit" name="submit" class="rounded-5 btn btn-primary">Login</button>
                     </form>
-                    <div class="text-center mt-3">
-                        <p>Don't have an account? <a href="#" class="text-light">Sign Up</a></p>
-                    </div>
                 </div>
             </div>
 
