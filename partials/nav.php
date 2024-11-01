@@ -78,6 +78,7 @@ if (isset($_SESSION["email"])) {
                         $menPage = isset($menPage) ? $menPage : '../../../zulo/pages/men.php';
                         $womenPage = isset($womenPage) ? $womenPage : '../../../zulo/pages/women.php';
                         $logoutPage = isset($logoutPage) ? $logoutPage : '../../../zulo/inc/handlers/logout_handler.php';
+                        $cartPage = isset($cartPage) ? $cartPage : '../../zulo/pages/cart.php';
 
                         ?>
                         <a class="nav-link active" aria-current="page" href="<?php echo $homePage ?>">Home</a>
@@ -119,7 +120,7 @@ if (isset($_SESSION["email"])) {
                     </div>
 
                     <div>
-                        <a href="../../zulo/pages/cart.php">
+                        <a href="<?php echo $cartPage ?>">
                             <button class="btn btn-outline-dark cart-btn" data-toggle="tooltip" data-placement="top" title="cart">
                                 <i class="bi bi-bag-fill"></i>
                                 <span class="cart-items">
