@@ -114,21 +114,45 @@ $Products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
-                    <div class="container d-flex flex-wrap product-container">
-                        <?php
-                        foreach ($Products as $product) {
-
-                            $productPrice = $product["price"];
-                            $imgName = $product["image_url"];
-                            $productTitle = $product["product_name"];
-                            $imgPath = "../../assets/img/$imgName";
-                            $productId = $product["product_id"];
+                    <div class="container d-flex flex-wrap flex-column product-container">
 
 
-                            include "../../partials/admin/productCard.php";
-                        }
-                        ?>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Product Image</th>
+                                    <th scope="col">Product Name</th>
+                                    <th scope="col">Product Price</th>
+                                    <th scope="col">Product Id</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                foreach ($Products as $product) {
 
+                                    $productPrice = $product["price"];
+                                    $imgName = $product["image_url"];
+                                    $productTitle = $product["product_name"];
+                                    $imgPath = "../../assets/img/$imgName";
+                                    $productId = $product["product_id"];
+                                ?>
+                                    <tr>
+                                        <form method="GET" class="updateProduct">
+                                            <td><img src="<?php echo $imgPath; ?>" style="width: 40px;height:40px;object-fit:cover;object-position:center top" alt=""></td>
+                                            <td scope="row"><input type="text" name="productName" value="<?php echo $productTitle; ?>"></td>
+                                            <td><input type="text" name="productPrice" value="<?php echo $productPrice; ?>"></td>
+                                            <td><input type="text" name="productId" value="<?php echo $productId; ?>" disabled></td>
+                                            <td>
+                                                <button class="btn btn-success" name="update">Update</button>
+                                                <button class="btn btn-danger deleteBtn" onclick="deleteProduct(event, <?php echo $productId; ?>)">Delete</button>
+                                            </td>
+                                        </form>
+                                    </tr>
+                                <?php  } ?>
+
+                            </tbody>
+                        </table>
                     </div>
 
                 </section>
@@ -264,6 +288,8 @@ $Products = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <!-- External JS  -->
     <script src="../../assets/js/admin.js"></script>
+    <script src="../../assets/js/updateProduct.js"></script>
+    <script src="../../assets/js/deleteProducts.js"></script>
 </body>
 
 </html>
