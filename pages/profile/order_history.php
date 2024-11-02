@@ -50,7 +50,13 @@ try {
 </head>
 
 <body>
-    <?php include_once "../../partials/nav.php"; ?>
+    <?php
+    $profilePage = "";
+    $cartPage = "../../pages/cart.php";
+
+    include_once "../../partials/nav.php";
+
+    ?>
 
     <div class="container-xl px-4 mt-4">
         <h1 class="mb-4">My Orders</h1>
