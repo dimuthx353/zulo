@@ -38,6 +38,9 @@ if (isset($_SESSION["user_id"])) {
 
 <body>
   <?php
+  $profilePage = "";
+  $cartPage = "../../pages/cart.php";
+
   include_once "../../partials/nav.php";
   ?>
 
