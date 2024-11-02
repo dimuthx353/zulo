@@ -32,7 +32,7 @@
                         <i class="fas fa-gem me-3"></i>Zulo
                     </h6>
                     <p>
-                        At Spara, we blend cutting-edge designs with eco-friendly practices, creating fashion that looks and feels good—promoting conscious consumption without compromising on style. Spara is fashion with purpose.
+                        We bring you the best in fashion with a focus on quality, style, and affordability. Browse through our latest collections and enjoy a seamless shopping experience.
                     </p>
                 </div>
 
@@ -41,16 +41,16 @@
                         Products
                     </h6>
                     <p>
-                        <a href="#!" class="text-reset">products 1</a>
+                        <a href="#!" class="text-reset">Men's Collection</a>
                     </p>
                     <p>
-                        <a href="#!" class="text-reset">products 2</a>
+                        <a href="#!" class="text-reset">Women's Collection</a>
                     </p>
                     <p>
-                        <a href="#!" class="text-reset">products 3</a>
+                        <a href="#!" class="text-reset">New Arrivals</a>
                     </p>
                     <p>
-                        <a href="#!" class="text-reset">products 4</a>
+                        <a href="#!" class="text-reset">Best Sellers</a>
                     </p>
                 </div>
 
