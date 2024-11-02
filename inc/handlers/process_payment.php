@@ -16,13 +16,13 @@ try {
     $stmt->bindParam(':user_id', $userID, PDO::PARAM_INT);
     $stmt->execute();
     $userDetails = $stmt->fetch(PDO::FETCH_ASSOC);
-    
+
     if (!$userDetails) {
         die('User details not found.');
     }
 
     $shippingAddress = $userDetails['address'];  // Get the shipping address from the users table
-    
+
     // Fetch cart items and product prices using a JOIN between cart and product tables
     $cartQuery = "SELECT c.product_id, c.quantity, p.price 
                   FROM cart c 
@@ -54,9 +54,9 @@ try {
     $sql = "INSERT INTO orders (user_id, total_amount, payment_status, created_at, shipping_address, qty, product_id) 
             VALUES (:user_id, :total_amount, :payment_status, NOW(), :shipping_address, :qty, :product_id)";
     $stmt = $conn->prepare($sql);
-    
+
     // Assuming `qty` is the total quantity of items in the cart
-    $qty = array_sum(array_column($cartItems, 'quantity')); 
+    $qty = array_sum(array_column($cartItems, 'quantity'));
 
     // Bind values
     $stmt->bindParam(':user_id', $userID, PDO::PARAM_INT);
@@ -78,9 +78,8 @@ try {
     $stmt->execute();
 
     // Redirect to the order confirmation page
-    header("Location: ../order_done.php?order_id=$orderID");
+    header("Location: ../../../../../zulo/pages/orderSuccess.php?order_id=$orderID");
     exit();
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
 }
-?>
