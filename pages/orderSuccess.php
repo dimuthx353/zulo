@@ -56,6 +56,8 @@ if (isset($_GET['order_id'])) {
         <h1>Success</h1>
         <p>We received your purchase request;<br /> we'll be in touch shortly!</p>
         <p style="margin-top:10px ;">Your Order Id: <b><?php echo $orderId ?></b></p>
+
+        <a style="padding: 5px;margin:30px 0px;display:inline-block; background-color: #4CAF50;color: white;text-decoration: none" href="../../zulo/index.php">Click Here to Return Home</a>
     </div>
 </body>
 
