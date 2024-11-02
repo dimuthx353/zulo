@@ -77,10 +77,10 @@
                     <p><i class="fas fa-home me-3"></i> Kegalle,Sri Lanka</p>
                     <p>
                         <i class="fas fa-envelope me-3"></i>
-                        info@zulo.com
+                        zulofashion@gmail.com
                     </p>
-                    <p><i class="fas fa-phone me-3"></i> + 94713969520</p>
-                    <p><i class="fas fa-print me-3"></i> + 94772442599</p>
+                    <p><i class="fas fa-phone me-3"></i> + 94717323579</p>
+                    <p><i class="fas fa-print me-3"></i> + 94728410781</p>
                 </div>
                 <div class="col-lg-2">
                     <img src="<?php echo $imgPathForFooter ?>koko.webp" alt="" class="mb-2 rounded" style="width: 100%;">
@@ -91,7 +91,7 @@
     </section>
 
     <div class=" text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-        © 2021 Copyright:
+        © 2024 Copyright:
         <a class="text-reset fw-bold" href="">Zulo</a>
     </div>
 </footer>
