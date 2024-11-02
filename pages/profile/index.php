@@ -129,11 +129,6 @@ if (isset($_SESSION["user_id"])) {
                                         <label class="small mb-1" for="inputEmail">Email</label>
                                         <input class="form-control" id="inputEmail" type="email" name="email" value="<?php echo htmlspecialchars($user['email']); ?>" required>
                                     </div>
-                                    <div class="mb-3">
-                                        <label class="small mb-1" for="inputPassword">Password</label>
-                                        <input class="form-control" id="inputPassword" type="password" name="password" placeholder="Enter new password or leave blank" value="">
-                                    </div>
-
                                     <!-- Phone Number and Address -->
                                     <div class="row gx-3 mb-3">
                                         <div class="col-md-6">
