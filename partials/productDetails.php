@@ -65,7 +65,16 @@ if (isset($_SESSION["user_id"])) {
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Product Details - Zulo</title>
+  <title>Zulo - <?php echo $product["product_name"]; ?> </title>
+
+
+  <link rel="icon" type="image/png" href="../assets/img/favicon-48x48.png" sizes="48x48" />
+  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg" />
+  <link rel="shortcut icon" href="../assets/img/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/apple-touch-icon.png" />
+  <link rel="manifest" href="../assets/img/site.webmanifest" />
+
+
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     rel="stylesheet"
