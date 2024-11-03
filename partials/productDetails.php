@@ -1,9 +1,7 @@
 <?php
-
 include "../inc/db.php";
+session_start();
 
-
-$productID = 0;
 
 if (isset($_GET['product_id'])) {
   $productID = $_GET['product_id'];
@@ -24,6 +22,39 @@ $product = $stmt->fetch(PDO::FETCH_ASSOC);
 
 $imgName = $product["image_url"];
 $imgPath = "../assets/img/$imgName";
+
+
+
+
+
+if (isset($_SESSION["user_id"])) {
+  // Assuming you already have the user_id and product_id
+  $user_id = $_SESSION['user_id']; // Example: get from session
+  $product_id = $productID; // Example: get from URL or request
+
+  // SQL Query
+  $sql = "SELECT * FROM wishlist WHERE user_id = :user_id AND product_id = :product_id";
+  $stmt = $conn->prepare($sql);
+
+  // Bind parameters
+  $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+  $stmt->bindParam(':product_id', $product_id, PDO::PARAM_INT);
+
+  // Execute the statement
+  $stmt->execute();
+
+  // Check if the product is in the wishlist
+  if ($stmt->rowCount() > 0) {
+    // Product is in wishlist, show filled heart
+    $heartClass = "bi bi-heart-fill";
+  } else {
+    // Product is not in wishlist, show empty heart
+    $heartClass = "bi bi-heart";
+  }
+} else {
+  $product_id = 0;
+}
+
 
 ?>
 
@@ -53,11 +84,12 @@ $imgPath = "../assets/img/$imgName";
   <link rel="stylesheet" href="../assets/css/reset.min.css">
   <link rel="stylesheet" href="./assets/css/footer.min.css">
   <link rel="stylesheet" href="../assets/css/productDetails.min.css">
+  <link rel="stylesheet" href="../assets/css/nav.min.css">
 </head>
 
 <body class="">
   <?php
-  include "../partials/nav.php";
+  include "../../zulo/partials/nav.php";
   ?>
   <div class="container-fluid bg-white pt-5 pb-5">
     <div class="col-lg-8 col-12 container d-flex flex-wrap p-5  bg-light p-3 mb-5">
@@ -77,9 +109,25 @@ $imgPath = "../assets/img/$imgName";
       <div class="col-md-6 col-12 p-4 mb-5">
         <h2 class="text-primary"><?php echo $product["product_name"] ?></h2>
         <small class="text-muted">Product ID: <?php echo $product["product_id"] ?>
-          <a href="">
-            <i class='bi bi-heart fs-5 text-danger' onclick="cartAdded(event)"></i>
-          </a>
+          </span>
+          <div class='d-flex gap-3 align-items-center'>
+            <i class='bi bi-bag fs-5 text-dark'></i>
+            <?php
+            if ($heartClass == "bi bi-heart") {
+              echo
+              "
+        <button class='btn' > <i class='bi bi-heart fs-5 text-danger' onclick='addToWishlist(event," . $product_id . ")'   data-product_id='" . $productID . "'></i></button>
+        ";
+            } else if ($heartClass == "bi bi-heart-fill") {
+              echo
+              "
+        <button class='btn'> <i class='bi bi-heart-fill fs-5 text-danger' onclick='addToWishlist(event, " . $product_id . ")' data-product_id='" . $productID . "'></i></button>
+      ";
+            }
+            ?>
+
+
+          </div>
         </small>
 
         <h1 class="mt-3 text-danger">Rs <?php echo $product["price"] ?></h1>
@@ -143,6 +191,9 @@ $imgPath = "../assets/img/$imgName";
     crossorigin="anonymous"></script>
 
   <script src="../assets/js/index.js"></script>
+  <script src="../assets/js/search.js"></script>
+  <script src="../assets/js/ajax.js"></script>
+
 </body>
 
 </html>
