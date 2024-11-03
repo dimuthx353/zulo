@@ -38,6 +38,13 @@ if (isset($_SESSION["user_id"])) {
 
 <body>
   <?php
+  $profilePage = "";
+  $cartPage = "../../pages/cart.php";
+  $homePage = "../../index.php";
+  $menPage = "../../pages/men.php";
+  $womenPage = "../../pages/women.php";
+  $logoutPage = "../../inc/handlers/logout_handler.php";
+
   include_once "../../partials/nav.php";
   ?>
 
