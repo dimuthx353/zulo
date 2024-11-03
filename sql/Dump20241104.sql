@@ -33,7 +33,7 @@ CREATE TABLE `cart` (
   KEY `product_id` (`product_id`),
   CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE,
   CONSTRAINT `cart_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +42,7 @@ CREATE TABLE `cart` (
 
 LOCK TABLES `cart` WRITE;
 /*!40000 ALTER TABLE `cart` DISABLE KEYS */;
-INSERT INTO `cart` VALUES (21,2,80,4,'2024-10-18 14:22:32'),(22,2,78,1,'2024-10-18 14:34:35'),(23,2,50,2,'2024-10-18 14:42:12'),(24,2,68,1,'2024-10-18 14:42:19'),(25,2,51,1,'2024-10-18 14:44:20'),(26,2,52,1,'2024-10-18 14:44:21'),(27,2,65,1,'2024-10-20 03:04:40'),(28,2,66,1,'2024-10-23 08:54:57');
+INSERT INTO `cart` VALUES (21,2,80,4,'2024-10-18 14:22:32'),(22,2,78,1,'2024-10-18 14:34:35'),(23,2,50,2,'2024-10-18 14:42:12'),(24,2,68,1,'2024-10-18 14:42:19'),(25,2,51,1,'2024-10-18 14:44:20'),(26,2,52,1,'2024-10-18 14:44:21'),(27,2,65,1,'2024-10-20 03:04:40'),(28,2,66,1,'2024-10-23 08:54:57'),(47,8,80,1,'2024-11-03 10:10:20'),(48,8,78,1,'2024-11-03 10:10:21'),(49,8,76,1,'2024-11-03 10:10:22'),(50,8,68,1,'2024-11-03 10:10:22');
 /*!40000 ALTER TABLE `cart` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -92,7 +92,7 @@ CREATE TABLE `orders` (
   PRIMARY KEY (`order_id`),
   KEY `user_id` (`user_id`),
   CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -101,7 +101,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (1,2,3195.00,'91/3','Cash On Delivery',0,'2024-10-10 16:23:35',1,'80'),(2,2,16380.00,'91/3','Cash On Delivery',0,'2024-10-10 16:36:03',4,'76,67'),(3,6,3195.00,'kegalle','Cash On Delivery',0,'2024-10-12 16:41:38',1,'80');
+INSERT INTO `orders` VALUES (1,2,3195.00,'91/3','Cash On Delivery',0,'2024-10-10 16:23:35',1,'80'),(2,2,16380.00,'91/3','Cash On Delivery',0,'2024-10-10 16:36:03',4,'76,67'),(3,6,3195.00,'kegalle','Cash On Delivery',0,'2024-10-12 16:41:38',1,'80'),(4,8,11850.00,'314,Welimannathota,Kegalle','Cash On Delivery',0,'2024-11-02 06:57:09',3,'80,78,76'),(5,8,6855.00,'314,Welimannathota,Kegalle','Cash On Delivery',0,'2024-11-02 07:02:52',2,'78,80'),(6,8,35445.00,'314,Welimannathota,Kegalle','Cash On Delivery',0,'2024-11-02 08:25:20',12,'67,66,65,78,80,76,68,64');
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -313,7 +313,7 @@ CREATE TABLE `users` (
   `image` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -322,7 +322,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (2,'waruni','laksika','waruni@gmail.com','$2y$10$uhMa6HWvfAumiTfMBVe8DO29p1iOEWviuEJJon0INSA9ONkpcwsS.','0775969520','91/3','990kegalle','71000','Sri Lanka','2024-09-29 08:13:46',1,'western','user','Screenshot 2024-10-10 120020.png'),(3,'thauka','marasinghe','tharuka@gmail.com','$2y$10$uWUOWQ4JXwqO6mJ1hgjGKe0IfnRBb6Su9JYO79KziEif0RCeibIGO','72224252','abc','abc','71000','Sri Lanka','2024-09-29 12:55:29',1,'sabaragamuwa','user',NULL),(5,'kaveesa','sandeepani','sandeepani@gamil.com','$2y$10$6PbchRa4dHXPgwuyF3L42Odb24fhJZjtFGv/k52jCmnKkWyqZNz.y','7724425299','313','kegalle','72000','Sri Lanka','2024-10-06 11:48:43',1,'keha','user',NULL),(6,'user','one','user@gmail.com','$2y$10$oU.Dy0jtUJiFD77y1smEIuUBbWjYuiNQwbrJOAcP8ZDwXx7EbOXzq','0777123456','kegalle','kegalle','71000','Sri Lanka','2024-10-11 15:08:17',0,'sabaragamuwa','user','user.png'),(7,'Dimuth','Adithya','dimuth@gmail.com','$2y$10$9JsjHztwk/4zuPEGQTdBneEE9CqmMqE4fC11FHw.W5Vj44RHvyY9O','0740069520','314,Welimannathota,Kegalle','Kegalle','71000','Sri Lanka','2024-11-01 15:18:52',1,'Sabaragamuwa','admin',NULL);
+INSERT INTO `users` VALUES (2,'waruni','laksika','waruni@gmail.com','$2y$10$uhMa6HWvfAumiTfMBVe8DO29p1iOEWviuEJJon0INSA9ONkpcwsS.','0775969520','91/3','990kegalle','71000','Sri Lanka','2024-09-29 08:13:46',1,'western','user','Screenshot 2024-10-10 120020.png'),(3,'thauka','marasinghe','tharuka@gmail.com','$2y$10$uWUOWQ4JXwqO6mJ1hgjGKe0IfnRBb6Su9JYO79KziEif0RCeibIGO','72224252','abc','abc','71000','Sri Lanka','2024-09-29 12:55:29',1,'sabaragamuwa','user',NULL),(5,'kaveesa','sandeepani','sandeepani@gamil.com','$2y$10$6PbchRa4dHXPgwuyF3L42Odb24fhJZjtFGv/k52jCmnKkWyqZNz.y','7724425299','313','kegalle','72000','Sri Lanka','2024-10-06 11:48:43',1,'keha','user',NULL),(6,'user','one','user@gmail.com','$2y$10$oU.Dy0jtUJiFD77y1smEIuUBbWjYuiNQwbrJOAcP8ZDwXx7EbOXzq','0777123456','kegalle','kegalle','71000','Sri Lanka','2024-10-11 15:08:17',0,'sabaragamuwa','user','user.png'),(8,'Dimuth','Adithya','dimuth@gmail.com','$2y$10$rSp/chxMSlXO68gnhnF.bO8Bbpz72ZjGzOz01xcGRrBxemiuoeJSu','0740069520','314,Welimannathota,Kegalle','Kegalle','71000','Sri Lanka','2024-11-01 16:20:08',1,'Sabaragamuwa','admin','Screenshot 2024-11-01 205838.png');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -343,7 +343,7 @@ CREATE TABLE `wishlist` (
   KEY `product_id` (`product_id`),
   CONSTRAINT `wishlist_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),
   CONSTRAINT `wishlist_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=140 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=174 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -352,7 +352,7 @@ CREATE TABLE `wishlist` (
 
 LOCK TABLES `wishlist` WRITE;
 /*!40000 ALTER TABLE `wishlist` DISABLE KEYS */;
-INSERT INTO `wishlist` VALUES (133,2,50,'2024-10-20 10:04:57'),(134,2,80,'2024-10-23 14:24:47'),(135,2,78,'2024-10-23 14:24:49'),(136,2,76,'2024-10-23 14:24:51'),(138,2,66,'2024-10-23 14:24:56');
+INSERT INTO `wishlist` VALUES (133,2,50,'2024-10-20 10:04:57'),(134,2,80,'2024-10-23 14:24:47'),(135,2,78,'2024-10-23 14:24:49'),(136,2,76,'2024-10-23 14:24:51'),(138,2,66,'2024-10-23 14:24:56'),(170,8,44,'2024-11-03 15:50:14'),(171,8,39,'2024-11-03 15:50:15'),(172,8,50,'2024-11-03 16:09:03'),(173,8,65,'2024-11-03 16:36:32');
 /*!40000 ALTER TABLE `wishlist` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -365,4 +365,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-11-01 20:52:43
+-- Dump completed on 2024-11-04  2:57:01
