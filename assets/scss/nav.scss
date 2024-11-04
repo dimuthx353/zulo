@@ -2,6 +2,12 @@
 @import '../../node_modules/bootstrap/scss/functions';
 @import '../../node_modules/bootstrap/scss/variables';
 
+.p-image {
+  width: 35px;
+  border-radius: 50%;
+  position: relative;
+}
+
 nav {
   .activeSearch {
     transition: background-color 0.5s ease-in;
@@ -27,6 +33,36 @@ nav {
 
   ul {
     li {
+      #search-bar {
+        position: relative;
+      }
+
+      .search-result {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        top: 50px;
+        z-index: 1;
+
+        > a {
+          margin: 20px 0px;
+          padding: 10px;
+          display: flex;
+          width: 100%;
+          align-items: center;
+
+          > img {
+            display: block;
+            width: 30px !important;
+            width: 30px !important;
+            background-position: center top;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 0px 20px;
+          }
+        }
+      }
+
       margin: 0px 30px;
 
       .nav-link {

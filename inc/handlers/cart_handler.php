@@ -89,6 +89,6 @@ if ($user && isset($product_id)) {
         }
     }
 } else {
-    header('Location: ../../../../../zulo/cart.php?error=unauthorized');
+    header('Location: ../../../../../zulo/pages/login.php');
     exit();
 }

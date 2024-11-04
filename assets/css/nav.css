@@ -1,3 +1,9 @@
+.p-image {
+  width: 35px;
+  border-radius: 50%;
+  position: relative;
+}
+
 nav .activeSearch {
   transition: background-color 0.5s ease-in;
 }
@@ -18,6 +24,32 @@ nav .search-bar.activeSearch {
 }
 nav ul li {
   margin: 0px 30px;
+}
+nav ul li #search-bar {
+  position: relative;
+}
+nav ul li .search-result {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 50px;
+  z-index: 1;
+}
+nav ul li .search-result > a {
+  margin: 20px 0px;
+  padding: 10px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+nav ul li .search-result > a > img {
+  display: block;
+  width: 30px !important;
+  width: 30px !important;
+  background-position: center top;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0px 20px;
 }
 nav ul li .nav-link {
   position: relative;

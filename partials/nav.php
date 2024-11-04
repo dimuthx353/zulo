@@ -1,17 +1,34 @@
 <?php
 
+
 $login = false;
 $email = '';
 
 if (isset($_SESSION["email"])) {
     $email = $_SESSION["email"];
     $userID = $_SESSION["user_id"];
-
     $login = true;
+
+    // Assuming you already have a database connection as $conn
+    $stmt = $conn->prepare("SELECT image FROM users WHERE user_id = :userID");
+    $stmt->bindParam(':userID', $userID);
+    $stmt->execute();
+
+    // Fetch the user's profile image
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    if ($result && !empty($result['image'])) {
+        $profileImage = $result['image'];
+    } else {
+        // Default image if no profile image is set
+        $profileImage = 'default.jpg';
+    }
 }
+
+
+
 ?>
 
-<div class="bg-secondary text-white d-flex justify-content-center align-content-center">
+<div class="bg-secondary text-white d-flex justify-content-center align-content-center ">
     <div class="container">
         <div id="carouselContent" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner" role="listbox">
@@ -30,7 +47,7 @@ if (isset($_SESSION["email"])) {
     </div>
 </div>
 
-<div class="container-fluid p-0 navigation">
+<div class="container-fluid p-0 navigation ">
     <nav class="navbar navbar-expand-lg bg-body-light shadow p-0 sticky-top navbar-inverse">
         <div class="container-fluid p-0 d-flex">
             <div class="col-3 row">
@@ -46,17 +63,26 @@ if (isset($_SESSION["email"])) {
                                         <i class="bi bi-search"></i>
                                     </button>
                                 </div>
-                                <input type="search" class="p-2 text-black search-bar bg-light" id="search-bar" placeholder="Search..." />
+                                <input type="search" class="p-2 text-black search-bar bg-light" id="search-bar" name="searchQuery" placeholder="Search..." />
+                                <p class="search-result"></p>
                             </li>
+
                         </ul>
                     </div>
                 </div>
             </div>
-
-            <div class="col-6 d-flex align-items-center">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 h6 justify-content-end flex-grow-1">
+            <div class="col-6 d-flex align-items-center ">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 h6 justify-content-end flex-grow-1 ">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../../zulo/index.php">Home</a>
+                        <?php
+                        $homePage = isset($homePage) ? $homePage : '../../../zulo/';
+                        $menPage = isset($menPage) ? $menPage : '../../../zulo/pages/men.php';
+                        $womenPage = isset($womenPage) ? $womenPage : '../../../zulo/pages/women.php';
+                        $logoutPage = isset($logoutPage) ? $logoutPage : '../../../zulo/inc/handlers/logout_handler.php';
+                        $cartPage = isset($cartPage) ? $cartPage : '../../zulo/pages/cart.php';
+
+                        ?>
+                        <a class="nav-link active" aria-current="page" href="<?php echo $homePage ?>">Home</a>
                     </li>
                     <li class="nav-item">
                         <div class="dropdown">
@@ -64,8 +90,8 @@ if (isset($_SESSION["email"])) {
                                 Category
                             </button>
                             <ul class="dropdown-menu bg-transparent" aria-labelledby="dropdownMenuButton2">
-                                <li><a class="dropdown-item" href="../../zulo/pages/men.php">Men</a></li>
-                                <li><a class="dropdown-item" href="../../zulo/pages/women.php">Women</a></li>
+                                <li><a class="dropdown-item" href="<?php echo $menPage ?>">Men</a></li>
+                                <li><a class="dropdown-item" href="<?php echo $womenPage ?>">Women</a></li>
                                 <li>
                                     <hr class="dropdown-divider" />
                                 </li>
@@ -73,12 +99,10 @@ if (isset($_SESSION["email"])) {
                         </div>
                     </li>
                 </ul>
-
-                <a class="navbar-brand w-100" href="#">
+                <a class="text-decoration-none" href="#">
                     <span class="display-5 z-text">&nbsp;Z</span><span class="ulo-text h3">ulo</span>
                 </a>
-
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-start h6 flex-grow-1">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-start h6  flex-grow-1">
                     <li class="nav-item">
                         <a class="nav-link" href="#">Gift</a>
                     </li>
@@ -87,8 +111,7 @@ if (isset($_SESSION["email"])) {
                     </li>
                 </ul>
             </div>
-
-            <div class="col-3 d-flex justify-content-end align-items-center pe-4">
+            <div class="col-3 d-flex justify-content-end align-items-center pe-4 ">
                 <div class="d-flex justify-content-end gap-2 ms-2 control-center">
                     <div onclick="activeDarkMode()">
                         <button class="btn btn-outline-dark" id="switch-mode">
@@ -98,7 +121,7 @@ if (isset($_SESSION["email"])) {
                     </div>
 
                     <div>
-                        <a href="../../zulo/pages/cart.php">
+                        <a href="<?php echo $cartPage ?>">
                             <button class="btn btn-outline-dark cart-btn" data-toggle="tooltip" data-placement="top" title="cart">
                                 <i class="bi bi-bag-fill"></i>
                                 <span class="cart-items">
@@ -119,23 +142,28 @@ if (isset($_SESSION["email"])) {
                             </button>
                         </a>
                     </div>
-
                     <div>
                         <?php
                         if ($login) {
-                            echo '<a href="../../zulo/pages/profile/">
-                                    <button class="btn btn-primary text-white" data-toggle="tooltip" data-placement="top" title="profile">
-                                        <i class="bi bi-person-circle"></i>
-                                    </button>
-                                  </a>';
+                            $profilePage = isset($profilePage) ? $profilePage : '../pages/profile/';
+                            $imgFolder = isset($imgFolder) ? $imgFolder : '../../../zulo/assets/img/userProfile/';
+
+
+                        ?>
+                            <a href="<?php echo  $profilePage ?>">
+                                <button class="btn btn-outline-white p-0" data-toggle="tooltip" data-placement="top" title="profile">
+                                    <img src="<?php echo $imgFolder . $profileImage ?>" alt="" class="p-image">
+                                </button>
+                            </a>
+                        <?php
                         } else {
-                            $loginPage = isset($loginPage) ? $loginPage : '../pages/login.php';
-                            echo '<a href="' . $loginPage . '">
-                                    <button class="btn btn-outline-dark" data-toggle="tooltip" data-placement="top" title="profile">
-                                        <i class="bi bi-person-circle"></i>
-                                    </button>
-                                  </a>';
-                        }
+                            $loginPage = isset($loginPage) ? $loginPage : '../pages/login.php'; ?>
+                            <a href="<?php echo $loginPage ?>">
+                                <button class="btn btn-outline-dark" data-toggle="tooltip" data-placement="top" title="profile">
+                                    <i class="bi bi-person-circle"></i>
+                                </button>
+                            </a>
+                        <?php  }
                         ?>
                     </div>
                 </div>
@@ -147,7 +175,7 @@ if (isset($_SESSION["email"])) {
 <?php if ($login): ?>
     <div class="bg-white p-2 d-flex justify-content-end align-items-center">
         <span><?= htmlspecialchars($email, ENT_QUOTES, 'UTF-8'); ?></span>
-        <a href="../../zulo/inc/handlers/logout_handler.php" class="ms-4">
+        <a href="<?php echo $logoutPage ?>" class="ms-4">
             <button class="btn btn-danger text-white" data-toggle="tooltip" data-placement="top" title="Log Out">
                 Log Out
             </button>

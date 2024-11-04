@@ -1,12 +1,9 @@
-RewriteEngine On
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^([^\.]+)$ $1.php [NC,L]
 
-# Only apply the rule if the requested resource is not a directory
-RewriteCond %{SCRIPT_FILENAME} !-d
+  ErrorDocument 404 http://localhost/zulo/pages/404.php
 
-# Rewrite URLs that don't have a file extension by appending .php
-RewriteRule ^([^.]+)$ $1.php [NC,L]
-
-Options -Indexes
-#ErrorDocument 404 /pages/404.php
-
-
+</IfModule>

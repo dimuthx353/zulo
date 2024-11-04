@@ -7,7 +7,7 @@ if (isset($_SESSION["user_id"])) {
     $userID = $_SESSION["user_id"];
 
     // Fetch the user details based on the user_id from the database
-    $sql = "SELECT first_name, last_name, email, password, phone_number, address, city, postal_code, country, created_at, province, account_status 
+    $sql = "SELECT first_name, last_name, email, password, phone_number, address, city, postal_code, country, created_at, province, account_status ,image ,roll
             FROM users WHERE user_id = :userID";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(":userID", $userID);
@@ -55,11 +55,18 @@ if (isset($_SESSION["user_id"])) {
 
 <body>
     <?php
+
+    $profilePage = "";
+    $cartPage = "../../pages/cart.php";
+
+
+
     include_once "../../partials/nav.php";
     ?>
 
+
     <div class="container-xl px-4 mt-4">
-        <h1 class="mb-4">Account Details</h1>
+        <h1 class="mb-4">My Account</h1>
         <div class="row">
             <div class="container-xl px-4 mt-4">
                 <!-- Account page navigation-->
@@ -68,6 +75,11 @@ if (isset($_SESSION["user_id"])) {
                     <a class="nav-link" href="./order_history.php" target="__blank">Order History</a>
                     <a class="nav-link" href="./wishlist.php" target="__blank">Wishlist</a>
                     <a class="nav-link" href="./security.php" target="__blank">Security</a>
+                    <?php
+                    if ($user["roll"] == "admin") { ?>
+                        <a class="nav-link" href="../admin/" target="__blank">Dashboard</a>
+                    <?php }
+                    ?>
                 </nav>
                 <hr class="mt-0 mb-4">
                 <div class="row">
@@ -77,11 +89,20 @@ if (isset($_SESSION["user_id"])) {
                             <div class="card-header">Profile Picture</div>
                             <div class="card-body text-center">
                                 <!-- Profile picture image-->
-                                <img class="img-account-profile rounded-circle mb-2" src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                                <?php
+                                $imageName = htmlspecialchars($user['image']);
+                                $imagePath = "../../assets/img/userProfile/" . $imageName;
+                                ?>
+                                <img class="img-account-profile rounded-circle mb-2" src="<?php echo $imagePath  ?>" alt="">
                                 <!-- Profile picture help block-->
                                 <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
                                 <!-- Profile picture upload button-->
-                                <button class="btn btn-primary" type="button">Upload new image</button>
+                                <div class="mb-3">
+                                    <form action="../../inc/handlers/profilePic_handler.php" method="post" enctype="multipart/form-data" class="d-flex">
+                                        <input type="file" class="form-control flex-1" id="uploadImg" name="uploadImg" required>
+                                        <input type="submit" class="py-2 px-1 h6 border btn btn-outline-primary" name="uploadImg">
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -106,13 +127,8 @@ if (isset($_SESSION["user_id"])) {
                                     <!-- Email and Password -->
                                     <div class="mb-3">
                                         <label class="small mb-1" for="inputEmail">Email</label>
-                                        <input class="form-control" id="inputEmail" type="email" name="email" value="<?php echo htmlspecialchars($user['email']); ?>" required>
+                                        <input class="form-control" id="inputEmail" type="email" name="email" disabled value="<?php echo htmlspecialchars($user['email']); ?>" required>
                                     </div>
-                                    <div class="mb-3">
-                                        <label class="small mb-1" for="inputPassword">Password</label>
-                                        <input class="form-control" id="inputPassword" type="password" name="password" placeholder="Enter new password or leave blank" value="">
-                                    </div>
-
                                     <!-- Phone Number and Address -->
                                     <div class="row gx-3 mb-3">
                                         <div class="col-md-6">

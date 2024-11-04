@@ -8,6 +8,12 @@ $userID = null;
 
 $cart = $_GET['cart'];
 
+$page = null;
+
+if (isset($_GET["page"])) {
+    $page = $_GET["page"];
+}
+
 // Check if the session contains an email
 if (isset($_SESSION["email"])) {
     $user = true;
@@ -30,6 +36,9 @@ if (isset($_SESSION["email"])) {
         echo "No user found with this email.";
         $user = false;
     }
+} else {
+    header('Location: ../../../../../zulo/pages/login.php');
+    exit();
 }
 
 if (isset($_GET['product_id'])) {
@@ -40,9 +49,6 @@ if (isset($_GET['product_id'])) {
 
 // If user is authenticated and product_id is set, proceed
 if ($user && isset($product_id)) {
-
-
-
     if ($cart == "true") {
         // Prepare the insert statement using PDO
         $sql = "INSERT INTO wishlist (user_id, product_id) VALUES (:user_id, :product_id)";
@@ -79,7 +85,11 @@ if ($user && isset($product_id)) {
 
         // Execute the statement
         if ($stmt->execute()) {
-            header('Location: ../../../../../zulo/?removed');
+            if ($page) {
+                header('Location: ../../../../../zulo//pages/profile/wishlist.php?removed');
+            } else {
+                header('Location: ../../../../../zulo/?removed');
+            }
         } else {
             header('Location: google.lk?error');
         }

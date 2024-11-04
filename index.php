@@ -38,7 +38,12 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- Title  -->
   <title>Zulo - Your Style, Your Way</title>
-  <link rel="icon" type="image/x-icon" href="./assets/img/logo.png">
+
+  <link rel="icon" type="image/png" href="./assets/img/favicon-48x48.png" sizes="48x48" />
+  <link rel="icon" type="image/svg+xml" href="./assets/img/favicon.svg" />
+  <link rel="shortcut icon" href="./assets/img/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/apple-touch-icon.png" />
+  <link rel="manifest" href="./assets/img/site.webmanifest" />
 
 
   <!-- Bootstrap CDN  -->
@@ -69,6 +74,13 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
     <header>
       <?php
       $loginPage = "./pages/login.php";
+      $imgFolder = "../../zulo/assets/img/userProfile/";
+      $profilePage = "../zulo/pages/profile/";
+      $homePage = "../zulo/";
+      $menPage = "../zulo/pages/men.php";
+      $womenPage = "../zulo/pages/women.php";
+      $logoutPage = "../zulo/inc/handlers/logout_handler.php";
+
       include_once "./partials/nav.php"
       ?>
     </header>
@@ -98,8 +110,12 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
         </p>
         <p class="slogan text-muted">Unleashing Style, Redefining Fashion</p>
         <div class="w-75 d-flex justify-content-around mt-5 p-3">
-          <button class="btn btn-outline-dark">shop men</button>
-          <button class="btn btn-outline-dark ">shop women</button>
+          <button class="btn btn-outline-dark">
+            <a href="./pages/men.php" class="text-decoration-none">shop men</a>
+          </button>
+          <button class=" btn btn-outline-dark ">
+            <a href=" ./pages/women.php" class="text-decoration-none">shop women</a>
+          </button>
         </div>
       </div>
 
@@ -587,6 +603,15 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
 
   <!-- External JS  -->
   <script src="./assets/js/index.js"></script>
+
+  <!-- Ajax For Handling Wishlist  -->
+
+
+
+  <script src="./assets/js/ajax.js"></script>
+
+
+  <script src="../zulo/assets/js/search.js"></script>
 </body>
 
 </html>

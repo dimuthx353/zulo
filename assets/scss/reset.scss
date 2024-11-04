@@ -17,6 +17,10 @@ body {
   overflow-x: hidden;
 }
 
+a {
+  text-decoration: none !important;
+}
+
 input {
   border: 0 !important;
   outline: 0 !important;
