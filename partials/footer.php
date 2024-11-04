@@ -59,10 +59,10 @@
                         Useful links
                     </h6>
                     <p>
-                        <a href="#!" class="text-reset">Pricing</a>
+                        <a href="#!" class="text-reset">Location</a>
                     </p>
                     <p>
-                        <a href="#!" class="text-reset">Settings</a>
+                        <a href="#!" class="text-reset">Email</a>
                     </p>
                     <p>
                         <a href="#!" class="text-reset">Orders</a>
@@ -80,7 +80,7 @@
                         info@zulo.com
                     </p>
                     <p><i class="fas fa-phone me-3"></i> + 94713969520</p>
-                    <p><i class="fas fa-print me-3"></i> + 94772442599</p>
+                    <p><i class="fas fa-print me-3"></i> + 94772445428</p>
                 </div>
                 <div class="col-lg-2">
                     <img src="<?php echo $imgPathForFooter ?>koko.webp" alt="" class="mb-2 rounded" style="width: 100%;">
