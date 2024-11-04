@@ -52,7 +52,6 @@
                         <div class="text-end mb-3">
                             <a href="#" class="text-light">Forgot Password?</a>
                         </div>
-
                         <button type="submit" name="submit" class="rounded-5 btn btn-primary">Login</button>
                     </form>
                 </div>
