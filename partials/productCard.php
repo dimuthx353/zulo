@@ -28,6 +28,8 @@ if (isset($_SESSION["user_id"])) {
         // Product is not in wishlist, show empty heart
         $heartClass = "bi bi-heart";
     }
+} else {
+    $product_id = 0;
 }
 ?>
 
@@ -60,12 +62,12 @@ if (isset($_SESSION["user_id"])) {
                 if ($heartClass == "bi bi-heart") {
                     echo
                     "
-        <button class='btn' > <i class='bi bi-heart fs-5 text-danger' onclick='addToWishlist(event)'   data-product_id='" . $productId . "'></i></button>
+        <button class='btn' > <i class='bi bi-heart fs-5 text-danger' onclick='addToWishlist(event," . $product_id . ")'   data-product_id='" . $productId . "'></i></button>
         ";
                 } else if ($heartClass == "bi bi-heart-fill") {
                     echo
                     "
-        <button class='btn'> <i class='bi bi-heart-fill fs-5 text-danger' onclick='addToWishlist(event)' data-product_id='" . $productId . "'></i></button>
+        <button class='btn'> <i class='bi bi-heart-fill fs-5 text-danger' onclick='addToWishlist(event, " . $product_id . ")' data-product_id='" . $productId . "'></i></button>
       ";
                 }
                 ?>
@@ -75,9 +77,7 @@ if (isset($_SESSION["user_id"])) {
         </div>
         <!-- Buy Now Buttons -->
         <div class='d-flex justify-content-center gap-2'>
-            <!-- <a href="../../zulo/inc/handlers/cart_handler.php?product_id=<?php echo $productId ?>"> -->
-            <button class='btn btn-outline-danger' onclick="addToCart(<?php echo $product_id ?> )">Add to Cart</button>
-            <!-- </a> -->
+            <button class='btn btn-outline-danger' onclick="addToCart(<?php echo $product_id ?>)">Add to Cart</button>
             <button class='btn btn-danger text-white'>Buy Now</button>
         </div>
     </div>

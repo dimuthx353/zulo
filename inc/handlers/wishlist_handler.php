@@ -86,7 +86,7 @@ if ($user && isset($product_id)) {
         // Execute the statement
         if ($stmt->execute()) {
             if ($page) {
-                header('Location: ../../../../../zulo/pages/profile/wishlist?removed');
+                header('Location: ../../../../../zulo//pages/profile/wishlist.php?removed');
             } else {
                 header('Location: ../../../../../zulo/?removed');
             }
