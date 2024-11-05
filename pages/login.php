@@ -82,6 +82,37 @@
                         <div class="mb-2">
                             <input type="text" required name="phoneNum" placeholder="Phone Number" class="rounded-5 form-control">
                         </div>
+
+                        <!-- Address Fields -->
+                        <div class="mb-2">
+                            <input type="text" required name="streetAddress" placeholder="Street Address" class="rounded-5 form-control">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 mb-2">
+                                <input type="text" required name="city" placeholder="City" class="rounded-5 form-control">
+                            </div>
+                            <div class="col-md-4 mb-2">
+                                <input type="text" required name="province" placeholder="Province" class="rounded-5 form-control">
+                            </div>
+                            <div class="col-md-4 mb-2">
+                                <input type="text" required name="zipCode" placeholder="Zip Code" class="rounded-5 form-control">
+                            </div>
+                        </div>
+
+                        <button type="submit" name="submit" class="rounded-5 btn btn-primary">Register</button>
+                    </form>
+                    <div class="text-center mt-1">
+                        <p>Already have an account? <a href="#" class="text-light">Login</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap CDN  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
     
 </body>
 </html>
