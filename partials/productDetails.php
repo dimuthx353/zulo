@@ -2,6 +2,8 @@
 include "../inc/db.php";
 session_start();
 
+$heartClass = "bi bi-heart";
+
 
 if (isset($_GET['product_id'])) {
   $productID = $_GET['product_id'];
