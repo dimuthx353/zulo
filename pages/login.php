@@ -37,6 +37,26 @@
             </li>
         </ul>
     </div>
+    <div class="container container-form rounded-3 col-4 d-flex justify-content-center align-items-center flex-column">
+     <div class="tab-content">
+        <!-- Login Form -->
+        <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
+                <div class="text-white login rounded-2">
+                    <form class="h-75 d-flex flex-column justify-content-around" >
+                        <div class="mb-3">
+                            <input type="email" name="email" placeholder="Email" class="rounded-5 form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" name="password" placeholder="Password" class="rounded-5 form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="text-end mb-3">
+                            <a href="#" class="text-light">Forgot Password?</a>
+                        </div>
+
+                        <button type="submit" name="submit" class="rounded-5 btn btn-primary">Login</button>
+                    </form>
+                </div>
+            </div>
     
 </body>
 </html>
