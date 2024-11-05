@@ -156,7 +156,7 @@ if (isset($_SESSION["user_id"])) {
 
         <p>
           <button class='btn btn-outline-danger' onclick="addToCart(<?php echo $product_id ?>)">Add to Cart</button>
-          <button class="btn btn-danger">Buy Now</button>
+          <button class="btn btn-danger" onclick="buyNow(event,<?php echo $product_id ?>)">Buy Now</button>
         </p>
       </div>
       <div>
