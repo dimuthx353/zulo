@@ -57,6 +57,31 @@
                     </form>
                 </div>
             </div>
+
+            <!-- Register Form -->
+            <div class="tab-pane fade p-0" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
+                <div class="text-white login rounded-2  h-100 d-flex justify-content-center flex-column">
+                    <form class="d-flex flex-column justify-content-around ">
+                        <div class="row">
+                            <div class="col-md-6 mb-2">
+                                <input type="text" required name="fname" placeholder="First Name" class="rounded-5 form-control">
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <input type="text" required name="lname" placeholder="Last Name" class="rounded-5 form-control">
+                            </div>
+                        </div>
+
+                        <div class="mb-2">
+                            <input type="email" required name="email" placeholder="Email" class="rounded-5 form-control">
+                        </div>
+
+                        <div class="mb-2">
+                            <input type="password" required name="password" placeholder="Password" class="rounded-5 form-control">
+                        </div>
+
+                        <div class="mb-2">
+                            <input type="text" required name="phoneNum" placeholder="Phone Number" class="rounded-5 form-control">
+                        </div>
     
 </body>
 </html>
