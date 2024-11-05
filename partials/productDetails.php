@@ -142,7 +142,7 @@ if (isset($_SESSION["user_id"])) {
         </small>
 
         <h1 class="mt-3 text-danger">Rs <?php echo $product["price"] ?></h1>
-        <small class="text-muted">or 3 installments of $16.66</small>
+        <small class="text-muted">or 3 installments of <?php echo $product["price"] / 3, ".00 LKR" ?></small>
 
         <p class="mt-4 fw-bold">Style: Casual</p>
         <p class="fw-bold">Size:</p>
