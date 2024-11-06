@@ -15,6 +15,9 @@ if (isset($_POST['submit'])) {
     $province = trim($_POST['province']);
     $zipCode = trim($_POST['zipCode']);
 
+    // check , is input -> empty ? invalid ? exists ? 
+    $emptyInput = emptyInputSignup($fName, $lName, $email, $pwd, $phoneNum, $streetAddress, $city, $province, $zipCode);
+
 
 
 }
