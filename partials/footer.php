@@ -41,16 +41,16 @@
                         Products
                     </h6>
                     <p>
-                        <a href="#!" class="text-reset">products 1</a>
+                        <a href="#!" class="text-reset">Home</a>
                     </p>
                     <p>
-                        <a href="#!" class="text-reset">products 2</a>
+                        <a href="#!" class="text-reset">Category</a>
                     </p>
                     <p>
-                        <a href="#!" class="text-reset">products 3</a>
+                        <a href="#!" class="text-reset">Gift</a>
                     </p>
                     <p>
-                        <a href="#!" class="text-reset">products 4</a>
+                        <a href="#!" class="text-reset">Sale</a>
                     </p>
                 </div>
 
