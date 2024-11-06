@@ -8,10 +8,10 @@ if (isset($_POST['submit'])) {
     $fName = trim($_POST['fname']);
     $lName = trim($_POST['lname']);
     $email = trim($_POST['email']);
-    $pwd = trim($_POST['password'])
+    $pwd = trim($_POST['password']);
     $phoneNum = trim($_POST['phoneNum']);
     $streetAddress = trim($_POST['streetAddress']);
-    $city = trim($_POST['city'])
+    $city = trim($_POST['city']);
     $province = trim($_POST['province']);
     $zipCode = trim($_POST['zipCode']);
 
