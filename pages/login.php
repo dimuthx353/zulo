@@ -42,7 +42,7 @@
         <!-- Login Form -->
         <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
                 <div class="text-white login rounded-2">
-                    <form class="h-75 d-flex flex-column justify-content-around" >
+                    <form class="h-75 d-flex flex-column justify-content-around" action="../inc/handlers/login_handler.php" method="post" >
                         <div class="mb-3">
                             <input type="email" name="email" placeholder="Email" class="rounded-5 form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                         </div>
