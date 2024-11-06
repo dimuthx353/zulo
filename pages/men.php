@@ -1,4 +1,16 @@
-<!doctype html>
+v <?php
+    session_start();
+    include_once "../inc/db.php";
+
+    $sql = "SELECT product_id,product_name, description, price, stock_quantity, image_url, sku FROM products WHERE category_id = 1";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+
+    $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+    ?>
+ <!doctype html>
    <html lang="en">
 
    <head>
@@ -76,3 +88,20 @@
     </div>
     <div class="col-9 d-flex flex-wrap gap-4 border-red" id="men">
         <h1 class="text-center w-100">Men</h1>
+
+        <?php
+                foreach ($products as $product) {
+
+                    $productPrice = $product["price"];
+                    $imgName = $product["image_url"];
+                    $productTitle = $product["product_name"];
+                    $imgPathOrg = "../assets/img/$imgName";
+                    $imgPathLow = "../assets/img/low-quality/$imgName";
+                    $productId = $product["product_id"];
+
+                    include "../partials/productCard.php";
+                }
+                ?>
+           </div>
+       </div>
+       </div>
