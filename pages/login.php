@@ -61,7 +61,7 @@
             <!-- Register Form -->
             <div class="tab-pane fade p-0" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
                 <div class="text-white login rounded-2  h-100 d-flex justify-content-center flex-column">
-                    <form class="d-flex flex-column justify-content-around ">
+                    <form class="d-flex flex-column justify-content-around " action="../inc/handlers/register_handler.php" method="post">
                         <div class="row">
                             <div class="col-md-6 mb-2">
                                 <input type="text" required name="fname" placeholder="First Name" class="rounded-5 form-control">
