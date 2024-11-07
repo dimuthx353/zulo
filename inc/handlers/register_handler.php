@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
 
     // check , is input -> empty ? invalid ? exists ? 
     $emptyInput = emptyInputSignup($fName, $lName, $email, $pwd, $phoneNum, $streetAddress, $city, $province, $zipCode);
-
+    $invalidEmail = invalidEmail($email);
 
 
 }
