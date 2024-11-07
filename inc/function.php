@@ -32,3 +32,19 @@ function invalidEmail($email)
 
     return $IsInvalid;
 }
+
+function emailExists($conn, $email)
+{
+    $sql = "SELECT * FROM users WHERE email = :email;";
+
+    $stmt = $conn->prepare($sql);
+    stmtFailed($stmt);
+    $stmt->bindParam(':email', $email);
+    $stmt->execute()
+
+    if ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        return true;
+    } else {
+        return false;
+    }
+}
