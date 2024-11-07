@@ -127,7 +127,7 @@ if (isset($_SESSION["user_id"])) {
                                     <!-- Email and Password -->
                                     <div class="mb-3">
                                         <label class="small mb-1" for="inputEmail">Email</label>
-                                        <input class="form-control" id="inputEmail" type="email" name="email" value="<?php echo htmlspecialchars($user['email']); ?>" required>
+                                        <input class="form-control" id="inputEmail" type="email" name="email" disabled value="<?php echo htmlspecialchars($user['email']); ?>" required>
                                     </div>
                                     <!-- Phone Number and Address -->
                                     <div class="row gx-3 mb-3">
