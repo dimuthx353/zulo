@@ -19,3 +19,16 @@ function emptyInputSignup($fName, $lName, $email, $pwd, $phoneNum, $streetAddres
 
     return $isEmpty;
 }
+
+function invalidEmail($email)
+{
+    $IsInvalid = null;
+
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $IsInvalid = true;
+    } else {
+        $IsInvalid = false;
+    }
+
+    return $IsInvalid;
+}
