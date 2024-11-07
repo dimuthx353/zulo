@@ -48,3 +48,34 @@ function emailExists($conn, $email)
         return false;
     }
 }
+
+function createUser($conn, $fName, $lName, $email, $pwd, $phoneNum, $streetAddress, $city, $province, $zipCode)
+{
+
+    $sql = "INSERT INTO users (first_name, last_name, email, password, phone_number, address, city, postal_code, province) 
+            VALUES (:fName, :lName, :email, :pwd, :phoneNum, :streetAddress, :city, :zipCode, :province);";
+
+    $stmt = $conn->prepare($sql);
+    stmtFailed($stmt);
+
+    // password hash 
+    $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
+
+
+    $stmt->bindParam(':fName', $fName);
+    $stmt->bindParam(':lName', $lName);
+    $stmt->bindParam(':email', $email);
+    $stmt->bindParam(':pwd', $hashedPwd);
+    $stmt->bindParam(':phoneNum', $phoneNum);
+    $stmt->bindParam(':streetAddress', $streetAddress);
+    $stmt->bindParam(':city', $city);
+    $stmt->bindParam(':zipCode', $zipCode);
+    $stmt->bindParam(':province', $province);
+
+
+    if ($stmt->execute()) {
+        header('Location:../../../../zulo/');
+    }
+
+    exit();
+}
