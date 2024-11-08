@@ -37,6 +37,7 @@ if (isset($_GET["product_id"])) {
 
 <body class="">
 
+
     <div class="container d-flex ">
         <?php
 
@@ -123,7 +124,7 @@ if (isset($_GET["product_id"])) {
                         <div>
                             <div>
                     </form>
-                    <form action="../inc/handlers/process_payment.php" method="POST">
+                    <form action="../inc/handlers/buyNow_handler.php?productID=<?php echo $productID ?>" method="POST">
                         <h3 class="mb-5 pt-2 text-center fw-bold text-uppercase">Payment Method</h3>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="paymentMethod" id="cashOnDelivery" value="Cash On Delivery" required checked>
