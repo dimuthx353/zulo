@@ -2,6 +2,8 @@
 include "../inc/db.php";
 session_start();
 
+$heartClass = "bi bi-heart";
+
 
 if (isset($_GET['product_id'])) {
   $productID = $_GET['product_id'];
@@ -140,7 +142,7 @@ if (isset($_SESSION["user_id"])) {
         </small>
 
         <h1 class="mt-3 text-danger">Rs <?php echo $product["price"] ?></h1>
-        <small class="text-muted">or 3 installments of $16.66</small>
+        <small class="text-muted">or 3 installments of <?php echo $product["price"] / 3, ".00 LKR" ?></small>
 
         <p class="mt-4 fw-bold">Style: Casual</p>
         <p class="fw-bold">Size:</p>
@@ -154,7 +156,7 @@ if (isset($_SESSION["user_id"])) {
 
         <p>
           <button class='btn btn-outline-danger' onclick="addToCart(<?php echo $product_id ?>)">Add to Cart</button>
-          <button class="btn btn-danger">Buy Now</button>
+          <button class="btn btn-danger" onclick="buyNow(event,<?php echo $product_id ?>)">Buy Now</button>
         </p>
       </div>
       <div>
