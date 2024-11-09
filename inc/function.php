@@ -79,3 +79,19 @@ function createUser($conn, $fName, $lName, $email, $pwd, $phoneNum, $streetAddre
 
     exit();
 }
+
+function loginUser($conn, $email, $pwd)
+{
+    $sql = "SELECT * FROM users WHERE email = :email";
+
+    $stmt = $conn->prepare($sql);
+    stmtFailed($stmt);
+
+    $stmt->bindParam(':email', $email);
+    $stmt->execute();
+
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+
+}
