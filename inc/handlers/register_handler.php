@@ -29,8 +29,20 @@ if (isset($_POST['submit'])) {
             exit();
         }
     } else {
-        
+        if ($emptyInput !== false || $invalidEmail !== false || $emailExists !== false) {
+            if ($emailExists) {
+                header("Location: ../../pages/login.php?error=emailExists");
+                exit();
+            } else {
+                header("Location: ../../pages/login.php?error=invalidInputs");
+                exit();
+            }
+        } else {
+            createUser($conn, $fName, $lName, $email, $pwd, $phoneNum, $streetAddress, $city, $province, $zipCode);
+            exit();
+        }
     }
+    
 
 
 }
