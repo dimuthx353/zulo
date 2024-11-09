@@ -20,5 +20,17 @@ if (isset($_POST['submit'])) {
     $invalidEmail = invalidEmail($email);
     $emailExists = emailExists($conn, $email);
 
+    if ($emptyInput !== false || $invalidEmail !== false || $emailExists !== false) {
+        if ($emailExists) {
+            header("Location: ../../pages/login.php?error=emailExists");
+            exit();
+        } else {
+            header("Location: ../../pages/login.php?error=invalidInputs");
+            exit();
+        }
+    } else {
+        
+    }
+
 
 }
