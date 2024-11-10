@@ -88,26 +88,26 @@ if (isset($_GET["product_id"])) {
             // Check if the user was found
             if ($userDetails) { ?>
                 <div class="col-lg-6 px-5 py-4">
-                    <h3 class="mb-5 pt-2 text-center fw-bold text-uppercase">Shpping Details</h3>
-                    <form class="mb-5">
+                    <h3 class="mb-5 pt-2 text-center fw-bold text-uppercase">Shipping Details</h3>
+                    <form action="../inc/handlers/buyNow_handler.php?product_id=<?php echo $productID ?>" method="POST">
                         <div data-mdb-input-init class="form-outline mb-2">
                             <label class="form-label" for="typeText">Name </label>
-                            <input type="text" id="typeText" class="form-control form-control-lg" siez="17"
+                            <input type="text" name="name" id="typeText" class="form-control form-control-lg" size="17"
                                 value="<?php echo $userDetails["first_name"] . " " . $userDetails["last_name"] ?>" />
                         </div>
                         <div data-mdb-input-init class="form-outline mb-2">
                             <label class="form-label" for="typeName">Phone Number</label>
-                            <input type="text" id="typeName" class="form-control form-control-lg" siez="17"
+                            <input type="text" id="typeName" class="form-control form-control-lg" size="17"
                                 value="<?php echo $userDetails["phone_number"] ?>" />
                         </div>
                         <div data-mdb-input-init class="form-outline mb-2">
                             <label class="form-label" for="typeName">Country</label>
-                            <input type="text" id="typeName" class="form-control form-control-lg" siez="17"
+                            <input type="text" id="typeName" class="form-control form-control-lg" size="17"
                                 value="<?php echo $userDetails["country"] ?>" />
                         </div>
                         <div data-mdb-input-init class="form-outline mb-2">
                             <label class="form-label" for="typeName">province</label>
-                            <input type="text" id="typeName" class="form-control form-control-lg" siez="17"
+                            <input type="text" id="typeName" class="form-control form-control-lg" size="17"
                                 value="<?php echo $userDetails["province"] ?>" />
                         </div>
                         <div class="row">
@@ -135,22 +135,21 @@ if (isset($_GET["product_id"])) {
                         </div>
                         <div>
                             <div>
-                    </form>
-                    <form action="../inc/handlers/buyNow_handler.php?productID=<?php echo $productID ?>" method="POST">
-                        <h3 class="mb-5 pt-2 text-center fw-bold text-uppercase">Payment Method</h3>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="paymentMethod" id="cashOnDelivery" value="Cash On Delivery" required checked>
-                            <label class="form-check-label" for="cashOnDelivery">
-                                Cash On Delivery
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="paymentMethod" id="cardPayment" value="Card Payment" required>
-                            <label class="form-check-label" for="cardPayment">
-                                Card Payment
-                            </label>
-                        </div>
-                        <button type="submit" class="mt-5 btn btn-primary btn-block">Buy now</button>
+                                <h3 class="mb-5 pt-2 text-center fw-bold text-uppercase">Payment Method</h3>
+                                <div class="form-check">
+                                    <input type="number" value="<?php echo $productPrice ?>" hidden name="productPrice">
+                                    <input class="form-check-input" type="radio" name="paymentMethod" id="cashOnDelivery" value="Cash On Delivery" required checked>
+                                    <label class="form-check-label" for="cashOnDelivery">
+                                        Cash On Delivery
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="paymentMethod" id="cardPayment" value="Card Payment" required>
+                                    <label class="form-check-label" for="cardPayment">
+                                        Card Payment
+                                    </label>
+                                </div>
+                                <button type="submit" class="mt-5 btn btn-primary btn-block">Buy now</button>
                     </form>
 
                     <h5 class="fw-bold mb-5" style="position: absolute; bottom: 0;">
