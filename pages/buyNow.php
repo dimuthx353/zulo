@@ -31,7 +31,7 @@ if (isset($_GET["product_id"])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <!-- External CSS  -->
-    <link rel="stylesheet" href="../assets/css/cart.min.css">
+    <!-- <link rel="stylesheet" href="../assets/css/cart.min.css"> -->
     <link rel="stylesheet" href="../assets/css/reset.min.css">
     <link rel="stylesheet" href="../assets/css/nav.min.css">
     <link rel="stylesheet" href="../assets/css/footer.min.css">
@@ -79,7 +79,7 @@ if (isset($_GET["product_id"])) {
 
             // Check if the user was found
             if ($userDetails) { ?>
-                <div class="col-lg-6 px-5 py-4 border border-danger border-5">
+                <div class="col-lg-6 px-5 py-4">
                     <h3 class="mb-5 pt-2 text-center fw-bold text-uppercase">Shpping Details</h3>
                     <form class="mb-5">
                         <div data-mdb-input-init class="form-outline mb-2">
@@ -161,11 +161,12 @@ if (isset($_GET["product_id"])) {
         ?>
     </div>
 
-
-
+    </div>
+    </div>
     <?php
     include_once "../partials/footer.php"
     ?>
+
 
 
     <!-- Bootstrap CDN  -->
