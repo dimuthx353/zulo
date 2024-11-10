@@ -180,7 +180,22 @@ $total = 0;
                                                 <div>
                                                     <div>
                                             </form>
-                                            
+                                            <form action="../inc/handlers/process_payment.php" method="POST">
+                                                <h3 class="mb-5 pt-2 text-center fw-bold text-uppercase">Payment Method</h3>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="paymentMethod" id="cashOnDelivery" value="Cash On Delivery" required checked>
+                                                    <label class="form-check-label" for="cashOnDelivery">
+                                                        Cash On Delivery
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="paymentMethod" id="cardPayment" value="Card Payment" required>
+                                                    <label class="form-check-label" for="cardPayment">
+                                                        Card Payment
+                                                    </label>
+                                                </div>
+                                               
+                                            </form>
 
                                            
 
