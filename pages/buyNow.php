@@ -33,10 +33,13 @@ if (isset($_GET["product_id"])) {
     <!-- External CSS  -->
     <link rel="stylesheet" href="../assets/css/cart.min.css">
     <link rel="stylesheet" href="../assets/css/reset.min.css">
+    <link rel="stylesheet" href="../assets/css/nav.min.css">
 </head>
 
-<body class="">
-
+<body>
+    <?php
+    include_once "../partials/nav.php"
+    ?>
 
     <div class="container d-flex ">
         <?php
@@ -159,6 +162,8 @@ if (isset($_GET["product_id"])) {
 
 
     </section>
+
+
 
     <!-- Bootstrap CDN  -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
