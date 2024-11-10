@@ -7,6 +7,7 @@ $total = 0;
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,6 +21,7 @@ $total = 0;
     <link rel="stylesheet" href="../assets/css/cart.min.css">
     <link rel="stylesheet" href="../assets/css/reset.min.css">
 </head>
+
 <body>
 <section class="h-100 h-custom" style="background-color: #eee;">
         <div class="container h-100 py-5">
@@ -51,7 +53,6 @@ $total = 0;
                                         $stmt->execute();
                                          $cartItems = $stmt->fetchAll(PDO::FETCH_ASSOC); // Fetch all results
                                         
-
                                         if (count($cartItems) > 0) {
 
 
@@ -90,8 +91,20 @@ $total = 0;
                                     }
                                     ?>
 
-
                                     
+                                     <hr class="mb-4" style="height: 2px; background-color: #1266f1; opacity: 1;">
+
+                                    <div class="d-flex justify-content-between px-x">
+                                        <p class="fw-bold">Discount:</p>
+                                        <p class="fw-bold"></p>
+                                    </div>
+                                    <div class="d-flex justify-content-between p-2 mb-2 bg-primary">
+                                        <h5 class="fw-bold mb-0">Total:</h5>
+                                        <h5 class="fw-bold mb-0">Rs.
+                                            <?php
+                                            echo $total;
+                                            ?>
+                                        </h5>
                                     </div>
 
                                 </div>
