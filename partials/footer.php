@@ -32,7 +32,7 @@
                         <i class="fas fa-gem me-3"></i>Zulo
                     </h6>
                     <p>
-                        At Spara, we blend cutting-edge designs with eco-friendly practices, creating fashion that looks and feels good—promoting conscious consumption without compromising on style. Spara is fashion with purpose.
+                        We bring you the best in fashion with a focus on quality, style, and affordability. Browse through our latest collections and enjoy a seamless shopping experience.
                     </p>
                 </div>
 
@@ -41,16 +41,16 @@
                         Products
                     </h6>
                     <p>
-                        <a href="#!" class="text-reset">products 1</a>
+                        <a href="#!" class="text-reset">Men's Collection</a>
                     </p>
                     <p>
-                        <a href="#!" class="text-reset">products 2</a>
+                        <a href="#!" class="text-reset">Women's Collection</a>
                     </p>
                     <p>
-                        <a href="#!" class="text-reset">products 3</a>
+                        <a href="#!" class="text-reset">New Arrivals</a>
                     </p>
                     <p>
-                        <a href="#!" class="text-reset">products 4</a>
+                        <a href="#!" class="text-reset">Best Sellers</a>
                     </p>
                 </div>
 
@@ -59,16 +59,16 @@
                         Useful links
                     </h6>
                     <p>
-                        <a href="#!" class="text-reset">Pricing</a>
+                        <a href="#!" class="text-reset">Shipping & Returns</a>
                     </p>
                     <p>
-                        <a href="#!" class="text-reset">Settings</a>
+                        <a href="#!" class="text-reset">Terms & Conditions</a>
                     </p>
                     <p>
-                        <a href="#!" class="text-reset">Orders</a>
+                        <a href="#!" class="text-reset">Privacy Policy</a>
                     </p>
                     <p>
-                        <a href="#!" class="text-reset">Help</a>
+                        <a href="#!" class="text-reset">About Us</a>
                     </p>
                 </div>
 
@@ -77,10 +77,10 @@
                     <p><i class="fas fa-home me-3"></i> Kegalle,Sri Lanka</p>
                     <p>
                         <i class="fas fa-envelope me-3"></i>
-                        info@zulo.com
+                        zulofashion@gmail.com
                     </p>
-                    <p><i class="fas fa-phone me-3"></i> + 94713969520</p>
-                    <p><i class="fas fa-print me-3"></i> + 94772442599</p>
+                    <p><i class="fas fa-phone me-3"></i> + 94717323579</p>
+                    <p><i class="fas fa-print me-3"></i> + 94728410781</p>
                 </div>
                 <div class="col-lg-2">
                     <img src="<?php echo $imgPathForFooter ?>koko.webp" alt="" class="mb-2 rounded" style="width: 100%;">
@@ -91,7 +91,7 @@
     </section>
 
     <div class=" text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-        © 2021 Copyright:
+        © 2024 Copyright:
         <a class="text-reset fw-bold" href="">Zulo</a>
     </div>
 </footer>

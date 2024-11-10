@@ -30,12 +30,25 @@ if (isset($_GET["product_id"])) {
     <!-- Bootstrap CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
+    <!-- Font Awesome CDN  -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" />
+
     <!-- External CSS  -->
-    <link rel="stylesheet" href="../assets/css/cart.min.css">
+    <!-- <link rel="stylesheet" href="../assets/css/cart.min.css"> -->
     <link rel="stylesheet" href="../assets/css/reset.min.css">
+    <link rel="stylesheet" href="../assets/css/nav.min.css">
+    <link rel="stylesheet" href="../assets/css/footer.min.css">
+    <link rel="stylesheet" href="../assets/css/index.min.css">
 </head>
 
-<body class="">
+<body>
+    <?php
+    include_once "../partials/nav.php"
+    ?>
 
     <div class="container d-flex ">
         <?php
@@ -74,27 +87,27 @@ if (isset($_GET["product_id"])) {
 
             // Check if the user was found
             if ($userDetails) { ?>
-                <div class="col-lg-6 px-5 py-4 border border-danger border-5">
-                    <h3 class="mb-5 pt-2 text-center fw-bold text-uppercase">Shpping Details</h3>
-                    <form class="mb-5">
+                <div class="col-lg-6 px-5 py-4">
+                    <h3 class="mb-5 pt-2 text-center fw-bold text-uppercase">Shipping Details</h3>
+                    <form action="../inc/handlers/buyNow_handler.php?product_id=<?php echo $productID ?>" method="POST">
                         <div data-mdb-input-init class="form-outline mb-2">
                             <label class="form-label" for="typeText">Name </label>
-                            <input type="text" id="typeText" class="form-control form-control-lg" siez="17"
+                            <input type="text" name="name" id="typeText" class="form-control form-control-lg" size="17"
                                 value="<?php echo $userDetails["first_name"] . " " . $userDetails["last_name"] ?>" />
                         </div>
                         <div data-mdb-input-init class="form-outline mb-2">
                             <label class="form-label" for="typeName">Phone Number</label>
-                            <input type="text" id="typeName" class="form-control form-control-lg" siez="17"
+                            <input type="text" id="typeName" class="form-control form-control-lg" size="17"
                                 value="<?php echo $userDetails["phone_number"] ?>" />
                         </div>
                         <div data-mdb-input-init class="form-outline mb-2">
                             <label class="form-label" for="typeName">Country</label>
-                            <input type="text" id="typeName" class="form-control form-control-lg" siez="17"
+                            <input type="text" id="typeName" class="form-control form-control-lg" size="17"
                                 value="<?php echo $userDetails["country"] ?>" />
                         </div>
                         <div data-mdb-input-init class="form-outline mb-2">
                             <label class="form-label" for="typeName">province</label>
-                            <input type="text" id="typeName" class="form-control form-control-lg" siez="17"
+                            <input type="text" id="typeName" class="form-control form-control-lg" size="17"
                                 value="<?php echo $userDetails["province"] ?>" />
                         </div>
                         <div class="row">
@@ -122,22 +135,21 @@ if (isset($_GET["product_id"])) {
                         </div>
                         <div>
                             <div>
-                    </form>
-                    <form action="../inc/handlers/process_payment.php" method="POST">
-                        <h3 class="mb-5 pt-2 text-center fw-bold text-uppercase">Payment Method</h3>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="paymentMethod" id="cashOnDelivery" value="Cash On Delivery" required checked>
-                            <label class="form-check-label" for="cashOnDelivery">
-                                Cash On Delivery
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="paymentMethod" id="cardPayment" value="Card Payment" required>
-                            <label class="form-check-label" for="cardPayment">
-                                Card Payment
-                            </label>
-                        </div>
-                        <button type="submit" class="mt-5 btn btn-primary btn-block">Buy now</button>
+                                <h3 class="mb-5 pt-2 text-center fw-bold text-uppercase">Payment Method</h3>
+                                <div class="form-check">
+                                    <input type="number" value="<?php echo $productPrice ?>" hidden name="productPrice">
+                                    <input class="form-check-input" type="radio" name="paymentMethod" id="cashOnDelivery" value="Cash On Delivery" required checked>
+                                    <label class="form-check-label" for="cashOnDelivery">
+                                        Cash On Delivery
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="paymentMethod" id="cardPayment" value="Card Payment" required>
+                                    <label class="form-check-label" for="cardPayment">
+                                        Card Payment
+                                    </label>
+                                </div>
+                                <button type="submit" class="mt-5 btn btn-primary btn-block">Buy now</button>
                     </form>
 
                     <h5 class="fw-bold mb-5" style="position: absolute; bottom: 0;">
@@ -156,8 +168,15 @@ if (isset($_GET["product_id"])) {
         ?>
     </div>
 
+    </div>
+    </div>
+    <?php
+    $imgPathForFooter = "../assets/img/";
 
-    </section>
+    include_once "../partials/footer.php"
+    ?>
+
+
 
     <!-- Bootstrap CDN  -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
