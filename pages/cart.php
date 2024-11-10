@@ -13,6 +13,8 @@ $total = 0;
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cart - Zulo</title>
     <link rel="icon" type="image/x-icon" href="../assets/img/logo.png">
+    <!-- Font Awesome CDN  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" />
 
     <!-- Bootstrap CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -68,8 +70,9 @@ $total = 0;
                                                             <img src="../assets/img/' . htmlspecialchars($item['image_url']) . '" class="img-fluid" style="width: 150px;" alt="Product image">
                                                         </div>
                                                         <div class="flex-grow-1 ms-3">
-                                                            <a href="#!" class="float-end"><i class="fas fa-times"></i></a>
+                                                            <a href="" onclick="removeFromCart(' . $item['product_id'] . ',event)" class="float-end"><i class="fas fa-trash-alt"></i></a>
                                                             <h5 class="text-primary">' . htmlspecialchars($item['product_name']) . '</h5>
+                                                           
                                                             <h6 style="color: #9e9e9e;">Added on: ' . htmlspecialchars($item['added_at']) . '</h6>
                                                             <div class="d-flex align-items-center">
                                                                 <p class="fw-bold mb-0 me-5 pe-3">Rs.' .  number_format($item['price'], 2) . '</p>
@@ -223,6 +226,24 @@ $total = 0;
 
     <!-- Bootstrap CDN  -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script>
+        function removeFromCart(productId, event) {
+            event.preventDefault();
+            const result = confirm("Are you sure you want to remove this product from your cart?");
+
+            if (result) {
+                const xhr = new XMLHttpRequest();
+                xhr.open("GET", `../inc/handlers/remove_from_cart.php?product_id=${productId}`, true);
+                xhr.onload = function() {
+                    if (this.status === 200) {
+                        location.reload();
+                    }
+                };
+                xhr.send();
+            }
+        }
+    </script>
 </body>
 
 </html>
