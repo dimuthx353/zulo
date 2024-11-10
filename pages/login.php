@@ -1,9 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login and Register - Zulo</title>
     <link rel="icon" type="image/x-icon" href="../assets/img/logo.png">
 
@@ -25,7 +25,7 @@
 </head>
 
 <body>
-    <div class="container controls">
+<div class="container controls">
         <ul class="nav nav-pills nav-justified mb-3 w-100 px-5 py-4" id="ex1" role="tablist">
             <li class="nav-item" role="presentation">
                 <a class="nav-link active" id="tab-login" data-bs-toggle="pill" href="#pills-login" role="tab"
@@ -38,11 +38,11 @@
         </ul>
     </div>
     <div class="container container-form rounded-3 col-4 d-flex justify-content-center align-items-center flex-column">
-        <div class="tab-content">
-            <!-- Login Form -->
-            <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
+     <div class="tab-content">
+        <!-- Login Form -->
+        <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
                 <div class="text-white login rounded-2">
-                    <form class="h-75 d-flex flex-column justify-content-around" action="../inc/handlers/login_handler.php" method="post">
+                    <form class="h-75 d-flex flex-column justify-content-around" action="../inc/handlers/login_handler.php" method="post" >
                         <div class="mb-3">
                             <input type="email" name="email" placeholder="Email" class="rounded-5 form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                         </div>
@@ -130,7 +130,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-
+    
 
 </body>
 
