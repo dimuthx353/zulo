@@ -1,3 +1,10 @@
+<?php
+session_start();
+include_once "../inc/db.php";
+$userID = $_SESSION["user_id"];
+$total = 0;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
