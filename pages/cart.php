@@ -91,7 +91,7 @@ $total = 0;
                                     }
                                     ?>
 
-                                    
+
                                      <hr class="mb-4" style="height: 2px; background-color: #1266f1; opacity: 1;">
 
                                     <div class="d-flex justify-content-between px-x">
@@ -109,6 +109,92 @@ $total = 0;
 
                                 </div>
 
+                                <?php
+                                try {
+                                    // Prepare a query to fetch user details based on the logged-in user ID
+                                    $sql = "SELECT * FROM users WHERE user_id = :user_id";
+                                    $stmt = $conn->prepare($sql);
+
+                                    // Bind the user ID parameter to prevent SQL injection
+                                    $stmt->bindParam(':user_id', $userID, PDO::PARAM_INT);
+
+                                    // Execute the query
+                                    $stmt->execute();
+
+                                    // Fetch the user details
+                                    $userDetails = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                                    // Check if the user was found
+                                    if ($userDetails) { ?>
+                                        <div class="col-lg-6 px-5 py-4">
+                                            <h3 class="mb-5 pt-2 text-center fw-bold text-uppercase">Shpping Details</h3>
+                                            <form class="mb-5">
+                                                <div data-mdb-input-init class="form-outline mb-2">
+                                                    <label class="form-label" for="typeText">Name </label>
+                                                    <input type="text" id="typeText" class="form-control form-control-lg" siez="17"
+                                                        value="<?php echo $userDetails["first_name"] . " " . $userDetails["last_name"] ?>" />
+                                                </div>
+                                                <div data-mdb-input-init class="form-outline mb-2">
+                                                    <label class="form-label" for="typeName">Name on card</label>
+                                                    <input type="text" id="typeName" class="form-control form-control-lg" siez="17"
+                                                        value="<?php echo $userDetails["email"] ?>" />
+                                                </div>
+                                                <div data-mdb-input-init class="form-outline mb-2">
+                                                    <label class="form-label" for="typeName">Phone Number</label>
+                                                    <input type="text" id="typeName" class="form-control form-control-lg" siez="17"
+                                                        value="<?php echo $userDetails["phone_number"] ?>" />
+                                                </div>
+                                                <div data-mdb-input-init class="form-outline mb-2">
+                                                    <label class="form-label" for="typeName">Country</label>
+                                                    <input type="text" id="typeName" class="form-control form-control-lg" siez="17"
+                                                        value="<?php echo $userDetails["country"] ?>" />
+                                                </div>
+                                                <div data-mdb-input-init class="form-outline mb-2">
+                                                    <label class="form-label" for="typeName">province</label>
+                                                    <input type="text" id="typeName" class="form-control form-control-lg" siez="17"
+                                                        value="<?php echo $userDetails["province"] ?>" />
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-4 mb-5">
+                                                        <div data-mdb-input-init class="form-outline">
+                                                            <label class="form-label" for="typeExp">Address</label>
+                                                            <input type="text" id="typeExp" class="form-control form-control-lg" value="<?php echo $userDetails["address"] ?>"
+                                                                size="7" id="exp" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-5">
+                                                        <div data-mdb-input-init class="form-outline">
+                                                            <label class="form-label" for="typeText">city</label>
+                                                            <input type="text" id="typeText" class="form-control form-control-lg"
+                                                                value="<?php echo $userDetails["city"] ?>" size="1" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-5">
+                                                        <div data-mdb-input-init class="form-outline">
+                                                            <label class="form-label" for="typeText">postal code</label>
+                                                            <input type="text" id="typeText" class="form-control form-control-lg"
+                                                                value="<?php echo $userDetails["postal_code"] ?>" size="1" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div>
+                                            </form>
+                                            
+
+                                           
+
+
+                                        </div>
+                                        <?php
+                                    } else {
+                                        echo "No user found with this ID.";
+                                    }
+                                } catch (PDOException $e) {
+                                    echo "Error: " . $e->getMessage();
+                                }
+                                ?>
+                                
                             </div>
 
                         </div>
