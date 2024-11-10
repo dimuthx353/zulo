@@ -197,9 +197,11 @@ $total = 0;
                                                 <button type="submit" class="mt-5 btn btn-primary btn-block">Buy now</button>
                                             </form>
 
+                                            <h5 class="fw-bold mb-5" style="position: absolute; bottom: 0;">
+                                                <a href="../index.php"><i class="fas fa-angle-left me-2"></i>Back to shopping</a>
+                                            </h5>
+
                                            
-
-
                                         </div>
                                         <?php
                                     } else {
