@@ -21,11 +21,69 @@
                     <div class="card shopping-cart" style="border-radius: 15px;">
                         <div class="card-body">
                             <div class="row">
+                                <div class="col-lg-6 px-5 py-4">
+
+                                    <h3 class="mb-5 pt-2 text-center fw-bold text-uppercase">Your products</h3>
+                                    <?php
+
+
+                                    if (!isset($userID)) {
+                                        die('User not authenticated.');
+                                    }
+
+                                    try {
+                                        // SQL query to fetch cart items and product details using PDO
+                                        $sql = "
+                                                    SELECT c.product_id, c.quantity, c.added_at, p.product_name, p.price, p.image_url
+                                                    FROM cart c
+                                                    JOIN products p ON c.product_id = p.product_id
+                                                    WHERE c.user_id = :user_id
+                                                ";
+                                        
+
+                                        if (count($cartItems) > 0) {
 
 
 
+                                            foreach ($cartItems as $item) {
 
-                            
+                                                $itemTotal = $item['price'] * $item['quantity'];
+                                                $total += $itemTotal;
+                                                // Template to display cart items
+                                                echo '
+                                                    <div class="d-flex align-items-center mb-5">
+                                                        <div class="flex-shrink-0">
+                                                            <img src="../assets/img/' . htmlspecialchars($item['image_url']) . '" class="img-fluid" style="width: 150px;" alt="Product image">
+                                                        </div>
+                                                        <div class="flex-grow-1 ms-3">
+                                                            <a href="#!" class="float-end"><i class="fas fa-times"></i></a>
+                                                            <h5 class="text-primary">' . htmlspecialchars($item['product_name']) . '</h5>
+                                                            <h6 style="color: #9e9e9e;">Added on: ' . htmlspecialchars($item['added_at']) . '</h6>
+                                                            <div class="d-flex align-items-center">
+                                                                <p class="fw-bold mb-0 me-5 pe-3">Rs.' .  number_format($item['price'], 2) . '</p>
+                                                                <div class="def-number-input number-input safari_only">
+                                                                    <button data-mdb-button-init onclick="this.parentNode.querySelector(\'input[type=number]\').stepDown()" class="minus"></button>
+                                                                    <input class="quantity fw-bold bg-body-tertiary text-body" min="0" name="quantity" value="' . htmlspecialchars($item['quantity']) . '" type="number">
+                                                                    <button data-mdb-button-init onclick="this.parentNode.querySelector(\'input[type=number]\').stepUp()" class="plus"></button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>';
+                                            }
+                                        } else {
+                                            echo '<p>Your cart is empty.</p>';
+                                        }
+                                    } catch (PDOException $e) {
+                                        // Handle errors
+                                        echo "Error: " . $e->getMessage();
+                                    }
+                                    ?>
+
+
+                                    
+                                    </div>
+
+                                </div>
 
                             </div>
 
