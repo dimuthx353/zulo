@@ -14,6 +14,27 @@
     <link rel="stylesheet" href="../assets/css/reset.min.css">
 </head>
 <body>
+<section class="h-100 h-custom" style="background-color: #eee;">
+        <div class="container h-100 py-5">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col">
+                    <div class="card shopping-cart" style="border-radius: 15px;">
+                        <div class="card-body">
+                            <div class="row">
+
+
+
+
+                            
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     
 </body>
 </html>

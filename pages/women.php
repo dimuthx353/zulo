@@ -180,32 +180,6 @@
                }
 
 
-               function addToCart(productId) {
-                   console.log(productId);
-                   const xhr = new XMLHttpRequest();
-                   xhr.open(
-                       'GET',
-                       `../../zulo/inc/handlers/cart_handler.php?product_id=${productId}`,
-                       true
-                   );
-                   xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-                   xhr.onload = function() {
-                       if (this.status === 200) {
-                           // console.log(this.responseText);
-                       }
-                   };
-                   xhr.send();
-               }
-
-               function buyNow(event, productId) {
-                   const result = confirm('are you sure want to buy this product?');
-
-                   console.log(result);
-
-                   if (result) {
-                       window.location.href = `../../../zulo/pages/buyNow.php?product_id=${productId}`;
-                   }
-               }
            </script>
        <?php }
         ?>
