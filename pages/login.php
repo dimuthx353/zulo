@@ -23,8 +23,8 @@
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" />
 </head>
-<body>
 
+<body>
 <div class="container controls">
         <ul class="nav nav-pills nav-justified mb-3 w-100 px-5 py-4" id="ex1" role="tablist">
             <li class="nav-item" role="presentation">
@@ -108,11 +108,30 @@
             </div>
         </div>
     </div>
+    <?php
+    if ($_GET["error"]) { ?>
+        <div class="error">
+            <div class="alert alert-danger" role="alert">
+                <?php
+                $error = $_GET["error"];
+
+                if ($error == "password") {
+                    echo "password not matching";
+                } else if ($error == "stmtFailed") {
+                    echo "something went wrong try again later..";
+                }
+                ?>
+            </div>
+        </div>
+    <?php  }    ?>
+
 
     <!-- Bootstrap CDN  -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     
+
 </body>
+
 </html>
