@@ -80,7 +80,6 @@ function createUser($conn, $fName, $lName, $email, $pwd, $phoneNum, $streetAddre
     exit();
 }
 
-
 function loginUser($conn, $email, $pwd)
 {
     $sql = "SELECT * FROM users WHERE email = :email";
@@ -114,4 +113,5 @@ function loginUser($conn, $email, $pwd)
             exit();
         }
     }
+
 }
