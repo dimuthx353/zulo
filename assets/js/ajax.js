@@ -37,3 +37,23 @@ function addToWishlist(event, productId) {
     event.target.classList.toggle('bi-heart-fill');
   }
 }
+
+function addToCart(productId) {
+  if (productId == 0) {
+    window.location.href = '../../../zulo/pages/login.php';
+  } else {
+    const xhr = new XMLHttpRequest();
+    xhr.open(
+      'GET',
+      `../../../zulo/inc/handlers/cart_handler.php?product_id=${productId}`,
+      true
+    );
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.onload = function () {
+      if (this.status === 200) {
+        // console.log(this.responseText);
+      }
+    };
+    xhr.send();
+  }
+}
