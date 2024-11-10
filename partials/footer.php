@@ -32,7 +32,7 @@
                         <i class="fas fa-gem me-3"></i>Zulo
                     </h6>
                     <p>
-                        We bring you the best in fashion with a focus on quality, style, and affordability. Browse through our latest collections and enjoy a seamless shopping experience.
+                    Explore the latest fashion trends and timeless classics. Find clothing, accessories, and footwear to express your unique style. Whether for everyday wear or special occasions, embrace fashion that’s bold and beautiful.
                     </p>
                 </div>
 
