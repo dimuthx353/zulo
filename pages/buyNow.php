@@ -34,6 +34,7 @@ if (isset($_GET["product_id"])) {
     <link rel="stylesheet" href="../assets/css/cart.min.css">
     <link rel="stylesheet" href="../assets/css/reset.min.css">
     <link rel="stylesheet" href="../assets/css/nav.min.css">
+    <link rel="stylesheet" href="../assets/css/footer.min.css">
 </head>
 
 <body>
@@ -161,8 +162,10 @@ if (isset($_GET["product_id"])) {
     </div>
 
 
-    </section>
 
+    <?php
+    include_once "../partials/footer.php"
+    ?>
 
 
     <!-- Bootstrap CDN  -->
