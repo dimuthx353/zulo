@@ -39,6 +39,10 @@
                                                     JOIN products p ON c.product_id = p.product_id
                                                     WHERE c.user_id = :user_id
                                                 ";
+                                        $stmt = $conn->prepare($sql);
+                                        $stmt->bindParam(':user_id', $userID, PDO::PARAM_INT); // Bind userID from session
+                                        $stmt->execute();
+                                         $cartItems = $stmt->fetchAll(PDO::FETCH_ASSOC); // Fetch all results
                                         
 
                                         if (count($cartItems) > 0) {
