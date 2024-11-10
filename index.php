@@ -61,7 +61,6 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
     crossorigin="anonymous" />
 
   <!-- External CSS   -->
-  <link rel="stylesheet" href="./assets/css/darkMode.min.css" />
   <link rel="stylesheet" href="./assets/css/nav.min.css" />
   <link rel="stylesheet" href="./assets/css/footer.min.css">
   <link rel="stylesheet" href="./assets/css/index.min.css" />
