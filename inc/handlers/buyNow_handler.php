@@ -31,10 +31,12 @@ if (isset($_SESSION["email"])) {
 
 if (isset($_GET['product_id'])) {
     $product_id = $_GET['product_id'];
+    // echo "product id: " . $product_id;
 }
 
-if ($user & $product_id) {
 
+if ($user && $product_id) {
+    echo "hello";
 
     $total = $_POST['productPrice'];
     $paymentStatus = $_POST["paymentMethod"];
