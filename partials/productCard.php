@@ -78,7 +78,7 @@ if (isset($_SESSION["user_id"])) {
         <!-- Buy Now Buttons -->
         <div class='d-flex justify-content-center gap-2'>
             <button class='btn btn-outline-danger' onclick="addToCart(<?php echo $product_id ?>)">Add to Cart</button>
-            <button class='btn btn-danger text-white'>Buy Now</button>
+            <button class='btn btn-danger text-white' onclick="buyNow(event,<?php echo $product_id ?>)">Buy Now</button>
         </div>
     </div>
 </div>
