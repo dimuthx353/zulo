@@ -29,3 +29,10 @@ if (isset($_SESSION["email"])) {
         $user = false;
     }
 }
+
+if (isset($_GET['product_id'])) {
+    $product_id = (int)$_GET['product_id']; // Cast it to an integer for safety
+    
+} else {
+    die('Product ID not provided in the URL.');
+}
