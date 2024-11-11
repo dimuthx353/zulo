@@ -36,3 +36,31 @@ if (isset($_GET['product_id'])) {
 } else {
     die('Product ID not provided in the URL.');
 }
+
+// If user is authenticated and product_id is set, proceed with adding to cart
+if ($user && isset($product_id)) {
+  
+        // Prepare the insert statement using PDO
+        $sql = "INSERT INTO cart (user_id, product_id, quantity) VALUES (:user_id, :product_id, :quantity)";
+        $stmt = $conn->prepare($sql);
+
+        if (!$stmt) {
+            header('Location: ../../../../../zulo/cart.php?error=stmtfailed');
+            exit();
+        }
+
+        // Bind the parameters
+        $stmt->bindParam(':user_id', $userID, PDO::PARAM_INT);
+        $stmt->bindParam(':product_id', $product_id, PDO::PARAM_INT);
+        $stmt->bindParam(':quantity', $quantity, PDO::PARAM_INT);
+
+        // Execute the statement
+        if ($stmt->execute()) {
+            header('Location: ../../../../../zulo/pages/cart.php?success=added');
+            exit();
+        } else {
+            header('Location: ../../../../../zulo/cart.php?error=insertfailed');
+            exit();
+        }
+   
+}
