@@ -32,7 +32,7 @@ if (isset($_SESSION["email"])) {
 
 if (isset($_GET['product_id'])) {
     $product_id = (int)$_GET['product_id']; // Cast it to an integer for safety
-    
+    $quantity = isset($_GET['quantity']) ? (int)$_GET['quantity'] : 1; // Default to 1 if quantity is not set
 } else {
     die('Product ID not provided in the URL.');
 }
