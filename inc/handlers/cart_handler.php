@@ -88,4 +88,7 @@ if ($user && isset($product_id)) {
             exit();
         }
     }
+} else {
+    header('Location: ../../../../../zulo/pages/login.php');
+    exit();
 }
