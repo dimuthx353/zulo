@@ -39,7 +39,32 @@ if (isset($_GET['product_id'])) {
 
 // If user is authenticated and product_id is set, proceed with adding to cart
 if ($user && isset($product_id)) {
-  
+    // Check if the product already exists in the cart
+    $sql = "SELECT quantity FROM cart WHERE user_id = :user_id AND product_id = :product_id";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':user_id', $userID, PDO::PARAM_INT);
+    $stmt->bindParam(':product_id', $product_id, PDO::PARAM_INT);
+    $stmt->execute();
+
+    if ($stmt->rowCount() > 0) {
+        // If the product is already in the cart, update the quantity
+        $currentQuantity = $stmt->fetchColumn();
+        $newQuantity = $currentQuantity + $quantity;
+
+        $sql = "UPDATE cart SET quantity = :quantity WHERE user_id = :user_id AND product_id = :product_id";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':quantity', $newQuantity, PDO::PARAM_INT);
+        $stmt->bindParam(':user_id', $userID, PDO::PARAM_INT);
+        $stmt->bindParam(':product_id', $product_id, PDO::PARAM_INT);
+
+        if ($stmt->execute()) {
+            header('Location: ../../../../../zulo/pages/cart.php?success=updated');
+            exit();
+        } else {
+            header('Location: ../../../../../zulo/cart.php?error=updatefailed');
+            exit();
+        }
+    } else {
         // Prepare the insert statement using PDO
         $sql = "INSERT INTO cart (user_id, product_id, quantity) VALUES (:user_id, :product_id, :quantity)";
         $stmt = $conn->prepare($sql);
@@ -62,5 +87,5 @@ if ($user && isset($product_id)) {
             header('Location: ../../../../../zulo/cart.php?error=insertfailed');
             exit();
         }
-   
+    }
 }
