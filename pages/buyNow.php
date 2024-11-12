@@ -20,6 +20,7 @@ if (isset($_GET["product_id"])) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,6 +49,27 @@ if (isset($_GET["product_id"])) {
      <?php
     include_once "../partials/nav.php"
     ?>
+
+<div class="container d-flex ">
+        <?php
+
+        $productPrice = $product["price"];
+        $imgName = $product["image_url"];
+        $productTitle = $product["product_name"];
+        $imgPathOrg = "../assets/img/$imgName";
+        $imgPathLow = "../assets/img/low-quality/$imgName";
+        $productId = $product["product_id"];
+        ?>
+
+        <div class="col-6">
+            <div class="mt-5 d-block">
+                <img src="<?php echo $imgPathOrg ?>" alt="" style="width: 400px;height:450px;object-fit:cover;object-position:center top">
+                <h6 class="mt-3 display-5 w-75"><?php echo $productTitle ?></h6>
+                <h5 class="display-4 text-primary"><?php echo $productPrice ?>LKR</h5>
+            </div>
+
+
+        </div>
     
 </body>
 </html>
