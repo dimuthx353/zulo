@@ -149,8 +149,7 @@ if (isset($_GET["product_id"])) {
                                         Card Payment
                                     </label>
                                 </div>
-                            
-                                
+                                <button type="submit" class="mt-5 btn btn-primary btn-block">Buy now</button>        
                     </form>
 
                 
