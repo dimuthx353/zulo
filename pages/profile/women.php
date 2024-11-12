@@ -1,3 +1,17 @@
+<?php
+    session_start();
+
+    include_once "../inc/db.php";
+
+    $sql = "SELECT product_id,product_name, description, price, stock_quantity, image_url, sku FROM products WHERE category_id = 2";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+
+
+    $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    ?>
+
 <!doctype html>
    <html lang="en">
 
@@ -75,4 +89,3 @@
                <h1>filer options</h1>
            </div>
 
-           
