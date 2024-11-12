@@ -1,3 +1,23 @@
+<?php
+session_start();
+include_once "../inc/db.php";
+$userID = $_SESSION["user_id"];
+
+if (isset($_GET["product_id"])) {
+    $productID = $_GET["product_id"];
+    $sql = "SELECT product_name, description, price, stock_quantity, image_url, sku ,product_id
+            FROM products 
+            WHERE product_id = $productID;";
+
+
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+
+    $product = $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,6 +45,9 @@
 </head>
 
 <body>
+     <?php
+    include_once "../partials/nav.php"
+    ?>
     
 </body>
 </html>
