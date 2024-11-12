@@ -14,7 +14,7 @@ function addToWishlist(event, productId) {
         if (this.status === 200) {
           Swal.fire({
             title: 'Success!',
-            text: 'Product added to Wishlist',
+            text: 'Product Removed From Wishlist',
             icon: 'success'
           });
         }
@@ -31,6 +31,11 @@ function addToWishlist(event, productId) {
       xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
       xhr.onload = function () {
         if (this.status === 200) {
+          Swal.fire({
+            title: 'Success!',
+            text: 'Product added to Wishlist',
+            icon: 'success'
+          });
         }
       };
 

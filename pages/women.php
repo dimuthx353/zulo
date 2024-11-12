@@ -159,7 +159,7 @@
                            if (this.status === 200) {
                                Swal.fire({
                                    title: 'Success!',
-                                   text: 'Product added to Wishlist',
+                                   text: 'Product Removed From Wishlist',
                                    icon: 'success'
                                });
                            }
@@ -175,7 +175,13 @@
                        );
                        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                        xhr.onload = function() {
-                           if (this.status === 200) {}
+                           if (this.status === 200) {
+                               Swal.fire({
+                                   title: 'Success!',
+                                   text: 'Product added to Wishlist',
+                                   icon: 'success'
+                               });
+                           }
                        };
 
                        xhr.send();
