@@ -138,9 +138,11 @@
            crossorigin="anonymous"
            referrerpolicy="no-referrer"></script>
 
+
+       <!-- SweetAlert2 for enhanced alerts -->
+       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
        <!-- Ajax For Handling Wishlist and add to cart function  -->
-
-
        <?php
         if ($_SESSION["user_id"]) { ?>
            <script>
@@ -191,7 +193,11 @@
                    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                    xhr.onload = function() {
                        if (this.status === 200) {
-                           // console.log(this.responseText);
+                           Swal.fire({
+                               title: 'Success!',
+                               text: 'Product added to cart',
+                               icon: 'success'
+                           });
                        }
                    };
                    xhr.send();
