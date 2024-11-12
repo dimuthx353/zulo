@@ -134,6 +134,21 @@ if (isset($_GET["product_id"])) {
                             </div>
                         </div>
                         <div>
+                             <div>
+                                <h3 class="mb-5 pt-2 text-center fw-bold text-uppercase">Payment Method</h3>
+                                <div class="form-check">
+                                    <input type="number" value="<?php echo $productPrice ?>" hidden name="productPrice">
+                                    <input class="form-check-input" type="radio" name="paymentMethod" id="cashOnDelivery" value="Cash On Delivery" required checked>
+                                    <label class="form-check-label" for="cashOnDelivery">
+                                        Cash On Delivery
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="paymentMethod" id="cardPayment" value="Card Payment" required>
+                                    <label class="form-check-label" for="cardPayment">
+                                        Card Payment
+                                    </label>
+                                </div>
                             
                                 
                     </form>
