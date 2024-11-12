@@ -170,6 +170,11 @@ if (isset($_GET["product_id"])) {
 
     </div>
     </div>
+    <?php
+    $imgPathForFooter = "../assets/img/";
+
+    include_once "../partials/footer.php"
+    ?>
 
         
 </body>
