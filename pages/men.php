@@ -1,4 +1,4 @@
-v <?php
+<?php
     session_start();
     include_once "../inc/db.php";
 
@@ -10,7 +10,8 @@ v <?php
 
 
     ?>
- <!doctype html>
+
+   <!doctype html>
    <html lang="en">
 
    <head>
@@ -36,60 +37,63 @@ v <?php
            integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
            crossorigin="anonymous" />
    </head>
+
    <body>
 
-<div class="container-fluid m-0 p-0 full-body d-flex flex-column">
-    <!-- Navigation  -->
-    <header>
-       
-    </header>
-</div>
+       <div class="container-fluid m-0 p-0 full-body d-flex flex-column">
+           <!-- Navigation  -->
+           <header>
+               <?php
+                include_once "../partials/nav.php";
+                ?>
+           </header>
+       </div>
 
-<div id="carouselExampleIndicators" class="carousel slide mb-5 carousel-slider">
-    <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
+       <div id="carouselExampleIndicators" class="carousel slide mb-5 carousel-slider">
+           <div class="carousel-indicators">
+               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+           </div>
 
-    <div class="carousel-inner h-100">
-        <div class="carousel-item active">
-            <p>
-            <h1>Men</h1>
-            </p>
-            <img src="../assets/img/menpageslide03.jpg" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-            <p>
-            <h1>Men</h1>
-            </p>
-            <img src="../assets/img/menpageslide02.jpg" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-            <p>
-            <h1>Men</h1>
-            </p>
-            <img src="../assets/img/menpageslide01.jpg" class="d-block w-100" alt="...">
-        </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
-</div>
+           <div class="carousel-inner h-100">
+               <div class="carousel-item active">
+                   <p>
+                   <h1>Men</h1>
+                   </p>
+                   <img src="../assets/img/menpageslide03.jpg" class="d-block w-100" alt="...">
+               </div>
+               <div class="carousel-item">
+                   <p>
+                   <h1>Men</h1>
+                   </p>
+                   <img src="../assets/img/menpageslide02.jpg" class="d-block w-100" alt="...">
+               </div>
+               <div class="carousel-item">
+                   <p>
+                   <h1>Men</h1>
+                   </p>
+                   <img src="../assets/img/menpageslide01.jpg" class="d-block w-100" alt="...">
+               </div>
+           </div>
+           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+               <span class="visually-hidden">Previous</span>
+           </button>
+           <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+               <span class="carousel-control-next-icon" aria-hidden="true"></span>
+               <span class="visually-hidden">Next</span>
+           </button>
+       </div>
 
-<div class="container d-flex product-section">
-    <div class="col-3 border-red">
-        <h1>filer options</h1>
-    </div>
-    <div class="col-9 d-flex flex-wrap gap-4 border-red" id="men">
-        <h1 class="text-center w-100">Men</h1>
+       <div class="container d-flex product-section">
+           <div class="col-3 border-red">
+               <h1>filer options</h1>
+           </div>
+           <div class="col-9 d-flex flex-wrap gap-4 border-red" id="men">
+               <h1 class="text-center w-100">Men</h1>
 
-        <?php
+               <?php
                 foreach ($products as $product) {
 
                     $productPrice = $product["price"];
@@ -106,8 +110,8 @@ v <?php
        </div>
        </div>
 
-        <!-- Footer Start  -->
-        <footer>
+       <!-- Footer Start  -->
+       <footer>
            <?php
             $imgPathForFooter = "../assets/img/";
 
@@ -131,7 +135,8 @@ v <?php
            crossorigin="anonymous"
            referrerpolicy="no-referrer"></script>
 
-            <!-- Ajax For Handling Wishlist and add to cart function  -->
+
+       <!-- Ajax For Handling Wishlist and add to cart function  -->
        <?php
         if ($_SESSION["user_id"]) { ?>
            <script>
