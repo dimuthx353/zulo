@@ -136,6 +136,9 @@
            referrerpolicy="no-referrer"></script>
 
 
+       <!-- SweetAlert2 for enhanced alerts -->
+       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
        <!-- Ajax For Handling Wishlist and add to cart function  -->
        <?php
         if ($_SESSION["user_id"]) { ?>
@@ -151,7 +154,11 @@
                        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                        xhr.onload = function() {
                            if (this.status === 200) {
-                               // console.log(this.responseText);
+                               Swal.fire({
+                                   title: 'Success!',
+                                   text: 'Product Removed From Wishlist',
+                                   icon: 'success'
+                               });
                            }
                        };
 
@@ -165,7 +172,13 @@
                        );
                        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                        xhr.onload = function() {
-                           if (this.status === 200) {}
+                           if (this.status === 200) {
+                               Swal.fire({
+                                   title: 'Success!',
+                                   text: 'Product added to Wishlist',
+                                   icon: 'success'
+                               });
+                           }
                        };
 
                        xhr.send();
@@ -187,7 +200,11 @@
                    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                    xhr.onload = function() {
                        if (this.status === 200) {
-                           //    console.log(this.responseText);
+                           Swal.fire({
+                               title: 'Success!',
+                               text: 'Product added to cart',
+                               icon: 'success'
+                           });
                        }
                    };
                    xhr.send();
@@ -195,8 +212,6 @@
 
                function buyNow(event, productId) {
                    const result = confirm('are you sure want to buy this product?');
-
-                   console.log(result);
 
                    if (result) {
                        window.location.href = `../../../zulo/pages/buyNow.php?product_id=${productId}`;

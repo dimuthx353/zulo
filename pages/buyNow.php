@@ -3,6 +3,10 @@ session_start();
 include_once "../inc/db.php";
 $userID = $_SESSION["user_id"];
 
+if (!isset($_SESSION["user_id"])) {
+    header("location: ../pages/login.php");
+}
+
 if (isset($_GET["product_id"])) {
     $productID = $_GET["product_id"];
     $sql = "SELECT product_name, description, price, stock_quantity, image_url, sku ,product_id

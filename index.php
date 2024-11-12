@@ -606,6 +606,8 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
   <!-- Ajax For Handling Wishlist  -->
 
 
+  <!-- SweetAlert2 for enhanced alerts -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <script src="./assets/js/ajax.js"></script>
 
