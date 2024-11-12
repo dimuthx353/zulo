@@ -157,7 +157,11 @@
                        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                        xhr.onload = function() {
                            if (this.status === 200) {
-                               // console.log(this.responseText);
+                               Swal.fire({
+                                   title: 'Success!',
+                                   text: 'Product added to Wishlist',
+                                   icon: 'success'
+                               });
                            }
                        };
 
