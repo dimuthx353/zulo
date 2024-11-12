@@ -70,6 +70,24 @@ if (isset($_GET["product_id"])) {
 
 
         </div>
+        <?php
+        try {
+            // Prepare a query to fetch user details based on the logged-in user ID
+            $sql = "SELECT * FROM users WHERE user_id = :user_id";
+            $stmt = $conn->prepare($sql);
+
+            // Bind the user ID parameter to prevent SQL injection
+            $stmt->bindParam(':user_id', $userID, PDO::PARAM_INT);
+
+            // Execute the query
+            $stmt->execute();
+
+            // Fetch the user details
+            $userDetails = $stmt->fetch(PDO::FETCH_ASSOC);
+            
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+        }
     
 </body>
 </html>
