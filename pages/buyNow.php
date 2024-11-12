@@ -152,7 +152,9 @@ if (isset($_GET["product_id"])) {
                                 <button type="submit" class="mt-5 btn btn-primary btn-block">Buy now</button>        
                     </form>
 
-                
+                    <h5 class="fw-bold mb-5" style="position: absolute; bottom: 0;">
+                        <a href="../index.php"><i class="fas fa-angle-left me-2"></i>Back to shopping</a>
+                    </h5>
 
 
                 </div>
@@ -164,6 +166,10 @@ if (isset($_GET["product_id"])) {
             echo "Error: " . $e->getMessage();
         }
         ?>
+    </div>
+
+    </div>
+    </div>
 
         
 </body>
