@@ -44,6 +44,12 @@
 
 <div class="container-fluid m-0 p-0 full-body d-flex flex-column">
     <!-- Navigation  -->
+    <header>
+
+<?php
+ include_once "../partials/nav.php";
+ ?>
+</header>
     
        </div>
 
@@ -89,3 +95,21 @@
                <h1>filer options</h1>
            </div>
 
+           <div class="col-9 d-flex flex-wrap gap-4 border-red">
+               <h1 class="text-center w-100">Women</h1>
+               <?php
+                foreach ($products as $product) {
+
+                    $productPrice = $product["price"];
+                    $imgName = $product["image_url"];
+                    $productTitle = $product["product_name"];
+                    $imgPathOrg = "../assets/img/$imgName";
+                    $imgPathLow = "../assets/img/low-quality/$imgName";
+                    $productId = $product["product_id"];
+
+
+                    include "../partials/productCard.php";
+                }
+                ?>
+           </div>
+       </div>
