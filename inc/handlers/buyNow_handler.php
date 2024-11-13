@@ -28,3 +28,8 @@ if (isset($_SESSION["email"])) {
         $user = false;
     }
 }
+
+if (isset($_GET['product_id'])) {
+    $product_id = $_GET['product_id'];
+    // echo "product id: " . $product_id;
+}
