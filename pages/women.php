@@ -10,9 +10,10 @@
 
     $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+
     ?>
 
-<!doctype html>
+   <!doctype html>
    <html lang="en">
 
    <head>
@@ -21,7 +22,7 @@
        <title>Women - Zulo</title>
        <link rel="icon" type="image/x-icon" href="../assets/img/logo.png">
 
-       <!-- Bootstrap Added HTML structure for "Women" pageCDN  -->
+       <!-- Bootstrap CDN  -->
        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
        <!-- External CSS  -->
@@ -42,15 +43,14 @@
 
    <body>
 
-<div class="container-fluid m-0 p-0 full-body d-flex flex-column">
-    <!-- Navigation  -->
-    <header>
+       <div class="container-fluid m-0 p-0 full-body d-flex flex-column">
+           <!-- Navigation  -->
+           <header>
 
-<?php
- include_once "../partials/nav.php";
- ?>
-</header>
-    
+               <?php
+                include_once "../partials/nav.php";
+                ?>
+           </header>
        </div>
 
        <div id="carouselExampleIndicators" class="carousel slide mb-5 carousel-slider">
@@ -94,7 +94,6 @@
            <div class="col-3 border-red">
                <h1>filer options</h1>
            </div>
-
            <div class="col-9 d-flex flex-wrap gap-4 border-red">
                <h1 class="text-center w-100">Women</h1>
                <?php
@@ -113,8 +112,9 @@
                 ?>
            </div>
        </div>
-        <!-- Footer start  -->
-        <footer>
+
+       <!-- Footer start  -->
+       <footer>
            <?php
             $imgPathForFooter = "../assets/img/";
 
@@ -138,9 +138,11 @@
            crossorigin="anonymous"
            referrerpolicy="no-referrer"></script>
 
+
+       <!-- SweetAlert2 for enhanced alerts -->
+       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
        <!-- Ajax For Handling Wishlist and add to cart function  -->
-
-
        <?php
         if ($_SESSION["user_id"]) { ?>
            <script>
@@ -155,7 +157,11 @@
                        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                        xhr.onload = function() {
                            if (this.status === 200) {
-                               // console.log(this.responseText);
+                               Swal.fire({
+                                   title: 'Success!',
+                                   text: 'Product Removed From Wishlist',
+                                   icon: 'success'
+                               });
                            }
                        };
 
@@ -169,7 +175,13 @@
                        );
                        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                        xhr.onload = function() {
-                           if (this.status === 200) {}
+                           if (this.status === 200) {
+                               Swal.fire({
+                                   title: 'Success!',
+                                   text: 'Product added to Wishlist',
+                                   icon: 'success'
+                               });
+                           }
                        };
 
                        xhr.send();
@@ -191,7 +203,11 @@
                    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                    xhr.onload = function() {
                        if (this.status === 200) {
-                           // console.log(this.responseText);
+                           Swal.fire({
+                               title: 'Success!',
+                               text: 'Product added to cart',
+                               icon: 'success'
+                           });
                        }
                    };
                    xhr.send();
