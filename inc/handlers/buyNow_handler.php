@@ -18,5 +18,13 @@ if (isset($_SESSION["email"])) {
     $stmt->bindParam(":email", $email);  // Bind email parameter
     $stmt->execute();
 
-   
+    // Check if a user is found
+    if ($stmt->rowCount() > 0) {
+        // Fetch the user ID
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        $userID = $row['user_id'];
+    } else {
+        echo "No user found with this email.";
+        $user = false;
+    }
 }
