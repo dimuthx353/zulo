@@ -1,3 +1,8 @@
+<?php
+if (isset($_GET['order_id'])) {
+    $orderId = $_GET['order_id'];
+}
+?>
 
 <html>
 <head>
