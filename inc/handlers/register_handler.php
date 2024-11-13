@@ -28,8 +28,11 @@ if (isset($_POST['submit'])) {
             header("Location: ../../pages/login.php?error=invalidInputs");
             exit();
         }
-    } else {
-        createUser($conn, $fName, $lName, $email, $pwd, $phoneNum, $streetAddress, $city, $province, $zipCode);
-        exit();
+        } else {
+            createUser($conn, $fName, $lName, $email, $pwd, $phoneNum, $streetAddress, $city, $province, $zipCode);
+            exit();
+        }
     }
-}
+    
+
+

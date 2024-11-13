@@ -1,4 +1,4 @@
-<?php
+   <?php
     session_start();
     include_once "../inc/db.php";
 
@@ -191,6 +191,16 @@
                        }
                    };
                    xhr.send();
+               }
+
+               function buyNow(event, productId) {
+                   const result = confirm('are you sure want to buy this product?');
+
+                   console.log(result);
+
+                   if (result) {
+                       window.location.href = `../../../zulo/pages/buyNow.php?product_id=${productId}`;
+                   }
                }
            </script>
        <?php }

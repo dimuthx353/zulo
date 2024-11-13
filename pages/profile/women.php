@@ -138,7 +138,9 @@
            crossorigin="anonymous"
            referrerpolicy="no-referrer"></script>
 
-            <!-- Ajax For Handling Wishlist and add to cart function  -->
+       <!-- Ajax For Handling Wishlist and add to cart function  -->
+
+
        <?php
         if ($_SESSION["user_id"]) { ?>
            <script>
@@ -193,6 +195,16 @@
                        }
                    };
                    xhr.send();
+               }
+
+               function buyNow(event, productId) {
+                   const result = confirm('are you sure want to buy this product?');
+
+                   console.log(result);
+
+                   if (result) {
+                       window.location.href = `../../../zulo/pages/buyNow.php?product_id=${productId}`;
+                   }
                }
            </script>
        <?php }
