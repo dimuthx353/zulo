@@ -1,3 +1,4 @@
+
 <?php
 if (isset($_GET['order_id'])) {
     $orderId = $_GET['order_id'];
@@ -7,7 +8,7 @@ if (isset($_GET['order_id'])) {
 <html>
 
 <head>
-   <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,900&display=swap" rel="stylesheet">
 </head>
 <style>
     body {
@@ -59,7 +60,6 @@ if (isset($_GET['order_id'])) {
 
         <a style="padding: 5px;margin:30px 0px;display:inline-block; background-color: #4CAF50;color: white;text-decoration: none" href="../../zulo/index.php">Click Here to Return Home</a>
     </div>
-    
 </body>
 
 </html>
