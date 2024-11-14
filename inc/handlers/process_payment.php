@@ -21,6 +21,20 @@ try {
         die('User details not found.');
     }
 
+    $shippingAddress = $userDetails['address'];  // Get the shipping address from the users table
+
+    // Fetch cart items and product prices using a JOIN between cart and product tables
+    $cartQuery = "SELECT c.product_id, c.quantity, p.price 
+                  FROM cart c 
+                  JOIN products p ON c.product_id = p.product_id 
+                  WHERE c.user_id = :user_id";
+    $stmt = $conn->prepare($cartQuery);
+    $stmt->bindParam(':user_id', $userID, PDO::PARAM_INT);
+    $stmt->execute();
+    $cartItems = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
 }
