@@ -568,7 +568,7 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
     <p class="text text-white">
       Get 25% Discount on your first purchase.
       Just Sign Up & Register it now to become member.
-      <button class="btn btn-primary">Register Now</button>
+      <button class="btn btn-primary">signup Now</button>
     </p>
   </div>
 
