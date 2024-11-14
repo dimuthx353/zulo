@@ -44,6 +44,35 @@ try {
         $total += $item['quantity'] * $item['price']; // Sum up price * quantity
     }
 
+    // Concatenate product IDs into a comma-separated string
+    $productIDs = implode(',', array_column($cartItems, 'product_id'));
+
+    // Assuming payment method comes from a form submission
+    $paymentMethod = $_POST['paymentMethod'];
+
+    // Insert the order into the orders table
+    $sql = "INSERT INTO orders (user_id, total_amount, payment_status, created_at, shipping_address, qty, product_id) 
+            VALUES (:user_id, :total_amount, :payment_status, NOW(), :shipping_address, :qty, :product_id)";
+    $stmt = $conn->prepare($sql);
+
+    // Assuming `qty` is the total quantity of items in the cart
+    $qty = array_sum(array_column($cartItems, 'quantity'));
+
+    // Bind values
+    $stmt->bindParam(':user_id', $userID, PDO::PARAM_INT);
+    $stmt->bindParam(':total_amount', $total, PDO::PARAM_STR);
+    $stmt->bindParam(':payment_status', $paymentMethod, PDO::PARAM_STR);
+    $stmt->bindParam(':shipping_address', $shippingAddress, PDO::PARAM_STR);
+    $stmt->bindParam(':qty', $qty, PDO::PARAM_INT);
+    $stmt->bindParam(':product_id', $productIDs, PDO::PARAM_STR);
+
+    $stmt->execute();
+
+    // Get the last inserted order ID
+    $orderID = $conn->lastInsertId();
+
+
+
 
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
