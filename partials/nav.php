@@ -175,7 +175,7 @@ if (isset($_SESSION["email"])) {
 <?php if ($login): ?>
     <div class="bg-white p-2 d-flex justify-content-end align-items-center">
         <span><?= htmlspecialchars($email, ENT_QUOTES, 'UTF-8'); ?></span>
-        <a href="<?php echo $logoutPage ?>" class="ms-4">
+        <a href="#" class="ms-4" id="logout">
             <button class="btn btn-danger text-white" data-toggle="tooltip" data-placement="top" title="Log Out">
                 Log Out
             </button>

@@ -1,4 +1,25 @@
+const logout = document.getElementById('logout');
 
+logout.addEventListener('click', (event) => {
+  event.preventDefault();
+  Swal.fire({
+    title: 'Are you sure?',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire({
+        title: 'success!',
+        text: 'Your file has been deleted.',
+        icon: 'success'
+      });
+      window.location.href = `../../../zulo/inc/handlers/logout_handler.php`;
+    }
+  });
+});
 
 function addActiveClass(event) {
   const navUl = document.querySelector('#navUl');
