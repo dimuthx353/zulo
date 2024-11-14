@@ -173,10 +173,14 @@ if (isset($_SESSION["email"])) {
 </div>
 
 <?php if ($login): ?>
-    <div class="bg-white p-2 d-flex justify-content-end align-items-center">
-        <span><?= htmlspecialchars($email, ENT_QUOTES, 'UTF-8'); ?></span>
+    <div class="bg-bg-transparent p-2 d-flex justify-content-end align-items-center logout">
+        <span class="btn btn-primary text-white btn-sm fw-bold">
+            <a href="<?php echo $profilePage ?>" class="text-decoration-none">
+                <?= htmlspecialchars($email, ENT_QUOTES, 'UTF-8'); ?>
+            </a>
+        </span>
         <a href="#" class="ms-4" id="logout">
-            <button class="btn btn-danger text-white" data-toggle="tooltip" data-placement="top" title="Log Out">
+            <button class="btn btn-danger text-white btn-sm fw-bold" data-toggle="tooltip" data-placement="top" title="Log Out">
                 Log Out
             </button>
         </a>
