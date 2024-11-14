@@ -71,7 +71,11 @@ try {
     // Get the last inserted order ID
     $orderID = $conn->lastInsertId();
 
-
+    // Clear the user's cart after order submission
+    $sql = "DELETE FROM cart WHERE user_id = :user_id";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':user_id', $userID, PDO::PARAM_INT);
+    $stmt->execute();
 
 
 } catch (PDOException $e) {
