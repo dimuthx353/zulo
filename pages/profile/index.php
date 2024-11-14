@@ -111,7 +111,7 @@ if (isset($_SESSION["user_id"])) {
                         <div class="card mb-4">
                             <div class="card-header">Account Details</div>
                             <div class="card-body">
-                                <form action="../../inc/handlers/profile_handler.php" method="POST">
+                                <form method="POST" id="form">
                                     <!-- First Name and Last Name -->
                                     <div class="row gx-3 mb-3">
                                         <div class="col-md-6">
@@ -168,6 +168,38 @@ if (isset($_SESSION["user_id"])) {
                                     <!-- Save changes button -->
                                     <button class="btn btn-primary" type="submit">Save changes</button>
                                 </form>
+
+                                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                                <script>
+                                    const form = document.getElementById("form");
+
+                                    form.addEventListener("submit", (e) => {
+                                        e.preventDefault();
+
+                                        const xhr = new XMLHttpRequest();
+                                        xhr.open("POST", "../../inc/handlers/profile_handler.php", true);
+
+                                        xhr.onload = function() {
+                                            if (xhr.status === 200) {
+                                                Swal.fire({
+                                                    title: "Profile Updated!",
+                                                    text: "Your account details have been saved successfully.",
+                                                    icon: "success"
+                                                });
+                                            } else {
+                                                Swal.fire({
+                                                    title: "Error",
+                                                    text: "There was a problem updating your profile.",
+                                                    icon: "error"
+                                                });
+                                            }
+                                        };
+
+                                        // Use FormData to send form data
+                                        const formData = new FormData(form);
+                                        xhr.send(formData);
+                                    });
+                                </script>
                             </div>
                         </div>
                     </div>

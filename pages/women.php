@@ -179,7 +179,8 @@
                                Swal.fire({
                                    title: 'Success!',
                                    text: 'Product added to Wishlist',
-                                   icon: 'success'
+                                   icon: 'success',
+                                   footer: '<a href="../pages/profile/wishlist.php">View Wishlist</a>'
                                });
                            }
                        };

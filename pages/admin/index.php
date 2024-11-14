@@ -42,6 +42,11 @@ $Products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <li class="gnav2">Category</li>
                 <li class="gnav3">Sub Category</li>
                 <li class="gnav4">Manage Users</li>
+                <li class="gnav4">
+                    <a href="../../index.php">
+                        Back to Home
+                    </a>
+                </li>
             </ul>
         </nav>
         <div class="contents" id="contents">

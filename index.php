@@ -600,6 +600,9 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
 
+  <!-- SweetAlert2 for enhanced alerts -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
   <!-- External JS  -->
   <script src="./assets/js/index.js"></script>
 

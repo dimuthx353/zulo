@@ -25,10 +25,11 @@
 
        <!-- External CSS  -->
        <link rel="stylesheet" href="../assets/css/addCategories.min.css">
-       <link rel="stylesheet" href="../assets/css/women.min.css">
+       <link rel="stylesheet" href="../assets/css/men.min.css">
        <link rel="stylesheet" href="../assets/css/reset.min.css">
        <link rel="stylesheet" href="../assets/css/nav.min.css">
        <link rel="stylesheet" href="./assets/css/footer.min.css">
+
 
        <!-- Font Awesome CDN  -->
        <link
@@ -43,6 +44,7 @@
        <div class="container-fluid m-0 p-0 full-body d-flex flex-column">
            <!-- Navigation  -->
            <header>
+
                <?php
                 include_once "../partials/nav.php";
                 ?>
@@ -58,9 +60,6 @@
 
            <div class="carousel-inner h-100">
                <div class="carousel-item active">
-                   <p>
-                   <h1>Men</h1>
-                   </p>
                    <img src="../assets/img/menpageslide03.jpg" class="d-block w-100" alt="...">
                </div>
                <div class="carousel-item">
@@ -176,7 +175,8 @@
                                Swal.fire({
                                    title: 'Success!',
                                    text: 'Product added to Wishlist',
-                                   icon: 'success'
+                                   icon: 'success',
+                                   footer: '<a href="../pages/profile/wishlist.php">View Wishlist</a>'
                                });
                            }
                        };
