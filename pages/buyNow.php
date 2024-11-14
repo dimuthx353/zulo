@@ -3,6 +3,10 @@ session_start();
 include_once "../inc/db.php";
 $userID = $_SESSION["user_id"];
 
+if (!isset($_SESSION["user_id"])) {
+    header("location: ../pages/login.php");
+}
+
 if (isset($_GET["product_id"])) {
     $productID = $_GET["product_id"];
     $sql = "SELECT product_name, description, price, stock_quantity, image_url, sku ,product_id
@@ -18,39 +22,39 @@ if (isset($_GET["product_id"])) {
 
 ?>
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Buy Now - Zulo</title>
     <link rel="icon" type="image/x-icon" href="../assets/img/logo.png">
 
-     <!-- Bootstrap CDN -->
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-<!-- Font Awesome CDN  -->
-<link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-    crossorigin="anonymous" />
+    <!-- Font Awesome CDN  -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" />
 
-<!-- External CSS  -->
-<!-- <link rel="stylesheet" href="../assets/css/cart.min.css"> -->
-<link rel="stylesheet" href="../assets/css/reset.min.css">
-<link rel="stylesheet" href="../assets/css/nav.min.css">
-<link rel="stylesheet" href="../assets/css/footer.min.css">
-<link rel="stylesheet" href="../assets/css/index.min.css">
+    <!-- External CSS  -->
+    <!-- <link rel="stylesheet" href="../assets/css/cart.min.css"> -->
+    <link rel="stylesheet" href="../assets/css/reset.min.css">
+    <link rel="stylesheet" href="../assets/css/nav.min.css">
+    <link rel="stylesheet" href="../assets/css/footer.min.css">
+    <link rel="stylesheet" href="../assets/css/index.min.css">
 </head>
 
 <body>
-     <?php
+    <?php
     include_once "../partials/nav.php"
     ?>
 
-<div class="container d-flex ">
+    <div class="container d-flex ">
         <?php
 
         $productPrice = $product["price"];
@@ -89,7 +93,7 @@ if (isset($_GET["product_id"])) {
             if ($userDetails) { ?>
                 <div class="col-lg-6 px-5 py-4">
                     <h3 class="mb-5 pt-2 text-center fw-bold text-uppercase">Shipping Details</h3>
-                    <form <?php echo $productID ?>" method="POST">
+                    <form action="../inc/handlers/buyNow_handler.php?product_id=<?php echo $productID ?>" method="POST">
                         <div data-mdb-input-init class="form-outline mb-2">
                             <label class="form-label" for="typeText">Name </label>
                             <input type="text" name="name" id="typeText" class="form-control form-control-lg" size="17"
@@ -134,7 +138,7 @@ if (isset($_GET["product_id"])) {
                             </div>
                         </div>
                         <div>
-                             <div>
+                            <div>
                                 <h3 class="mb-5 pt-2 text-center fw-bold text-uppercase">Payment Method</h3>
                                 <div class="form-check">
                                     <input type="number" value="<?php echo $productPrice ?>" hidden name="productPrice">
@@ -149,7 +153,7 @@ if (isset($_GET["product_id"])) {
                                         Card Payment
                                     </label>
                                 </div>
-                                <button type="submit" class="mt-5 btn btn-primary btn-block">Buy now</button>        
+                                <button type="submit" class="mt-5 btn btn-primary btn-block">Buy now</button>
                     </form>
 
                     <h5 class="fw-bold mb-5" style="position: absolute; bottom: 0;">
@@ -176,9 +180,9 @@ if (isset($_GET["product_id"])) {
     include_once "../partials/footer.php"
     ?>
 
-        
 
-<!-- Bootstrap CDN  -->
+
+    <!-- Bootstrap CDN  -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
