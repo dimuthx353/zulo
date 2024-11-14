@@ -33,6 +33,16 @@ try {
     $stmt->execute();
     $cartItems = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+    // If the cart is empty
+    if (empty($cartItems)) {
+        die('No items in cart.');
+    }
+
+    // Calculate total amount
+    $total = 0;
+    foreach ($cartItems as $item) {
+        $total += $item['quantity'] * $item['price']; // Sum up price * quantity
+    }
 
 
 } catch (PDOException $e) {
