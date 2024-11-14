@@ -77,7 +77,9 @@ try {
     $stmt->bindParam(':user_id', $userID, PDO::PARAM_INT);
     $stmt->execute();
 
-
+    // Redirect to the order confirmation page
+    header("Location: ../../../../../zulo/pages/orderSuccess.php?order_id=$orderID");
+    exit();
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
 }
