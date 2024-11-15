@@ -130,28 +130,16 @@
                            <h5 class="">MEN CLOTHES CATEGORIES</h1>
                                <div class="form-check d-flex flex-wrap flex-column bg-light">
                                    <div class="my-2 p-2">
-                                       <input class="form-check-input" type="checkbox" id="tshirts" name="category" value="T-SHIRTS">
-                                       <label class="form-check-label" for="tshirts">T-SHIRTS</label> <br>
+                                       <input class="form-check-input" type="radio" id="tshirts" name="category" value="T-SHIRTS" onclick="filterProducts('tShirts',event)">
+                                       <label class="form-check-label" for="tshirts" onclick="filterProducts('tShirts',event)">T-SHIRTS</label> <br>
                                    </div>
                                    <div class="my-2 p-2">
-                                       <input class="form-check-input" type="checkbox" id="shirts" name="category" value="SHIRTS">
-                                       <label class="form-check-label" for="shirts">SHIRTS</label>
+                                       <input class="form-check-input" type="radio" id="shirts" name="category" value="SHIRTS" onclick="filterProducts('shirts',event)">
+                                       <label class="form-check-label" for="shirts" onclick="filterProducts('shirts',event)">SHIRTS</label>
                                    </div>
                                    <div class="my-2 p-2">
-                                       <input class="form-check-input" type="checkbox" id="casual-Shirts" name="category" value="casual-shirts">
-                                       <label class="form-check-label" for="casual-Shirts">CASUAL SHIRTS</label>
-                                   </div>
-                                   <div class="my-2 p-2">
-                                       <input class="form-check-input" type="checkbox" id="shorts" name="category" value="SHORTS">
-                                       <label class="form-check-label" for="shorts">SHORTS</label>
-                                   </div>
-                                   <div class="my-2 p-2">
-                                       <input class="form-check-input" type="checkbox" id="jackets" name="category" value="JACKETS">
-                                       <label class="form-check-label" for="jackets">JACKETS</label>
-                                   </div>
-                                   <div class="my-2 p-2">
-                                       <input class="form-check-input" type="checkbox" id="hoodies" name="category" value="HOODIES">
-                                       <label class="form-check-label" for="hoodies">HOODIES</label>
+                                       <input class="form-check-input" type="radio" id="casual-Shirts" name="category" value="casual-shirts" onclick="filterProducts('casual-shirts',event)">
+                                       <label class="form-check-label" for="casual-Shirts" onclick="filterProducts('casualShirts',event)">CASUAL SHIRTS</label>
                                    </div>
                                </div>
                        </div>
