@@ -281,7 +281,7 @@ $Products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                                     </form>
                                                 </td>
                                                <td>
-                                                    <a href="../../inc/handlers/admin/deleteUser_handler.php?id=' . htmlspecialchars($user["user_id"]) . '">Delete</a>
+                                                    <a href="#" onclick="deleteUser(event,' . htmlspecialchars($user["user_id"]) . ')">Delete</a>
                                                </td>
                                             </tr>';
                                 }
@@ -307,6 +307,7 @@ $Products = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <script src="../../assets/js/admin.js"></script>
     <script src="../../assets/js/updateProduct.js"></script>
     <script src="../../assets/js/deleteProducts.js"></script>
+    <script src="../../assets/js/deleteUser.js"></script>
 </body>
 
 </html>
