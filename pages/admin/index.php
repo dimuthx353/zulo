@@ -231,6 +231,13 @@ $Products = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </article>
             <article id="page4">
                 <section>
+                    <div class="text-white text-capitalize d-flex justify-content-end">
+                        <select name="userType" id="userType" onchange="filterUsers(event)">
+                            <option name="all" value="all">All</option>
+                            <option name="user" value="user">users</option>
+                            <option name="admin" value="admin">admins</option>
+                        </select>
+                    </div>
                     <h1>Manage Users</h1>
                     <table class="table table-centered mb-0">
                         <thead>
@@ -308,6 +315,19 @@ $Products = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <script src="../../assets/js/updateProduct.js"></script>
     <script src="../../assets/js/deleteProducts.js"></script>
     <script src="../../assets/js/deleteUser.js"></script>
+    <script>
+        function filterUsers(event) {
+            console.log(event.target.value)
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', `../../inc/handlers/admin/filterUsers.php?userType=${event.target.value}`, true);
+            xhr.onload = function() {
+                if (this.status === 200) {
+                    document.getElementById('page4').innerHTML = this.responseText;
+                }
+            };
+            xhr.send();
+        }
+    </script>
 </body>
 
 </html>
