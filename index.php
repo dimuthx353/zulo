@@ -568,7 +568,7 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
     <p class="text text-white">
       Get 25% Discount on your first purchase.
       Just Sign Up & Register it now to become member.
-      <button class="btn btn-primary">Register Now</button>
+      <button class="btn btn-primary">signup Now</button>
     </p>
   </div>
 
@@ -600,12 +600,17 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
 
+  <!-- SweetAlert2 for enhanced alerts -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
   <!-- External JS  -->
   <script src="./assets/js/index.js"></script>
 
   <!-- Ajax For Handling Wishlist  -->
 
 
+  <!-- SweetAlert2 for enhanced alerts -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <script src="./assets/js/ajax.js"></script>
 

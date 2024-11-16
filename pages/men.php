@@ -25,10 +25,11 @@
 
        <!-- External CSS  -->
        <link rel="stylesheet" href="../assets/css/addCategories.min.css">
-       <link rel="stylesheet" href="../assets/css/women.min.css">
+       <link rel="stylesheet" href="../assets/css/men.min.css">
        <link rel="stylesheet" href="../assets/css/reset.min.css">
        <link rel="stylesheet" href="../assets/css/nav.min.css">
        <link rel="stylesheet" href="./assets/css/footer.min.css">
+
 
        <!-- Font Awesome CDN  -->
        <link
@@ -36,6 +37,35 @@
            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
            integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
            crossorigin="anonymous" />
+
+       <style>
+           .styled-radio {
+               appearance: none;
+               width: 20px;
+               height: 20px;
+               border-radius: 50%;
+               border: 2px solid #007bff;
+               outline: none;
+               cursor: pointer;
+               position: relative;
+           }
+
+           .styled-radio:checked {
+               background-color: #007bff;
+           }
+
+           .styled-radio:checked::before {
+               content: '';
+               display: block;
+               width: 12px;
+               height: 12px;
+               border-radius: 50%;
+               background-color: white;
+               position: absolute;
+               top: 3px;
+               left: 3px;
+           }
+       </style>
    </head>
 
    <body>
@@ -43,6 +73,7 @@
        <div class="container-fluid m-0 p-0 full-body d-flex flex-column">
            <!-- Navigation  -->
            <header>
+
                <?php
                 include_once "../partials/nav.php";
                 ?>
@@ -58,9 +89,6 @@
 
            <div class="carousel-inner h-100">
                <div class="carousel-item active">
-                   <p>
-                   <h1>Men</h1>
-                   </p>
                    <img src="../assets/img/menpageslide03.jpg" class="d-block w-100" alt="...">
                </div>
                <div class="carousel-item">
@@ -87,12 +115,37 @@
        </div>
 
        <div class="container d-flex product-section">
-           <div class="col-3 border-red">
-               <h1>filer options</h1>
+           <div class="col-3 border-end border-secondary">
+               <div class="form-check border d-flex flex-wrap flex-column pt-5 bg-light">
+                   <h5 class="">FILTER OPTIONS</h1>
+                       <div class="my-2 p-2">
+                           <input class="form-check-input styled-radio" type="radio" id="radio1" name="sort" value="ASC" checked onclick="sortProducts('ASC')">
+                           <label class="form-check-label" for="radio1" onclick="sortProducts('ASC')">Price: Low to High</label> <br>
+                       </div>
+                       <div class="my-2 p-2">
+                           <input class="form-check-input styled-radio" type="radio" id="radio2" name="sort" value="DESC" onclick="sortProducts('DESC')">
+                           <label class="form-check-label" for="radio2" onclick="sortProducts('DESC')">Price: High to Low</label>
+                       </div>
+                       <div class="mt-5">
+                           <h5 class="">MEN CLOTHES CATEGORIES</h1>
+                               <div class="form-check d-flex flex-wrap flex-column bg-light">
+                                   <div class="my-2 p-2">
+                                       <input class="form-check-input" type="radio" id="tshirts" name="category" value="T-SHIRTS" onclick="filterProducts('tShirts',event)">
+                                       <label class="form-check-label" for="tshirts" onclick="filterProducts('tShirts',event)">T-SHIRTS</label> <br>
+                                   </div>
+                                   <div class="my-2 p-2">
+                                       <input class="form-check-input" type="radio" id="shirts" name="category" value="SHIRTS" onclick="filterProducts('shirts',event)">
+                                       <label class="form-check-label" for="shirts" onclick="filterProducts('shirts',event)">SHIRTS</label>
+                                   </div>
+                                   <div class="my-2 p-2">
+                                       <input class="form-check-input" type="radio" id="casual-Shirts" name="category" value="casual-shirts" onclick="filterProducts('casual-shirts',event)">
+                                       <label class="form-check-label" for="casual-Shirts" onclick="filterProducts('casualShirts',event)">CASUAL SHIRTS</label>
+                                   </div>
+                               </div>
+                       </div>
+               </div>
            </div>
-           <div class="col-9 d-flex flex-wrap gap-4 border-red" id="men">
-               <h1 class="text-center w-100">Men</h1>
-
+           <div class="col-9 d-flex flex-wrap gap-4 " id="men">
                <?php
                 foreach ($products as $product) {
 
@@ -107,7 +160,6 @@
                 }
                 ?>
            </div>
-       </div>
        </div>
 
        <!-- Footer Start  -->
@@ -136,6 +188,9 @@
            referrerpolicy="no-referrer"></script>
 
 
+       <!-- SweetAlert2 for enhanced alerts -->
+       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
        <!-- Ajax For Handling Wishlist and add to cart function  -->
        <?php
         if ($_SESSION["user_id"]) { ?>
@@ -151,7 +206,11 @@
                        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                        xhr.onload = function() {
                            if (this.status === 200) {
-                               // console.log(this.responseText);
+                               Swal.fire({
+                                   title: 'Success!',
+                                   text: 'Product Removed From Wishlist',
+                                   icon: 'success'
+                               });
                            }
                        };
 
@@ -165,7 +224,14 @@
                        );
                        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                        xhr.onload = function() {
-                           if (this.status === 200) {}
+                           if (this.status === 200) {
+                               Swal.fire({
+                                   title: 'Success!',
+                                   text: 'Product added to Wishlist',
+                                   icon: 'success',
+                                   footer: '<a href="../pages/profile/wishlist.php">View Wishlist</a>'
+                               });
+                           }
                        };
 
                        xhr.send();
@@ -186,7 +252,11 @@
                    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                    xhr.onload = function() {
                        if (this.status === 200) {
-                           //    console.log(this.responseText);
+                           Swal.fire({
+                               title: 'Success!',
+                               text: 'Product added to cart',
+                               icon: 'success'
+                           });
                        }
                    };
                    xhr.send();
@@ -194,8 +264,6 @@
 
                function buyNow(event, productId) {
                    const result = confirm('are you sure want to buy this product?');
-
-                   console.log(result);
 
                    if (result) {
                        window.location.href = `../../../zulo/pages/buyNow.php?product_id=${productId}`;
@@ -207,6 +275,7 @@
         ?>
 
        <script src="../assets/js/search.js"></script>
+       <script src="../assets/js/filter.js"></script>
 
 
    </body>

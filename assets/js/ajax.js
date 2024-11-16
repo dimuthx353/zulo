@@ -12,7 +12,11 @@ function addToWishlist(event, productId) {
       xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
       xhr.onload = function () {
         if (this.status === 200) {
-          // console.log(this.responseText);
+          Swal.fire({
+            title: 'Success!',
+            text: 'Product Removed From Wishlist',
+            icon: 'success'
+          });
         }
       };
 
@@ -27,6 +31,13 @@ function addToWishlist(event, productId) {
       xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
       xhr.onload = function () {
         if (this.status === 200) {
+          Swal.fire({
+            title: 'Success!',
+            text: 'Product added to Wishlist',
+            icon: 'success',
+            footer:
+              '<a href="../../../zulo/pages/profile/wishlist.php">View Wishlist</a>'
+          });
         }
       };
 
@@ -51,7 +62,11 @@ function addToCart(productId) {
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.onload = function () {
       if (this.status === 200) {
-        // console.log(this.responseText);
+        Swal.fire({
+          title: 'Success!',
+          text: 'Product added to cart',
+          icon: 'success'
+        });
       }
     };
     xhr.send();
@@ -60,9 +75,6 @@ function addToCart(productId) {
 
 function buyNow(event, productId) {
   const result = confirm('are you sure want to buy this product?');
-
-  console.log(result);
-
   if (result) {
     window.location.href = `../../../zulo/pages/buyNow.php?product_id=${productId}`;
   }
