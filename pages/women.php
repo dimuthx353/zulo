@@ -192,7 +192,6 @@
                    event.target.classList.toggle('bi-heart-fill');
                }
 
-
                function addToCart(productId) {
                    console.log(productId);
                    const xhr = new XMLHttpRequest();
@@ -223,6 +222,7 @@
                        window.location.href = `../../../zulo/pages/buyNow.php?product_id=${productId}`;
                    }
                }
+
            </script>
        <?php }
         ?>
