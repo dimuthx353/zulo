@@ -46,10 +46,14 @@ if (count($users) > 0) {
                 <p class="fw-normal mb-1">' . htmlspecialchars($user["postal_code"]) . '</p>
             </td>
             <td>
-                <p class="fw-normal mb-1">' . htmlspecialchars($user["province"]) . '</p>
+                <p class="fw-normal mb-1">' . htmlspecialchars($user["province"]) .
+            '</p>
             </td>
             <td>
-                <p class="fw-normal mb-1">' . htmlspecialchars($user["roll"]) . '</p>
+            <select name="roll" id="roll" onchange="updateUserRoll(event,' . htmlspecialchars($user['user_id']) . ')" class="form-select form-select-sm" style="width: 100px">
+                <option value="user" ' . ($user['roll'] == 'user' ? 'selected' : '') . '>User</option>
+                <option value="admin" ' . ($user['roll'] == 'admin' ? 'selected' : '') . '>Admin</option>
+            </select>
             </td>
             <td>
                 <form method="POST" action="../../inc/handlers/admin/update_user_status.php">
