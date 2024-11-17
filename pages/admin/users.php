@@ -240,7 +240,7 @@ if (isset($_SESSION['user_id'])) {
                   <th>phone number</th>
                   <th>address</th>
                   <th>city</th>
-                  <th>postal code</th>
+                  <th>zip</th>
                   <th>province</th>
                   <th>roll</th>
                   <th>active</th>
@@ -289,7 +289,10 @@ if (isset($_SESSION['user_id'])) {
                         <p class="fw-normal mb-1"><?php echo htmlspecialchars($user["province"]) ?></p>
                       </td>
                       <td>
-                        <p class="fw-normal mb-1"><?php echo htmlspecialchars($user["roll"]) ?></p>
+                        <select name="roll" id="roll" name="roll" for="roll" onchange="updateUserRoll(event,<?php echo htmlspecialchars($user['user_id']) ?>)" class="form-select form-select-sm" style="width: 100px">
+                          <option value="user" name="roll">user</option>
+                          <option value="admin" name="roll">admin</option>
+                        </select>
                       </td>
                       <td>
                         <form method="POST" action="../../inc/handlers/admin/update_user_status.php">
@@ -300,7 +303,7 @@ if (isset($_SESSION['user_id'])) {
                         </form>
                       </td>
                       <td>
-                        <a href="#" class="btn btn-danger btn-sm rounded-pill" onclick="deleteUser(event, <?php echo htmlspecialchars($user["user_id"]) ?>)">Delete</a>
+                        <a href="#" class="btn btn-danger btn-sm rounded-pill" onclick="deleteUser(event, <?php echo htmlspecialchars($user['user_id']) ?>)">Delete</a>
                       </td>
                     </tr>
                 <?php
@@ -359,6 +362,23 @@ if (isset($_SESSION['user_id'])) {
           document.getElementById('userTable').innerHTML = this.responseText;
         }
       };
+      xhr.send();
+    }
+
+    function updateUserRoll(event, userId) {
+      const roll = event.target.value;
+      console.log(roll);
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', `../../inc/handlers/admin/updateUserRoll.php?userId=${userId}&roll=${roll}`, true);
+      xhr.onload = function() {
+        if (this.status === 200) {
+          Swal.fire({
+            title: 'Success!',
+            text: 'Change User Roll',
+            icon: 'success'
+          });
+        }
+      }
       xhr.send();
     }
   </script>
