@@ -20,17 +20,31 @@ if (isset($_SESSION['user_id'])) {
     content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <title>Dashboard - SB Admin</title>
-  <link
-    href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css"
-    rel="stylesheet" />
+  <title>Manage Category - Zulo Admin</title>
+
+  <link rel="icon" type="image/png" href="../../assets/img/favicon-48x48.png" sizes="48x48" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg" />
+  <link rel="shortcut icon" href="../../assets/img/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/img/apple-touch-icon.png" />
+  <link rel="manifest" href="../../assets/img/site.webmanifest" />
+
   <link href="css/styles.css" rel="stylesheet" />
+
   <script
     src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
     crossorigin="anonymous"></script>
+
+  <!-- Bootstrap CDN  -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- External CSS  -->
+  <link rel="stylesheet" href="../../assets/css/reset.min.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
-<body class="sb-nav-fixed">
+<body>
   <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
     <!-- Navbar Brand-->
     <a class="navbar-brand ps-3" href="index.html">Start Bootstrap</a>
@@ -69,7 +83,12 @@ if (isset($_SESSION['user_id'])) {
         <ul
           class="dropdown-menu dropdown-menu-end"
           aria-labelledby="navbarDropdown">
-          <li><a class="dropdown-item" href="../../inc/handlers/login_handler.php">Logout</a></li>
+          <li><a class="dropdown-item" href="#!">Settings</a></li>
+          <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+          <li>
+            <hr class="dropdown-divider" />
+          </li>
+          <li><a class="dropdown-item" href="#!">Logout</a></li>
         </ul>
       </li>
     </ul>
@@ -191,130 +210,35 @@ if (isset($_SESSION['user_id'])) {
     <div id="layoutSidenav_content">
       <main>
         <div class="container-fluid px-4">
-          <h1 class="mt-4">Dashboard</h1>
+          <h1 class="mt-4">Manage Category</h1>
           <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item active">Dashboard</li>
+            <li class="breadcrumb-item">
+              <a href="index.html">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item active">Manage Category</li>
           </ol>
-          <div class="row">
-            <div class="col-xl-3 col-md-6">
-              <div class="card bg-primary text-white mb-4">
-                <div class="card-body">
-                  <p class="d-flex justify-content-between">
-                    Users <span class="display-1">
-                      <?php
-                      $stmt = $conn->prepare("SELECT COUNT(*) FROM users");
-                      $stmt->execute();
-                      echo $stmt->fetchColumn();
-                      ?>
-                    </span>
-                  </p>
-                  <i class="fas fa-users"></i>
-                </div>
-                <div
-                  class="card-footer d-flex align-items-center justify-content-between">
-                  <a class="small text-white stretched-link" href="#">View Details</a>
-                  <div class="small text-white">
-                    <i class="fas fa-angle-right"></i>
-                  </div>
-                </div>
+          <!-- !content -->
+          <section>
+            <h3 class="mt-4 mb-3 bg-dark text-light p-2">Add New Category</h3>
+            <form class=" my-0 p-5" action=" ../../inc/handlers/admin/addMain.php" method="post">
+              <!-- Main Category Name -->
+              <div class="mb-3">
+                <label for="mainCategory" class="form-label">Main Category Name</label>
+                <input type="text" class="form-control" id="mainCategory" name="mainCategory" required>
               </div>
-            </div>
-            <div class="col-xl-3 col-md-6">
-              <div class="card bg-warning text-white mb-4">
-                <div class="card-body">
-                  <p class="d-flex justify-content-between">
-                    Products <span class="display-1">
-                      <?php
-                      $stmt = $conn->prepare("SELECT COUNT(*) FROM products");
-                      $stmt->execute();
-                      echo $stmt->fetchColumn();
-                      ?>
-                    </span>
-                  </p>
 
-                  <i class="fas fa-boxes"></i>
-                </div>
-                <div
-                  class="card-footer d-flex align-items-center justify-content-between">
-                  <a class="small text-white stretched-link" href="#">View Details</a>
-                  <div class="small text-white">
-                    <i class="fas fa-angle-right"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-md-6">
-              <div class="card bg-success text-white mb-4">
-                <div class="card-body">
-                  <p class="d-flex justify-content-between">
-                    Admin <span class="display-1">
-                      <?php
-                      $stmt = $conn->prepare("SELECT COUNT(*) FROM users WHERE roll = 'admin'");
-                      $stmt->execute();
-                      echo $stmt->fetchColumn();
-                      ?>
-                    </span>
-                  </p>
-                  <i class="fas fa-user-tie"></i>
-                </div>
-                <div
-                  class="card-footer d-flex align-items-center justify-content-between">
-                  <a class="small text-white stretched-link" href="#">View Details</a>
-                  <div class="small text-white">
-                    <i class="fas fa-angle-right"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-md-6">
-              <div class="card bg-info text-white mb-4">
-                <div class="card-body">
-                  <p class="d-flex justify-content-between">
-                    Cart <span class="display-1">
-                      <?php
-                      $stmt = $conn->prepare("SELECT COUNT(*) FROM cart");
-                      $stmt->execute();
-                      echo $stmt->fetchColumn();
-                      ?>
-                    </span>
-                  </p>
-                  <i class="fas fa-shopping-cart"></i>
-                </div>
-                <div
-                  class="card-footer d-flex align-items-center justify-content-between">
-                  <a class="small text-white stretched-link" href="#">View Details</a>
-                  <div class="small text-white">
-                    <i class="fas fa-angle-right"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-md-6">
-              <div class="card bg-danger text-white mb-4">
-                <div class="card-body">
-                  <p class="d-flex justify-content-between">
-                    Wishlist <span class="display-1">
-                      <?php
-                      $stmt = $conn->prepare("SELECT COUNT(*) FROM wishlist");
-                      $stmt->execute();
-                      echo $stmt->fetchColumn();
-                      ?>
-                    </span>
-                  </p>
-                  <i class="fas fa-heart"></i>
-                </div>
-                <div
-                  class="card-footer d-flex align-items-center justify-content-between">
-                  <a class="small text-white stretched-link" href="#">View Details</a>
-                  <div class="small text-white">
-                    <i class="fas fa-angle-right"></i>
-                  </div>
-                </div>
-              </div>
+              <!-- Submit Button -->
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </section>
+
+          <!-- ! end content -->
+          <div style="height: 100vh"></div>
+          <div class="card mb-4">
+            <div class="card-body">
+              test test
             </div>
           </div>
-
-
         </div>
       </main>
       <footer class="py-4 bg-light mt-auto">
@@ -332,19 +256,24 @@ if (isset($_SESSION['user_id'])) {
       </footer>
     </div>
   </div>
+
+
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
     crossorigin="anonymous"></script>
   <script src="js/scripts.js"></script>
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
-    crossorigin="anonymous"></script>
-  <script src="assets/demo/chart-area-demo.js"></script>
-  <script src="assets/demo/chart-bar-demo.js"></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
-    crossorigin="anonymous"></script>
-  <script src="js/datatables-simple-demo.js"></script>
+  <!-- Jquery CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.0/jquery-ui.min.js" integrity="sha512-MlEyuwT6VkRXExjj8CdBKNgd+e2H+aYZOCUaCrt9KRk6MlZDOs91V1yK22rwm8aCIsb5Ec1euL8f0g58RKT/Pg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js' integrity='sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==' crossorigin='anonymous'></script>
+  <!-- Bootstrap CDN  -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <!-- SweetAlert2 CDN  -->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- External JS  -->
+  <script src="../../assets/js/admin.js"></script>
+  <script src="../../assets/js/updateProduct.js"></script>
+  <script src="../../assets/js/deleteProducts.js"></script>
+  <script src="../../assets/js/deleteUser.js"></script>
 </body>
 
 </html>

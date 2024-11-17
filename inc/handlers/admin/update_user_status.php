@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['user_id'])) {
 
     if ($stmt->execute()) {
         // Redirect back to the admin page or display a success message
-        header("Location:  ../../../pages/admin/index.php"); // Change to your admin page
+        header("Location:  ../../../pages/admin2/users.php"); // Change to your admin page
         exit;
     } else {
         echo 'Failed to update account status.';
