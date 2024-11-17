@@ -259,7 +259,6 @@ if (isset($_SESSION['user_id'])) {
           </form>
 
           <!-- ! end content -->
-          <div style="height: 100vh"></div>
           <div class="card mb-4">
             <div class="card-body">
               test test

@@ -348,7 +348,6 @@ $Products = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </form>
           </section>
           <!-- ! end content -->
-          <div style="height: 100vh"></div>
           <div class="card mb-4">
             <div class="card-body">
               test test
