@@ -268,7 +268,7 @@ if (isset($_SESSION['user_id'])) {
                             style="width: 45px; height: 45px"
                             class="rounded-circle" />
                           <div class="ms-3">
-                            <p class="fw-bold mb-1"><?php echo htmlspecialchars($user["first_name"]) ?></p>
+                            <p class="fw-bold mb-1"><?php echo htmlspecialchars($user["first_name"]) ?> <span class="badge rounded-pill bg-primary"><?php echo htmlspecialchars($user["roll"]) ?></span> </p>
                             <p class="text-muted mb-0"><?php echo htmlspecialchars($user["email"]) ?></p>
                           </div>
                         </div>
