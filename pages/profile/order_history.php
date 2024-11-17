@@ -53,6 +53,7 @@ try {
     <?php
     $profilePage = "";
     $cartPage = "../../pages/cart.php";
+    $logoutPage = "../../inc/handlers/logout_handler.php";
 
     include_once "../../partials/nav.php";
 

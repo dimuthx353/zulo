@@ -58,6 +58,7 @@ if (isset($_SESSION["user_id"])) {
 
     $profilePage = "";
     $cartPage = "../../pages/cart.php";
+    $logoutPage = "../../inc/handlers/logout_handler.php";
 
 
 
