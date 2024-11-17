@@ -349,9 +349,6 @@ $Products = $stmt->fetchAll(PDO::FETCH_ASSOC);
           </section>
           <!-- ! end content -->
           <div class="card mb-4">
-            <div class="card-body">
-              test test
-            </div>
           </div>
         </div>
       </main>

@@ -315,9 +315,6 @@ if (isset($_SESSION['user_id'])) {
 
             <!-- ! end content -->
             <div class="card mb-4">
-              <div class="card-body">
-                test test
-              </div>
             </div>
         </div>
       </main>
