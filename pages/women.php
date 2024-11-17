@@ -170,7 +170,7 @@
 
        <!-- Ajax For Handling Wishlist and add to cart function  -->
        <?php
-        if ($_SESSION["user_id"]) { ?>
+        if (isset($_SESSION["user_id"])) { ?>
            <script>
                function addToWishlist(event) {
                    if (event.target.classList.contains('bi-heart-fill')) {
