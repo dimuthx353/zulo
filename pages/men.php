@@ -86,7 +86,6 @@
                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
            </div>
-
            <div class="carousel-inner h-100">
                <div class="carousel-item active">
                    <img src="../assets/img/menpageslide03.jpg" class="d-block w-100" alt="...">
@@ -116,14 +115,14 @@
 
        <div class="container d-flex product-section">
            <div class="col-3 border-end border-secondary">
-               <div class="form-check border d-flex flex-wrap flex-column pt-5 bg-light">
+               <div class="form-check  d-flex flex-wrap flex-column pt-5 bg-light">
                    <h5 class="">FILTER OPTIONS</h1>
                        <div class="my-2 p-2">
-                           <input class="form-check-input styled-radio" type="radio" id="radio1" name="sort" value="ASC" checked onclick="sortProducts('ASC')">
+                           <input class="form-check-input styled-radio" type="radio" id="radio1" name="sort" value="ASC" checked onclick="sortProducts('ASC',1)">
                            <label class="form-check-label" for="radio1" onclick="sortProducts('ASC')">Price: Low to High</label> <br>
                        </div>
                        <div class="my-2 p-2">
-                           <input class="form-check-input styled-radio" type="radio" id="radio2" name="sort" value="DESC" onclick="sortProducts('DESC')">
+                           <input class="form-check-input styled-radio" type="radio" id="radio2" name="sort" value="DESC" onclick="sortProducts('DESC',1)">
                            <label class="form-check-label" for="radio2" onclick="sortProducts('DESC')">Price: High to Low</label>
                        </div>
                        <div class="mt-5">
@@ -145,7 +144,7 @@
                        </div>
                </div>
            </div>
-           <div class="col-9 d-flex flex-wrap gap-4 " id="men">
+           <div class="col-9 d-flex flex-wrap gap-4 " id="clothes_div">
                <?php
                 foreach ($products as $product) {
 
@@ -240,7 +239,7 @@
                    event.target.classList.toggle('bi-heart');
                    event.target.classList.toggle('bi-heart-fill');
                }
-               
+
                function addToCart(productId) {
                    console.log(productId);
                    const xhr = new XMLHttpRequest();
@@ -269,7 +268,6 @@
                        window.location.href = `../../../zulo/pages/buyNow.php?product_id=${productId}`;
                    }
                }
-
            </script>
        <?php }
         ?>

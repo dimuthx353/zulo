@@ -41,6 +41,7 @@ if (isset($_SESSION["user_id"])) {
     <?php
     $profilePage = "";
     $cartPage = "../../pages/cart.php";
+    $logoutPage = "../../inc/handlers/logout_handler.php";
 
     include_once "../../partials/nav.php";
     ?>
@@ -83,11 +84,11 @@ if (isset($_SESSION["user_id"])) {
                         </form>
                     </div>
                 </div>
-                
+
             </div>
             <div class="col-lg-4">
-                
-                
+
+
             </div>
         </div>
     </div>

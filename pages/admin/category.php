@@ -233,11 +233,7 @@ if (isset($_SESSION['user_id'])) {
           </section>
 
           <!-- ! end content -->
-          <div style="height: 100vh"></div>
           <div class="card mb-4">
-            <div class="card-body">
-              test test
-            </div>
           </div>
         </div>
       </main>
@@ -245,7 +241,7 @@ if (isset($_SESSION['user_id'])) {
         <div class="container-fluid px-4">
           <div
             class="d-flex align-items-center justify-content-between small">
-            <div class="text-muted">Copyright &copy; Your Website 2023</div>
+            <div class="text-muted">Copyright &copy; Zulo 2024</div>
             <div>
               <a href="#">Privacy Policy</a>
               &middot;

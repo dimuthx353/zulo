@@ -1,11 +1,11 @@
-function sortProducts(method) {
-  const menDiv = document.getElementById('men');
-  menDiv.innerHTML = ''; // Clear current content
+function sortProducts(method, page) {
+  const menDiv = document.getElementById('clothes_div');
+  menDiv.innerHTML = '';
 
   const xhr = new XMLHttpRequest();
   xhr.open(
     'GET',
-    `../../../zulo/inc/handlers/filter_handler.php?sort=${method}`,
+    `../../../zulo/inc/handlers/filter_handler.php?sort=${method}&page=${page}`,
     true
   );
 
@@ -86,7 +86,7 @@ function sortProducts(method) {
 }
 
 function filterProducts(category, event) {
-  const menDiv = document.getElementById('men');
+  const menDiv = document.getElementById('clothes_div');
   menDiv.innerHTML = ''; // Clear current content
 
   const xhr = new XMLHttpRequest();

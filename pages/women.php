@@ -91,11 +91,37 @@
        </div>
 
        <div class="container d-flex product-section">
-           <div class="col-3 border-red">
-               <h1>filer options</h1>
+           <div class="col-3">
+               <div class="form-check  d-flex flex-wrap flex-column pt-5 bg-light">
+                   <h5 class="">FILTER OPTIONS</h1>
+                       <div class="my-2 p-2">
+                           <input class="form-check-input styled-radio" type="radio" id="radio1" name="sort" value="ASC" checked onclick="sortProducts('ASC',2)">
+                           <label class="form-check-label" for="radio1" onclick="sortProducts('ASC')">Price: Low to High</label> <br>
+                       </div>
+                       <div class="my-2 p-2">
+                           <input class="form-check-input styled-radio" type="radio" id="radio2" name="sort" value="DESC" onclick="sortProducts('DESC',2)">
+                           <label class="form-check-label" for="radio2" onclick="sortProducts('DESC')">Price: High to Low</label>
+                       </div>
+                       <div class="mt-5">
+                           <h5 class="">MEN CLOTHES CATEGORIES</h1>
+                               <div class="form-check d-flex flex-wrap flex-column bg-light">
+                                   <div class="my-2 p-2">
+                                       <input class="form-check-input" type="radio" id="tshirts" name="category" value="" onclick="filterProducts('Denims',event)">
+                                       <label class="form-check-label" for="tshirts" onclick="filterProducts('Denims',event)">Denims</label> <br>
+                                   </div>
+                                   <div class="my-2 p-2">
+                                       <input class="form-check-input" type="radio" id="shirts" name="category" value="SHIRTS" onclick="filterProducts('T-Shirts',event)">
+                                       <label class="form-check-label" for="shirts" onclick="filterProducts('T-Shirts',event)">T Shirts</label>
+                                   </div>
+                                   <div class="my-2 p-2">
+                                       <input class="form-check-input" type="radio" id="casual-Shirts" name="category" value="casual-shirts" onclick="filterProducts('TopsW',event)">
+                                       <label class="form-check-label" for="casual-Shirts" onclick="filterProducts('TopsW',event)">Tops</label>
+                                   </div>
+                               </div>
+                       </div>
+               </div>
            </div>
-           <div class="col-9 d-flex flex-wrap gap-4 border-red">
-               <h1 class="text-center w-100">Women</h1>
+           <div class="col-9 d-flex flex-wrap gap-4 " id="clothes_div">
                <?php
                 foreach ($products as $product) {
 
@@ -222,12 +248,13 @@
                        window.location.href = `../../../zulo/pages/buyNow.php?product_id=${productId}`;
                    }
                }
-
            </script>
        <?php }
         ?>
 
        <script src="../assets/js/search.js"></script>
+       <script src="../assets/js/filter.js"></script>
+
 
    </body>
 

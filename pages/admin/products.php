@@ -348,11 +348,7 @@ $Products = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </form>
           </section>
           <!-- ! end content -->
-          <div style="height: 100vh"></div>
           <div class="card mb-4">
-            <div class="card-body">
-              test test
-            </div>
           </div>
         </div>
       </main>
@@ -360,7 +356,7 @@ $Products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="container-fluid px-4">
           <div
             class="d-flex align-items-center justify-content-between small">
-            <div class="text-muted">Copyright &copy; Your Website 2023</div>
+            <div class="text-muted">Copyright &copy; Zulo 2024</div>
             <div>
               <a href="#">Privacy Policy</a>
               &middot;
