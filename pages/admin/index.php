@@ -20,7 +20,15 @@ if (isset($_SESSION['user_id'])) {
     content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <title>Dashboard - SB Admin</title>
+  <title>Dashboard - Zulo Admin</title>
+
+
+  <link rel="icon" type="image/png" href="../../assets/img/favicon-48x48.png" sizes="48x48" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg" />
+  <link rel="shortcut icon" href="../../assets/img/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/img/apple-touch-icon.png" />
+  <link rel="manifest" href="../../assets/img/site.webmanifest" />
+
   <link
     href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css"
     rel="stylesheet" />
@@ -33,7 +41,7 @@ if (isset($_SESSION['user_id'])) {
 <body class="sb-nav-fixed">
   <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
     <!-- Navbar Brand-->
-    <a class="navbar-brand ps-3" href="index.html">Start Bootstrap</a>
+    <a class="navbar-brand ps-3" href="index.html">Welcome <br> <?php echo $_SESSION['firstName']; ?></a>
     <!-- Sidebar Toggle-->
     <button
       class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"

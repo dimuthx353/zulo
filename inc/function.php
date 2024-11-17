@@ -105,13 +105,13 @@ function loginUser($conn, $email, $pwd)
             session_start();
             $_SESSION["email"] = $row["email"];
             $_SESSION["user_id"] = $row["user_id"];
+            $_SESSION["firstName"] = $row["first_name"];
 
 
-                header("Location:../../../../zulo/index.php");
+            header("Location:../../../../zulo/index.php");
         } else {
             header("Location:../../../../zulo/pages/login.php?error=password");
             exit();
         }
     }
-
 }
