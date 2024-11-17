@@ -1,9 +1,16 @@
 <?php
 include_once "../../db.php";
 
-if (isset($_GET['userType']) && $_GET['userType'] !== 'all') {
+if (isset($_GET['userType'])) {
+
     $userType = $_GET['userType'];
-    $sql = "SELECT * FROM users WHERE roll = '$userType'"; // You can modify this to select specific fields if needed
+
+    if ($userType == "all") {
+        $sql = "SELECT * FROM users"; // You can modify this to select specific fields if needed
+    } else {
+        $sql = "SELECT * FROM users WHERE roll = '$userType'"; // You can modify this to select specific fields if needed
+    }
+
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
