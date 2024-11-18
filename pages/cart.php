@@ -77,9 +77,10 @@ $total = 0;
                                                             <div class="d-flex align-items-center">
                                                                 <p class="fw-bold mb-0 me-5 pe-3">Rs.' .  number_format($item['price'], 2) . '</p>
                                                                 <div class="def-number-input number-input safari_only">
-                                                                    <button data-mdb-button-init onclick="this.parentNode.querySelector(\'input[type=number]\').stepDown()" class="minus"></button>
-                                                                    <input class="quantity fw-bold bg-body-tertiary text-body" min="0" name="quantity" value="' . htmlspecialchars($item['quantity']) . '" type="number">
-                                                                    <button data-mdb-button-init onclick="this.parentNode.querySelector(\'input[type=number]\').stepUp()" class="plus"></button>
+                                                                    <button data-mdb-button-init onclick="this.parentNode.querySelector(\'input[type=number]\').stepDown() , updateCartQty(event, ' . $item['product_id'] . ')" class="minus"></button>
+                                                                    <input class="quantity fw-bold bg-body-tertiary text-body" min="1" name="quantity" value="' . htmlspecialchars($item['quantity']) .
+                                                    '" type="number">
+                                                                    <button data-mdb-button-init onclick="this.parentNode.querySelector(\'input[type=number]\').stepUp() ,updateCartQty(event, ' . $item['product_id'] . ')"" class="plus"></button>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -225,13 +226,13 @@ $total = 0;
     </section>
 
     <!-- Footer Start  -->
-       <footer>
-           <?php
-            $imgPathForFooter = "../assets/img/";
+    <footer>
+        <?php
+        $imgPathForFooter = "../assets/img/";
 
-            include_once "../partials/footer.php"
-            ?>
-       </footer>
+        include_once "../partials/footer.php"
+        ?>
+    </footer>
 
     <!-- Bootstrap CDN  -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -251,6 +252,20 @@ $total = 0;
                 };
                 xhr.send();
             }
+        }
+
+        function updateCartQty(event, productId) {
+
+            console.log(productId);
+            const qty = event.target.parentElement.querySelector('input').value;
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", `../inc/handlers/update_cart_qty.php?product_id=${productId}&qty=${qty}`, true);
+            xhr.onload = function() {
+                if (this.status === 200) {
+                    location.reload();
+                }
+            };
+            xhr.send();
         }
     </script>
 </body>
