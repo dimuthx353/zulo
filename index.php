@@ -274,7 +274,7 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
             <div class="carousel-caption d-none d-md-block">
               <h5>First slide label</h5>
               <p>
-                Some representative placeholder content for the first slide.
+              Fashion shapes the way we present ourselves to the world.
               </p>
             </div>
           </div>
@@ -288,7 +288,7 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
             <div class="carousel-caption d-none d-md-block">
               <h5>First slide label</h5>
               <p>
-                Some representative placeholder content for the first slide.
+              Beauty is the harmony of inner confidence and outer expression.
               </p>
             </div>
           </div>
@@ -302,7 +302,7 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
             <div class="carousel-caption d-none d-md-block">
               <h5>First slide label</h5>
               <p>
-                Some representative placeholder content for the first slide.
+              Elegance is crafted when self-expression meets timeless design.
               </p>
             </div>
           </div>
@@ -323,7 +323,7 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
             <div class="carousel-caption d-none d-md-block">
               <h5>First slide label</h5>
               <p>
-                Some representative placeholder content for the first slide.
+              Fashion and beauty are the perfect blend of style and self-expression.
               </p>
             </div>
           </div>
@@ -337,7 +337,7 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
             <div class="carousel-caption d-none d-md-block">
               <h5>First slide label</h5>
               <p>
-                Some representative placeholder content for the first slide.
+              Style and beauty come together to highlight the best version of ourselves.
               </p>
             </div>
           </div>
@@ -351,7 +351,7 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
             <div class="carousel-caption d-none d-md-block">
               <h5>First slide label</h5>
               <p>
-                Some representative placeholder content for the first slide.
+              True beauty radiates when confidence meets creativity in style.
               </p>
             </div>
           </div>
@@ -373,7 +373,7 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
             <div class="carousel-caption d-none d-md-block">
               <h5>First slide label</h5>
               <p>
-                Some representative placeholder content for the first slide.
+              Where style meets grace, beauty is born.
               </p>
             </div>
           </div>
@@ -387,7 +387,7 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
             <div class="carousel-caption d-none d-md-block">
               <h5>First slide label</h5>
               <p>
-                Some representative placeholder content for the first slide.
+              Beauty emerges when personality is woven into every detail.
               </p>
             </div>
           </div>
@@ -401,13 +401,13 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
             <div class="carousel-caption d-none d-md-block">
               <h5>First slide label</h5>
               <p>
-                Some representative placeholder content for the first slide.
+              Style thrives when individuality is woven into every thread.
               </p>
             </div>
             <div class="carousel-caption d-none d-md-block">
               <h5>First slide label</h5>
               <p>
-                Some representative placeholder content for the first slide.
+              True style is revealed when confidence is tailored to perfection.
               </p>
             </div>
           </div>
