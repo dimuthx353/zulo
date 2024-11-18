@@ -113,12 +113,7 @@ if (isset($_SESSION["email"])) {
             </div>
             <div class="col-3 d-flex justify-content-end align-items-center pe-4 ">
                 <div class="d-flex justify-content-end gap-2 ms-2 control-center">
-                    <div onclick="activeDarkMode()">
-                        <button class="btn btn-outline-dark" id="switch-mode">
-                            <i class="bi bi-brightness-high-fill"></i>
-                            <i class="bi bi-moon-stars d-none"></i>
-                        </button>
-                    </div>
+                    
 
                     <div>
                         <a href="<?php echo $cartPage ?>">
