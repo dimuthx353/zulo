@@ -272,7 +272,7 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
               class="lazyload blur-up d-block w-100"
               alt="Example Image 3" />
             <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
+              <h5></h5>
               <p>
               Fashion shapes the way we present ourselves to the world.
               </p>
@@ -286,7 +286,7 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
               class="lazyload blur-up d-block w-100"
               alt="Example Image 3" />
             <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
+              <h5></h5>
               <p>
               Beauty is the harmony of inner confidence and outer expression.
               </p>
@@ -300,7 +300,7 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
               class="lazyload blur-up d-block w-100"
               alt="Example Image 3" />
             <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
+              <h5></h5>
               <p>
               Elegance is crafted when self-expression meets timeless design.
               </p>
@@ -321,7 +321,7 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
               class="lazyload blur-up d-block w-100"
               alt="Example Image 3" />
             <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
+              <h5></h5>
               <p>
               Fashion and beauty are the perfect blend of style and self-expression.
               </p>
@@ -335,7 +335,7 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
               class="lazyload blur-up d-block w-100"
               alt="Example Image 3" />
             <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
+              <h5></h5>
               <p>
               Style and beauty come together to highlight the best version of ourselves.
               </p>
@@ -349,7 +349,7 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
               class="lazyload blur-up d-block w-100"
               alt="Example Image 3" />
             <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
+              <h5></h5>
               <p>
               True beauty radiates when confidence meets creativity in style.
               </p>
@@ -371,7 +371,7 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
               alt="Example Image 3" />
 
             <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
+              <h5></h5>
               <p>
               Where style meets grace, beauty is born.
               </p>
@@ -385,7 +385,7 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
               class="lazyload blur-up d-block w-100"
               alt="Example Image 3" />
             <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
+              <h5></h5>
               <p>
               Beauty emerges when personality is woven into every detail.
               </p>
@@ -399,13 +399,13 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
               class="lazyload blur-up d-block w-100"
               alt="Example Image 3" />
             <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
+              <h5></h5>
               <p>
               Style thrives when individuality is woven into every thread.
               </p>
             </div>
             <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
+              <h5></h5>
               <p>
               True style is revealed when confidence is tailored to perfection.
               </p>
