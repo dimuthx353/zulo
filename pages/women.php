@@ -62,22 +62,13 @@
 
            <div class="carousel-inner h-100">
                <div class="carousel-item active">
-                   <img src="../assets/img/womenpageslide03.jpg" class="d-block w-100" alt="...">
-                   <p style="font-family: Playfair Display;">
-                       Explore New Trends
-                   </p>
-               </div>
-               <div class="carousel-item">
                    <img src="../assets/img/womenpageslide02.jpg" class="d-block w-100" alt="...">
-                   <p style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
-                       Elevate Your Style
-                   </p>
                </div>
                <div class="carousel-item">
                    <img src="../assets/img/womenpageslide01.jpg" class="d-block w-100" alt="...">
-                   <p style="font-family: Raleway;">
-                       Unleash Your Inner Fashionista
-                   </p>
+               </div>
+               <div class="carousel-item ">
+                   <img src="../assets/img/womenpageslide03.jpg" class="d-block w-100" alt="...">
                </div>
            </div>
            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
