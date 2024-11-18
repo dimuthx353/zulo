@@ -272,9 +272,9 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
               class="lazyload blur-up d-block w-100"
               alt="Example Image 3" />
             <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
+              <h5></h5>
               <p>
-                Some representative placeholder content for the first slide.
+              Fashion shapes the way we present ourselves to the world.
               </p>
             </div>
           </div>
@@ -286,9 +286,9 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
               class="lazyload blur-up d-block w-100"
               alt="Example Image 3" />
             <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
+              <h5></h5>
               <p>
-                Some representative placeholder content for the first slide.
+              Beauty is the harmony of inner confidence and outer expression.
               </p>
             </div>
           </div>
@@ -300,9 +300,9 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
               class="lazyload blur-up d-block w-100"
               alt="Example Image 3" />
             <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
+              <h5></h5>
               <p>
-                Some representative placeholder content for the first slide.
+              Elegance is crafted when self-expression meets timeless design.
               </p>
             </div>
           </div>
@@ -321,9 +321,9 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
               class="lazyload blur-up d-block w-100"
               alt="Example Image 3" />
             <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
+              <h5></h5>
               <p>
-                Some representative placeholder content for the first slide.
+              Fashion and beauty are the perfect blend of style and self-expression.
               </p>
             </div>
           </div>
@@ -335,9 +335,9 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
               class="lazyload blur-up d-block w-100"
               alt="Example Image 3" />
             <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
+              <h5></h5>
               <p>
-                Some representative placeholder content for the first slide.
+              Style and beauty come together to highlight the best version of ourselves.
               </p>
             </div>
           </div>
@@ -349,9 +349,9 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
               class="lazyload blur-up d-block w-100"
               alt="Example Image 3" />
             <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
+              <h5></h5>
               <p>
-                Some representative placeholder content for the first slide.
+              True beauty radiates when confidence meets creativity in style.
               </p>
             </div>
           </div>
@@ -371,9 +371,9 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
               alt="Example Image 3" />
 
             <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
+              <h5></h5>
               <p>
-                Some representative placeholder content for the first slide.
+              Where style meets grace, beauty is born.
               </p>
             </div>
           </div>
@@ -385,9 +385,9 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
               class="lazyload blur-up d-block w-100"
               alt="Example Image 3" />
             <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
+              <h5></h5>
               <p>
-                Some representative placeholder content for the first slide.
+              Beauty emerges when personality is woven into every detail.
               </p>
             </div>
           </div>
@@ -399,15 +399,15 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
               class="lazyload blur-up d-block w-100"
               alt="Example Image 3" />
             <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
+              <h5></h5>
               <p>
-                Some representative placeholder content for the first slide.
+              Style thrives when individuality is woven into every thread.
               </p>
             </div>
             <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
+              <h5></h5>
               <p>
-                Some representative placeholder content for the first slide.
+              True style is revealed when confidence is tailored to perfection.
               </p>
             </div>
           </div>
@@ -568,7 +568,7 @@ $mProducts = $stmtMen->fetchAll(PDO::FETCH_ASSOC);
     <p class="text text-white">
       Get 25% Discount on your first purchase.
       Just Sign Up & Register it now to become member.
-      <button class="btn btn-primary">signup Now</button>
+      <button class="btn btn-primary">Signup Now</button>
     </p>
   </div>
 

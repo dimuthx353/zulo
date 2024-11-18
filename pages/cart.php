@@ -22,9 +22,19 @@ $total = 0;
     <!-- External CSS  -->
     <link rel="stylesheet" href="../assets/css/cart.min.css">
     <link rel="stylesheet" href="../assets/css/reset.min.css">
+    <link rel="stylesheet" href="../assets/css/nav.min.css">
 </head>
 
 <body>
+<div class="container-fluid m-0 p-0 full-body d-flex flex-column">
+           <!-- Navigation  -->
+           <header>
+
+               <?php
+                include_once "../partials/nav.php";
+                ?>
+           </header>
+       </div>
     <section class="h-100 h-custom" style="background-color: #eee;">
         <div class="container h-100 py-5">
             <div class="row d-flex justify-content-center align-items-center h-100">
