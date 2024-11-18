@@ -4,7 +4,7 @@ function deleteProduct(event, productId) {
   const xhr = new XMLHttpRequest();
   xhr.open(
     'GET',
-    `../../../zulo/inc/handlers/deleteProduct_handler.php?productId=${productId}`,
+    `../../inc/handlers/deleteProduct_handler.php?productId=${productId}`,
     true
   );
   xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');

@@ -113,5 +113,7 @@ function loginUser($conn, $email, $pwd)
             header("Location:../../../../zulo/pages/login.php?error=password");
             exit();
         }
+    } else {
+        header("Location:../../../../zulo/pages/login.php?error=invalidInput");
     }
 }
