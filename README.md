@@ -28,13 +28,42 @@ Zulo is an e-commerce website built with PHP, HTML, CSS, and JavaScript. The web
 
 ## Screenshots
 
+### Without Login Home Page
+
 ![Without Login Home Page](./assets/img/screenshots/home.png)
-![Men Product Page](screenshots/mProduct.png)
-![Women Product Page](screenshots/wProduct.png)
+
+### Men Product Page
+
+![Men Product Page](./assets/img/screenshots/mProduct.png)
+
+### Women Product Page
+
+![Women Product Page](./assets/img/screenshots/wProduct.png)
+
+### Cart Page
+
 ![Cart Page](./assets/img/screenshots/checkout.png)
+
+### Order History Page
+
 ![Order History Page](./assets/img/screenshots/order_history.png)
+
+### Edit Profile Page
+
 ![Edit Profile Page](./assets/img/screenshots/editProfie.png)
+
+### Admin Page
+
 ![Admin Page](./assets/img/screenshots/admin.png)
-![Manage Products Page](./assets/img/screenshots/mangeProducts..png)
+
+### Manage Products Page
+
+![Manage Products Page](./assets/img/screenshots/mangeProducts.png)
+
+### Mange Users Page
+
 ![Mange Users Page](./assets/img/screenshots/manageUsers.png)
+
+### Login Home Page
+
 ![Login Home Page](./assets/img/screenshots/loginHome.png)
